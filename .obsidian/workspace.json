@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "67030314/06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics.md",
+                "file": "67030314/07-Labsheet-12-2-Interactive-Actuator-Control-Switch-and-Status.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics"
+              "title": "07-Labsheet-12-2-Interactive-Actuator-Control-Switch-and-Status"
             }
           }
         ]
@@ -201,10 +201,25 @@
   },
   "active": "37bd71799e8f999a",
   "lastOpenFiles": [
+    "67030314/06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics.md",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/install_manifest.txt",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/shaders/stretch_effect.frag",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/shaders",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/packages/cupertino_icons",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/packages",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/NOTICES.Z",
+    "67030314/Lab12-1/iot_mqtt_basics/build/windows/x64/runner/Debug/data/flutter_assets/NativeAssetsManifest.json",
+    "67030314/Lab12-1/iot_mqtt_basics/README.md",
+    "67030314/Lab12-1/iot_mqtt_basics/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+    "67030314/Lab12-1/iot_mqtt_basics/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+    "67030314/Lab12-1/iot_mqtt_basics/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "67030314/Lab12-1/iot_mqtt_basics/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+    "67030314/Lab12-1/iot_mqtt_basics/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
     "67030314/07-Labsheet-12-2-Interactive-Actuator-Control-Switch-and-Status.md",
     "67030314/08-Labsheet-12-3-Realtime-Telemetry-Dashboard-and-Radial-Gauge.md",
-    "67030314/09-Labsheet-12-4-End-to-End-IoT-Ecosystem-Integration.md",
-    "67030314/06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics.md",
-    "67030314"
+    "67030314/09-Labsheet-12-4-End-to-End-IoT-Ecosystem-Integration.md"
   ]
 }
