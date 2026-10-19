@@ -4,7 +4,11 @@
 ---
 
 ## ผลลัพธ์การทดลอง
-<!-- นำรูปภาพผลการทดลองมาวางที่นี่ -->
+<img width="1080" height="2400" alt="Screenshot_20261019_213700" src="https://github.com/user-attachments/assets/261aaec2-334d-4ce4-9c1d-d568d1b53d59" />
+<img width="1080" height="2400" alt="Screenshot_20261019_213043" src="https://github.com/user-attachments/assets/99b60da0-0c8c-4638-8b42-bbba0049e54a" />
+<img width="1080" height="2400" alt="Screenshot_20261019_213718" src="https://github.com/user-attachments/assets/c549b5e4-c3a0-48a2-a248-44278ceda4e9" />
+<img width="1080" height="2400" alt="Screenshot_20261019_213053" src="https://github.com/user-attachments/assets/6f37c443-96cf-42b8-85a9-412342459dde" />
+
 
 ---
 
