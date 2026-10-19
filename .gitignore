@@ -2,11 +2,16 @@
 *.bkp
 ~$**
 .vscode/*
-!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 .idea/
+*.iml
+*.ipr
+*.iws
 *.tmp
+*.log
+*.swp
+.DS_Store
 __pycache__/
 *.py[cod]
 
@@ -15,12 +20,14 @@ build/
 **/build/
 build_*_*/
 dependencies.lock
+**/dependencies.lock
 managed_components/
 **/managed_components/
 *.old
 sdkconfig.old
+**/sdkconfig.old
 
-# Flutter & Dart
+# Flutter & Dart build / cache / generated files
 .dart_tool/
 **/.dart_tool/
 .packages
@@ -29,7 +36,39 @@ sdkconfig.old
 **/.flutter-plugins
 .flutter-plugins-dependencies
 **/.flutter-plugins-dependencies
+**/.pub-cache/
+**/.pub/
+**/coverage/
+**/doc/api/
 **/ephemeral/
 **/windows/flutter/ephemeral/
 **/linux/flutter/ephemeral/
 **/macos/Flutter/ephemeral/
+**/GeneratedPluginRegistrant.*
+**/generated_plugin_registrant.*
+**/generated_plugins.cmake
+**/app.*.symbols
+**/app.*.map.json
+
+# Android / Gradle generated files
+**/.gradle/
+**/.kotlin/
+**/.cxx/
+**/captures/
+**/local.properties
+**/key.properties
+**/*.keystore
+**/*.jks
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+
+# Unused platform boilerplate in student projects (codes-project)
+codes-project/**/ios/
+codes-project/**/macos/
+codes-project/**/linux/
+codes-project/**/web/
+codes-project/**/test/
+codes-project/**/.metadata
+codes-project/**/pubspec.lock
+
