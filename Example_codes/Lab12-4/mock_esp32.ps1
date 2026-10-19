@@ -4,6 +4,10 @@ param (
     [int]$Port = 1883
 )
 
+if ($env:Path -notlike "*C:\Program Files\mosquitto*") {
+    $env:Path += ";C:\Program Files\mosquitto"
+}
+
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host "    [MOCK ESP32] สคริปต์จำลองพฤติกรรมบอร์ด ESP32 ครบวงจร   " -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
@@ -46,11 +50,14 @@ mosquitto_pub -h $Broker -p $Port -t "iot/esp32/status" -m "online" -r
 # 2. เริ่มส่ง Telemetry จำลองเซนเซอร์ใน Background Job
 $job = Start-Job -ScriptBlock {
     param($b, $p)
+    if ($env:Path -notlike "*C:\Program Files\mosquitto*") {
+        $env:Path += ";C:\Program Files\mosquitto"
+    }
     $t = 0
     while ($true) {
         $v = [Math]::Round(1.65 + 1.5 * [Math]::Sin($t * 0.2), 2)
         $raw = [int](($v / 3.3) * 4095)
-        $payload = "{`"voltage`": $v, `"raw`": $raw, `"uptime`": $t}"
+        $payload = "{\`"voltage\`": $v, \`"raw\`": $raw, \`"uptime\`": $t}"
         mosquitto_pub -h $b -p $p -t "iot/esp32/telemetry" -m $payload
         $t++
         Start-Sleep -Milliseconds 500
@@ -76,7 +83,7 @@ try {
             Write-Host "  -> ปิดไฟ LED (GPIO 2 = LOW) และส่ง ACK ยืนยันสำเร็จ" -ForegroundColor Red
         }
 
-        $ackJson = "{`"led_state`": $(if($ledState){'true'}else{'false'}), `"ack`": true}"
+        $ackJson = "{\`"led_state\`": $(if($ledState){'true'}else{'false'}), \`"ack\`": true}"
         mosquitto_pub -h $Broker -p $Port -t "iot/esp32/led_ack" -m $ackJson
     }
 }
