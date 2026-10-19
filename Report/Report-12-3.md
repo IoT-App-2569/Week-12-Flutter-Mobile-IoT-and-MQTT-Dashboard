@@ -8,15 +8,15 @@
 
 **3.1 ผลการรันหน้าจอ Telemetry Dashboard และการเชื่อมต่อเริ่มต้น**
 
-![alt text](image-8.png)
+![alt text](/Report/img/image-8.png)
 
 **3.2 ผลการทดสอบแดชบอร์ดด้วยการจำลองข้อมูลคลื่น Sine Wave**
 
-![alt text](image-10.png)
+![alt text](/Report/img/image-10.png)
 
 **3.3 ผลการทดสอบส่งค่าแบบเจาะจง (แรงดันสูง)**
 
-![alt text](image-9.png)
+![alt text](/Report/img/image-9.png)
 
 ### 2. คำถามท้ายการทดลอง 12.3 (Review Questions)
 

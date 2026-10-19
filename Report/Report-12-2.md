@@ -8,23 +8,23 @@
 
 **2.1 ผลการทดสอบสถานะอุปกรณ์ออนไลน์**
 
-![alt text](image-2.png)
+![alt text](/Report/img/image-2.png)
 
-![alt text](image-3.png)
+![alt text](/Report/img/image-3.png)
 
 **2.2 ผลการตรวจสอบการส่งคำสั่งควบคุม (Control)**
 
-![alt text](image-4.png)
+![alt text](/Report/img/image-4.png)
 
-![alt text](image-5.png)
+![alt text](/Report/img/image-5.png)
 
 **2.3 ผลการทดสอบสถานะตอบรับ (ACK) และเอฟเฟกต์**
 
-![alt text](image-6.png)
+![alt text](/Report/img/image-6.png)
 
 **2.4 ผลการทดสอบสถานะอุปกรณ์ออฟไลน์และแจ้งเตือน (LWT)**
 
-![alt text](image-7.png)
+![alt text](/Report/img/image-7.png)
 
 ### 2. คำถามท้ายการทดลอง 12.2 (Review Questions)
 

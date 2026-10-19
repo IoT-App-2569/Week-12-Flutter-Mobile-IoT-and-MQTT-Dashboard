@@ -6,12 +6,12 @@
 
 - บนหน้าจอ Flutter: กรอก IP เป็น **`127.0.0.1`** (หรือ IP ของ Broker ที่เปิดรับ) แล้วกดปุ่ม **Connect**
 
-  ![alt text](image.png)
+  ![alt text](/Report/img/image.png)
 
 - เมื่อสถานะเปลี่ยนเป็นสีเขียว ให้กดปุ่ม **Publish Test Message**
 - สังเกตหน้าต่าง PowerShell `mosquitto_sub` ว่าได้รับข้อความ Ping หรือไม่
 
-  ![alt text](image-1.png)
+  ![alt text](/Report/img/image-1.png)
 
 - ในอีกหน้าต่าง PowerShell ส่งข้อความตอบกลับไปยังหัวข้อที่ Flutter รอฟัง:
 
