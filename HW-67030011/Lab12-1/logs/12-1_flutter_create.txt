@@ -1,0 +1,43 @@
+$ flutter create iot_mqtt_basics
+Creating project iot_mqtt_basics...
+Resolving dependencies in `iot_mqtt_basics`...
+Downloading packages...
+Got dependencies in `iot_mqtt_basics`.
+Wrote 131 files.
+
+All done!
+You can find general documentation for Flutter at: https://docs.flutter.dev/
+Detailed API documentation is available at: https://api.flutter.dev/
+If you prefer video documentation, consider: https://www.youtube.com/c/flutterdev
+
+In order to run your application, type:
+
+  $ cd iot_mqtt_basics
+  $ flutter run
+
+Your application code is in iot_mqtt_basics/lib/main.dart.
+
+Newer than known valid Java version (26.0.1), gradle (9.1.0).
+ Treating as valid configuration.
+The configured version of Java detected may conflict with the Gradle version in your new Flutter app.
+
+To keep the default Gradle version 9.1.0, download a compatible Java version
+(Java 17 <= compatible Java version < Java 26). Configure this Java version globally for Flutter by running:
+
+  flutter config --jdk-dir=<JDK_DIRECTORY>
+
+
+Alternatively, to continue using your configured Java version, update the Gradle
+version specified in the following file to a compatible Gradle version:
+/Users/kbbk/IOT/Week-12-Flutter-Mobile-IoT-and-MQTT-Dashboard/HW-67030011/Lab12-1/iot_mqtt_basics/android/gradle/wrapper/gradle-wrapper.properties
+
+You may also update the Gradle version used by running
+`./gradlew wrapper --gradle-version=<COMPATIBLE_GRADLE_VERSION>`.
+
+See
+https://docs.gradle.org/current/userguide/compatibility.html#java for details
+on compatible Java/Gradle versions, and see
+https://docs.gradle.org/current/userguide/gradle_wrapper.html#sec:upgrading_wrapper
+for more details on using the Gradle Wrapper command to update the Gradle version
+used.
+
