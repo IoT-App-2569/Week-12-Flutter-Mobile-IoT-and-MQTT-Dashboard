@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,6 +20,14 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
   bool _isWaitingAck = false;
   String _networkStatus = 'กำลังเชื่อมต่อ Broker...';
 
+  // ถ้าบอร์ดไม่ตอบ ACK ภายในเวลานี้ ให้ยกเลิกการรอ (เดิมสวิตช์ค้าง Waiting ACK ตลอดไป)
+  static const Duration _ackTimeout = Duration(seconds: 3);
+  Timer? _ackTimer;
+  // จับเวลาไป-กลับ (RTT) ตั้งแต่ Publish คำสั่งจนได้รับ led_ack
+  final Stopwatch _rttWatch = Stopwatch();
+  int? _lastRttMs;
+  StreamSubscription<List<MqttReceivedMessage<MqttMessage>>>? _updatesSub;
+
   @override
   void initState() {
     super.initState();
@@ -27,6 +36,12 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
 
   @override
   void dispose() {
+    _ackTimer?.cancel();
+    _updatesSub?.cancel();
+    // ระหว่าง dispose() ค่า mounted ยังเป็น true ถ้าไม่ถอด Callback ก่อน disconnect()
+    // onDisconnected จะเรียก setState บน Element ที่กำลังถูกถอด (assert _lifecycleState != defunct)
+    _client?.onDisconnected = null;
+    _client?.onAutoReconnect = null;
     _client?.disconnect();
     super.dispose();
   }
@@ -36,22 +51,37 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     _client = MqttServerClient(widget.brokerIp, clientId);
     _client!.port = 1883;
     _client!.keepAlivePeriod = 20;
+    _client!.autoReconnect = true;
+    _client!.setProtocolV311();
 
     _client!.onConnected = () {
+      if (!mounted) return;
       setState(() => _networkStatus = 'เชื่อมต่อ Broker เรียบร้อย');
       _subscribeTopics();
     };
 
+    _client!.onAutoReconnect = () {
+      if (!mounted) return;
+      setState(() {
+        _networkStatus = 'ขาดการเชื่อมต่อ Broker! กำลังเชื่อมต่อใหม่...';
+        _isDeviceOnline = false;
+        _cancelWaitingAck();
+      });
+    };
+
     _client!.onDisconnected = () {
+      if (!mounted) return;
       setState(() {
         _networkStatus = 'ขาดการเชื่อมต่อ Broker!';
         _isDeviceOnline = false;
+        _cancelWaitingAck();
       });
     };
 
     try {
       await _client!.connect();
     } catch (e) {
+      if (!mounted) return;
       setState(() => _networkStatus = 'เชื่อมต่อล้มเหลว: $e');
     }
   }
@@ -62,16 +92,25 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     // 2. บอกรับหัวข้อยืนยันการทำงานของหลอดไฟ
     _client?.subscribe('iot/esp32/led_ack', MqttQos.atMostOnce);
 
-    _client?.updates?.listen((List<MqttReceivedMessage<MqttMessage>> c) {
+    // onConnected ถูกเรียกซ้ำหลัง Auto-Reconnect จึงต้องยกเลิก Listener เดิมก่อน
+    _updatesSub?.cancel();
+    _updatesSub = _client?.updates?.listen((List<MqttReceivedMessage<MqttMessage>> c) {
       final recMess = c[0].payload as MqttPublishMessage;
       final pt = MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
       final topic = c[0].topic;
 
+      if (!mounted) return;
       setState(() {
         if (topic == 'iot/esp32/status') {
           _isDeviceOnline = (pt.trim().toLowerCase() == 'online');
+          // บอร์ดหลุด (LWT) ระหว่างรอ ACK: ไม่มีวันได้ ACK แล้ว จึงเลิกรอ
+          if (!_isDeviceOnline) _cancelWaitingAck();
         } else if (topic == 'iot/esp32/led_ack') {
-          _isWaitingAck = false;
+          if (_isWaitingAck) {
+            _lastRttMs = _rttWatch.elapsedMilliseconds;
+            debugPrint('RTT control -> led_ack: $_lastRttMs ms');
+          }
+          _cancelWaitingAck();
           try {
             final data = jsonDecode(pt);
             _isLedOn = data['led_state'] == true;
@@ -102,6 +141,17 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     setState(() {
       _isWaitingAck = true;
     });
+    _rttWatch
+      ..reset()
+      ..start();
+    _ackTimer?.cancel();
+    _ackTimer = Timer(_ackTimeout, () {
+      if (!mounted || !_isWaitingAck) return;
+      setState(_cancelWaitingAck);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('⚠️ ไม่ได้รับการยืนยัน (ACK) จากบอร์ดภายใน 3 วินาที')),
+      );
+    });
 
     final payloadMap = {'led': targetState ? 'ON' : 'OFF'};
     final jsonStr = jsonEncode(payloadMap);
@@ -115,8 +165,19 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     );
   }
 
+  // เรียกภายใน setState
+  void _cancelWaitingAck() {
+    _isWaitingAck = false;
+    _ackTimer?.cancel();
+    _rttWatch.stop();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final canControl = _isDeviceOnline &&
+        !_isWaitingAck &&
+        _client?.connectionStatus?.state == MqttConnectionState.connected;
+
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
       appBar: AppBar(
@@ -161,16 +222,16 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                color: const Color(0xFF1E293B).withOpacity(0.8),
+                color: const Color(0xFF1E293B).withValues(alpha: 0.8),
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
-                  color: _isLedOn ? const Color(0xFF00E676).withOpacity(0.6) : Colors.white12,
+                  color: _isLedOn ? const Color(0xFF00E676).withValues(alpha: 0.6) : Colors.white12,
                   width: 2,
                 ),
                 boxShadow: _isLedOn
                     ? [
                         BoxShadow(
-                          color: const Color(0xFF00E676).withOpacity(0.25),
+                          color: const Color(0xFF00E676).withValues(alpha: 0.25),
                           blurRadius: 24,
                           spreadRadius: 4,
                         )
@@ -209,14 +270,21 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
                       color: _isWaitingAck ? Colors.amber : (_isLedOn ? const Color(0xFF00E676) : Colors.white38),
                     ),
                   ),
+                  if (_lastRttMs != null) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      'RTT ล่าสุด: $_lastRttMs ms',
+                      style: const TextStyle(fontSize: 12, color: Color(0xFF00E5FF)),
+                    ),
+                  ],
                   const SizedBox(height: 24),
-                  // สวิตช์ควบคุม
+                  // สวิตช์ควบคุม (ปิดกั้นเมื่อบอร์ดออฟไลน์หรือกำลังรอ ACK)
                   Transform.scale(
                     scale: 1.4,
                     child: Switch(
                       value: _isLedOn,
-                      activeColor: const Color(0xFF00E676),
-                      onChanged: _isWaitingAck ? null : _toggleLed,
+                      activeThumbColor: const Color(0xFF00E676),
+                      onChanged: canControl ? _toggleLed : null,
                     ),
                   ),
                 ],

@@ -1,19 +1,19 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:iot_mqtt_basics/main.dart';
+import 'package:iot_mqtt_basics/actuator_control_screen.dart';
 
 void main() {
-  testWidgets('shows broker field, disconnected status and blocks publish before connect',
-      (WidgetTester tester) async {
-    await tester.pumpWidget(const MqttBasicsApp());
+  testWidgets('switch is disabled while ESP32 is offline', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(home: ActuatorControlScreen(brokerIp: '127.0.0.1')),
+    );
 
-    expect(find.text('Lab 12.1: MQTT Client Basics'), findsOneWidget);
-    expect(find.text('127.0.0.1'), findsOneWidget);
-    expect(find.text('ยังไม่ได้เชื่อมต่อ (Disconnected)'), findsOneWidget);
+    expect(find.text('ESP32 ฮาร์ดแวร์: ออฟไลน์ (OFFLINE)'), findsOneWidget);
+    expect(find.text('สถานะ: ปิดการทำงาน (Standby)'), findsOneWidget);
 
-    await tester.tap(find.text('Publish Test Message (Ping)'));
-    await tester.pump();
-
-    expect(find.textContaining('ไม่สามารถส่งข้อความได้เนื่องจากยังไม่ได้เชื่อมต่อ'), findsOneWidget);
+    final sw = tester.widget<Switch>(find.byType(Switch));
+    expect(sw.value, isFalse);
+    expect(sw.onChanged, isNull);
   });
 }
