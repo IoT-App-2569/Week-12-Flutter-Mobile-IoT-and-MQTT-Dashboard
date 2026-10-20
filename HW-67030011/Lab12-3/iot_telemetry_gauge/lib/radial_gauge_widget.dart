@@ -90,16 +90,18 @@ class _GaugePainter extends CustomPainter {
 
     // 2. เส้นแสดงระดับค่า (Gradient Active Arc)
     final ratio = (value / maxLimit).clamp(0.0, 1.0);
+    final capAngle = (18 / 2) / radius;
     final currentSweep = sweepAngle * ratio;
 
     final activePaint = Paint()
       // SweepGradient นับมุม 0 ที่ตำแหน่ง 3 นาฬิกา แต่ส่วนโค้งเริ่มที่ 135° จึงต้องหมุน Gradient ไปที่ startAngle
       // และให้ไล่สีเท่าช่วง sweepAngle (270°) ไม่เช่นนั้นปลายเกจช่วงแรงดันสูงจะวนกลับเป็นสีฟ้า
-      ..shader = const SweepGradient(
-        colors: [Color(0xFF00E5FF), Color(0xFF00E676), Color(0xFFFFD600), Color(0xFFFF5252)],
+      // capAngle: หัวมน (StrokeCap.round) ยื่นเลยจุดเริ่มไปครึ่งความหนาเส้น จึงเผื่อมุมไว้ไม่ให้หัวไปเก็บสีแดงจากปลาย Gradient
+      ..shader = SweepGradient(
+        colors: const [Color(0xFF00E5FF), Color(0xFF00E676), Color(0xFFFFD600), Color(0xFFFF5252)],
         startAngle: 0.0,
-        endAngle: sweepAngle,
-        transform: GradientRotation(startAngle),
+        endAngle: sweepAngle + 2 * capAngle,
+        transform: GradientRotation(startAngle - capAngle),
       ).createShader(Rect.fromCircle(center: center, radius: radius))
       ..style = PaintingStyle.stroke
       ..strokeWidth = 18

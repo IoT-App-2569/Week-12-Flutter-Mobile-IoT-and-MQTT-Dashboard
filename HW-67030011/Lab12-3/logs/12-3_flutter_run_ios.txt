@@ -33,3 +33,4 @@ flutter: ^
 flutter:
 flutter: Parsing error: type 'String' is not a subtype of type 'num?' in type cast
 flutter: Parsing error: type 'List<dynamic>' is not a subtype of type 'Map<String, dynamic>' in type cast
+Lost connection to device.
