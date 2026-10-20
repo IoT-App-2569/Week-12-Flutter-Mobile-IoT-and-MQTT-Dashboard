@@ -14,8 +14,8 @@ Got dependencies!
 Try `flutter pub outdated` for more information.
 Launching lib/main.dart on iPhone 16 Pro in debug mode...
 Running Xcode build...                                          
-Xcode build done.                                            6.8s
-Syncing files to device iPhone 16 Pro...                            65ms
+Xcode build done.                                            7.4s
+Syncing files to device iPhone 16 Pro...                            94ms
 
 Flutter run key commands.
 r Hot reload. 🔥🔥🔥
@@ -25,8 +25,8 @@ d Detach (terminate "flutter run" but leave application running).
 c Clear the screen
 q Quit (terminate the application on the device).
 
-A Dart VM Service on iPhone 16 Pro is available at: http://127.0.0.1:53788/MYE2Wmkak-s=/
-The Flutter DevTools debugger and profiler on iPhone 16 Pro is available at: http://127.0.0.1:53788/MYE2Wmkak-s=/devtools/?uri=ws://127.0.0.1:53788/MYE2Wmkak-s=/ws
+A Dart VM Service on iPhone 16 Pro is available at: http://127.0.0.1:53904/V2M2bjFksq8=/
+The Flutter DevTools debugger and profiler on iPhone 16 Pro is available at: http://127.0.0.1:53904/V2M2bjFksq8=/devtools/?uri=ws://127.0.0.1:53904/V2M2bjFksq8=/ws
 flutter: Rejected telemetry #1: {"voltage": null, "raw": null, "uptime": 31}
 flutter: Rejected telemetry #2: {"voltage": 5.0, "raw": 6200, "uptime": 32}
 flutter: Rejected telemetry #3: {"voltage": -1.2, "raw": -10, "uptime": 33}

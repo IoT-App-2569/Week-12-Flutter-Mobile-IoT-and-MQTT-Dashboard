@@ -1,0 +1,2 @@
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": 0.20, "raw": 248, "uptime": 40}'
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": 3.10, "raw": 3847, "uptime": 41}'
