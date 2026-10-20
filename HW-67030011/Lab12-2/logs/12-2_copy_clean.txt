@@ -1,0 +1,11 @@
+$ cp -R ../Lab12-1/iot_mqtt_basics ./iot_actuator_switch
+$ cd iot_actuator_switch
+$ flutter clean
+Cleaning Xcode workspace...                                         8.0s
+Cleaning Xcode workspace...                                         6.1s
+Deleting build...                                                   15ms
+Deleting .dart_tool...                                               1ms
+Deleting ephemeral...                                                1ms
+Deleting Generated.xcconfig...                                       0ms
+Deleting flutter_export_environment.sh...                            0ms
+Deleting ephemeral...                                                1ms

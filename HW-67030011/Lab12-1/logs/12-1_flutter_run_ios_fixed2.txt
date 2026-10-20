@@ -27,3 +27,4 @@ q Quit (terminate the application on the device).
 
 A Dart VM Service on iPhone 16 Pro is available at: http://127.0.0.1:52667/JezAYdCcSl8=/
 The Flutter DevTools debugger and profiler on iPhone 16 Pro is available at: http://127.0.0.1:52667/JezAYdCcSl8=/devtools/?uri=ws://127.0.0.1:52667/JezAYdCcSl8=/ws
+Lost connection to device.
