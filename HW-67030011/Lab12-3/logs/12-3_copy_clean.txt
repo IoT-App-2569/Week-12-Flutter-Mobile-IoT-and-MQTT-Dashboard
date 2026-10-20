@@ -1,0 +1,11 @@
+$ cp -R ../Lab12-1/iot_mqtt_basics ./iot_telemetry_gauge
+$ cd iot_telemetry_gauge
+$ flutter clean
+Cleaning Xcode workspace...                                         7.6s
+Cleaning Xcode workspace...                                         6.4s
+Deleting build...                                                   15ms
+Deleting .dart_tool...                                               2ms
+Deleting ephemeral...                                                1ms
+Deleting Generated.xcconfig...                                       0ms
+Deleting flutter_export_environment.sh...                            0ms
+Deleting ephemeral...                                                1ms

@@ -28,3 +28,4 @@ q Quit (terminate the application on the device).
 A Dart VM Service on iPhone 16 Pro is available at: http://127.0.0.1:53138/c2R9Wv9CzSw=/
 The Flutter DevTools debugger and profiler on iPhone 16 Pro is available at: http://127.0.0.1:53138/c2R9Wv9CzSw=/devtools/?uri=ws://127.0.0.1:53138/c2R9Wv9CzSw=/ws
 flutter: RTT control -> led_ack: 538 ms
+Lost connection to device.
