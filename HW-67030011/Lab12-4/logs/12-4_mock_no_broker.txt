@@ -1,0 +1,6 @@
+$ ./mock_esp32.sh
+==========================================================
+  [MOCK ESP32] ESP32 behaviour simulator (broker 127.0.0.1:1883)
+==========================================================
+[ERROR] cannot reach MQTT broker at 127.0.0.1:1883
+Start the broker first:  mosquitto -c mosquitto.conf -v
