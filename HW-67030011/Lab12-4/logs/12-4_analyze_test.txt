@@ -1,0 +1,8 @@
+$ flutter analyze --no-pub
+Analyzing iot_unified_dashboard...                              
+
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/main.dart:67:49 • deprecated_member_use
+
+1 issue found. (ran in 1.3s)
+$ flutter test --no-pub
+00:00 +9: All tests passed!

@@ -1,0 +1,12 @@
+$ cp -R ../Lab12-3/iot_telemetry_gauge ./iot_unified_dashboard
+$ cp ../Lab12-2/iot_actuator_switch/lib/actuator_control_screen.dart ./iot_unified_dashboard/lib/
+$ cd iot_unified_dashboard
+$ flutter clean
+Cleaning Xcode workspace...                                         8.2s
+Cleaning Xcode workspace...                                         6.1s
+Deleting build...                                                   15ms
+Deleting .dart_tool...                                               2ms
+Deleting ephemeral...                                                1ms
+Deleting Generated.xcconfig...                                       0ms
+Deleting flutter_export_environment.sh...                            0ms
+Deleting ephemeral...                                                1ms
