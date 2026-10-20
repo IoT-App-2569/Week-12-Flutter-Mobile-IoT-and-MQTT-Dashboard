@@ -33,3 +33,5 @@ sdkconfig.old
 **/windows/flutter/ephemeral/
 **/linux/flutter/ephemeral/
 **/macos/Flutter/ephemeral/
+# Flutter test output
+**/coverage/
