@@ -266,11 +266,13 @@ mosquitto_pub -h $Broker -p $Port -t "iot/esp32/status" -m "online" -r
 $job = Start-Job -ScriptBlock {
     param($b, $p)
     $t = 0
+    $payloadFile = Join-Path $env:TEMP "mock-esp32-telemetry-$PID.json"
     while ($true) {
         $v = [Math]::Round(1.65 + 1.5 * [Math]::Sin($t * 0.2), 2)
         $raw = [int](($v / 3.3) * 4095)
-        $payload = "{`"voltage`": $v, `"raw`": $raw, `"uptime`": $t}"
-        mosquitto_pub -h $b -p $p -t "iot/esp32/telemetry" -m $payload
+        $payload = @{ voltage = $v; raw = $raw; uptime = $t } | ConvertTo-Json -Compress
+        [System.IO.File]::WriteAllText($payloadFile, $payload, [System.Text.Encoding]::ASCII)
+        mosquitto_pub -h $b -p $p -t "iot/esp32/telemetry" -f $payloadFile
         $t++
         Start-Sleep -Milliseconds 500
     }
@@ -295,8 +297,10 @@ try {
             Write-Host "  -> ปิดไฟ LED (GPIO 2 = LOW) และส่ง ACK ยืนยันสำเร็จ" -ForegroundColor Red
         }
 
-        $ackJson = "{`"led_state`": $(if($ledState){'true'}else{'false'}), `"ack`": true}"
-        mosquitto_pub -h $Broker -p $Port -t "iot/esp32/led_ack" -m $ackJson
+        $ackJson = @{ led_state = $ledState; ack = $true } | ConvertTo-Json -Compress
+        $ackFile = Join-Path $env:TEMP "mock-esp32-ack-$PID.json"
+        [System.IO.File]::WriteAllText($ackFile, $ackJson, [System.Text.Encoding]::ASCII)
+        mosquitto_pub -h $Broker -p $Port -t "iot/esp32/led_ack" -f $ackFile
     }
 }
 finally {
