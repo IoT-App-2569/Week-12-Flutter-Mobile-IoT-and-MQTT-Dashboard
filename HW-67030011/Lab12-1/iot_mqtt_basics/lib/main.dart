@@ -88,7 +88,7 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
     _client!.onAutoReconnect = () {
       if (!mounted) return;
       setState(() {
-        _statusText = 'การเชื่อมต่อหลุด กำลังเชื่อมต่อใหม่ (Reconnecting)...';
+        _statusText = 'Broker หลุด กำลังเชื่อมต่อใหม่ (Reconnecting)...';
         _statusColor = Colors.amber;
       });
       _appendLog('⚠️ Broker หลุด กำลัง Auto-Reconnect');
@@ -208,11 +208,14 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
                 children: [
                   Icon(Icons.circle, color: _statusColor, size: 14),
                   const SizedBox(width: 8),
-                  Text(
-                    _statusText,
-                    style: TextStyle(
-                      color: _statusColor,
-                      fontWeight: FontWeight.bold,
+                  // Expanded ให้ข้อความสถานะยาว ๆ ขึ้นบรรทัดใหม่แทนการล้นขอบ (RenderFlex overflow)
+                  Expanded(
+                    child: Text(
+                      _statusText,
+                      style: TextStyle(
+                        color: _statusColor,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
