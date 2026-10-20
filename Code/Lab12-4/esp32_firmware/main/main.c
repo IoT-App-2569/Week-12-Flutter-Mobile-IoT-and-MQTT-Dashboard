@@ -16,15 +16,19 @@
 #include "esp_adc/adc_oneshot.h"
 #include "mqtt_client.h"
 #include "cJSON.h"
+#include "esp_random.h"
 
 /* ========================================================
  * 0. การกำหนดค่าเครือข่าย Wi-Fi, Broker และ GPIO
  * ======================================================== */
-#define WIFI_SSID           "AIS 4G Hi-Speed Home WiFi_769475"
-#define WIFI_PASS           "50769475"
+// WIFI_SSID, WIFI_PASS, MQTT_BROKER_URI มาจากไฟล์ ../.env (ไม่ถูกเก็บใน git)
+// ไฟล์ env_config.h ถูกสร้างอัตโนมัติตอน build โดย main/CMakeLists.txt
+#include "env_config.h"
 
-// หมายเลข IP ของคอมพิวเตอร์ที่รัน Mosquitto Broker (พอร์ต 1883)
-#define MQTT_BROKER_URI     "mqtt://192.168.0.107:1883"
+// SIMULATE_ADC=1 ใน .env: สุ่มค่าแรงดันแทนการอ่าน Potentiometer (ใช้เมื่อไม่มีอุปกรณ์)
+#ifndef SIMULATE_ADC
+#define SIMULATE_ADC "0"
+#endif
 
 // กำหนดขาฮาร์ดแวร์สำหรับบอร์ด ESP32 มาตรฐาน (NodeMCU / DevKit)
 #define LED_PIN             GPIO_NUM_2      // หลอดไฟ LED ต่อขา GPIO 2 (หรือ Onboard Blue LED)
@@ -194,7 +198,14 @@ static void telemetry_task(void *pvParameters)
 
         if (s_mqtt_client != NULL) {
             int adc_raw = 0;
-            if (s_adc_handle != NULL) {
+            if (SIMULATE_ADC[0] == '1') {
+                // เดินสุ่ม (random walk) รอบ 1.65 V ให้เกจขยับต่อเนื่องและดูสมจริง
+                static float sim_v = 1.65f;
+                sim_v += ((float)(esp_random() % 2001) - 1000.0f) / 1000.0f * 0.30f;
+                if (sim_v < 0.0f) sim_v = 0.0f;
+                if (sim_v > 3.3f) sim_v = 3.3f;
+                adc_raw = (int)(sim_v / 3.3f * 4095.0f);
+            } else if (s_adc_handle != NULL) {
                 adc_oneshot_read(s_adc_handle, ADC_CHANNEL, &adc_raw);
             }
             // แปลงค่า ADC (0-4095) เป็นแรงดันไฟฟ้าโดยประมาณ (0.00 - 3.30 V)

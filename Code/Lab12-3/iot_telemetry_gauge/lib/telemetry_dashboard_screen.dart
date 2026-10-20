@@ -32,6 +32,7 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
 
   @override
   void dispose() {
+    _client?.onDisconnected = null;
     _client?.disconnect();
     super.dispose();
   }

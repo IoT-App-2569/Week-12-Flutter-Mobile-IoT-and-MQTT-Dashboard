@@ -28,6 +28,7 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
 
   @override
   void dispose() {
+    _client?.onDisconnected = null;
     _client?.disconnect();
     super.dispose();
   }
@@ -44,6 +45,7 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     };
 
     _client!.onDisconnected = () {
+      if (!mounted) return;
       setState(() {
         _networkStatus = 'ขาดการเชื่อมต่อ Broker!';
         _isDeviceOnline = false;
@@ -53,7 +55,7 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     try {
       await _client!.connect();
     } catch (e) {
-      setState(() => _networkStatus = 'เชื่อมต่อล้มเหลว: $e');
+      if (mounted) setState(() => _networkStatus = 'เชื่อมต่อล้มเหลว: $e');
     }
   }
 
