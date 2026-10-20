@@ -51,6 +51,9 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
   void dispose() {
     _brokerIpController.dispose();
     _updatesSub?.cancel();
+    // ถอด Callback ก่อน ไม่ให้ onDisconnected เรียก setState ระหว่าง dispose()
+    _client?.onDisconnected = null;
+    _client?.onAutoReconnect = null;
     _client?.disconnect();
     super.dispose();
   }
