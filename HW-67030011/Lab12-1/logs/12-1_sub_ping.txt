@@ -1,0 +1,2 @@
+$ mosquitto_sub -h 127.0.0.1 -p 1883 -t "test/flutter/ping" -v
+test/flutter/ping Hello from Flutter at 2026-10-20T09:57:12.068981
