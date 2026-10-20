@@ -33,3 +33,7 @@ sdkconfig.old
 **/windows/flutter/ephemeral/
 **/linux/flutter/ephemeral/
 **/macos/Flutter/ephemeral/
+
+# Wi-Fi credentials (ESP32 firmware ของ HW-67030011)
+**/wifi_credentials.h
+sdkconfig
