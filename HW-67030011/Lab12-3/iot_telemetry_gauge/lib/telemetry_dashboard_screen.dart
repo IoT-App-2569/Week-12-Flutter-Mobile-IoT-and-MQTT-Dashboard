@@ -1,9 +1,10 @@
-import 'dart:convert';
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:mqtt_client/mqtt_client.dart';
 import 'package:mqtt_client/mqtt_server_client.dart';
 import 'radial_gauge_widget.dart';
+import 'telemetry_data.dart';
 
 class TelemetryDashboardScreen extends StatefulWidget {
   final String brokerIp;
@@ -20,6 +21,10 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
   int _currentUptime = 0;
   double _maxVoltage = 0.0;
   double _minVoltage = 3.3;
+  // ยังไม่มีข้อมูล: แสดง "--" แทนค่าเริ่มต้นของ Max/Min
+  bool _hasData = false;
+  int _rejected = 0;
+  StreamSubscription<List<MqttReceivedMessage<MqttMessage>>>? _updatesSub;
 
   final List<double> _history = [];
   bool _isConnected = false;
@@ -32,6 +37,8 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
 
   @override
   void dispose() {
+    _updatesSub?.cancel();
+    _client?.onDisconnected = null;
     _client?.disconnect();
     super.dispose();
   }
@@ -40,15 +47,25 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
     final clientId = 'Flutter_Telemetry_${DateTime.now().millisecondsSinceEpoch}';
     _client = MqttServerClient(widget.brokerIp, clientId);
     _client!.port = 1883;
+    _client!.keepAlivePeriod = 20;
+    _client!.autoReconnect = true;
+    _client!.setProtocolV311();
 
     _client!.onConnected = () {
+      if (!mounted) return;
       setState(() => _isConnected = true);
       _client!.subscribe('iot/esp32/telemetry', MqttQos.atMostOnce);
-      _client!.updates?.listen(_handleIncomingMessage);
+      // onConnected ถูกเรียกซ้ำหลัง Auto-Reconnect จึงยกเลิก Listener เดิมก่อน
+      _updatesSub?.cancel();
+      _updatesSub = _client!.updates?.listen(_handleIncomingMessage);
+    };
+
+    _client!.onAutoReconnect = () {
+      if (mounted) setState(() => _isConnected = false);
     };
 
     _client!.onDisconnected = () {
-      setState(() => _isConnected = false);
+      if (mounted) setState(() => _isConnected = false);
     };
 
     try {
@@ -60,25 +77,24 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
     final recMess = c[0].payload as MqttPublishMessage;
     final payload = MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
 
-    try {
-      final data = jsonDecode(payload) as Map<String, dynamic>;
-      final v = (data['voltage'] as num?)?.toDouble() ?? 0.0;
-      final raw = (data['raw'] as num?)?.toInt() ?? 0;
-      final up = (data['uptime'] as num?)?.toInt() ?? 0;
-
-      setState(() {
-        _currentVoltage = v;
-        _currentRaw = raw;
-        _currentUptime = up;
-        _maxVoltage = math.max(_maxVoltage, v);
-        _minVoltage = math.min(_minVoltage, v);
-
-        _history.add(v);
-        if (_history.length > 30) _history.removeAt(0);
-      });
-    } catch (e) {
-      debugPrint('Parsing error: $e');
+    final data = TelemetryData.tryParse(payload);
+    if (data == null) {
+      _rejected++;
+      debugPrint('Rejected telemetry #$_rejected: $payload');
+      return;
     }
+
+    setState(() {
+      _currentVoltage = data.voltage;
+      _currentRaw = data.raw;
+      _currentUptime = data.uptime;
+      _maxVoltage = _hasData ? math.max(_maxVoltage, data.voltage) : data.voltage;
+      _minVoltage = _hasData ? math.min(_minVoltage, data.voltage) : data.voltage;
+      _hasData = true;
+
+      _history.add(data.voltage);
+      if (_history.length > 30) _history.removeAt(0);
+    });
   }
 
   @override
@@ -114,9 +130,9 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
               children: [
                 _buildMetricCard('ค่าดิบ ADC', '$_currentRaw / 4095', const Color(0xFF00E5FF)),
                 const SizedBox(width: 12),
-                _buildMetricCard('แรงดันสูงสุด', '${_maxVoltage.toStringAsFixed(2)} V', const Color(0xFFFF5252)),
+                _buildMetricCard('แรงดันสูงสุด', _hasData ? '${_maxVoltage.toStringAsFixed(2)} V' : '-- V', const Color(0xFFFF5252)),
                 const SizedBox(width: 12),
-                _buildMetricCard('แรงดันต่ำสุด', '${_minVoltage == 3.3 ? 0.0 : _minVoltage.toStringAsFixed(2)} V', const Color(0xFF00E676)),
+                _buildMetricCard('แรงดันต่ำสุด', _hasData ? '${_minVoltage.toStringAsFixed(2)} V' : '-- V', const Color(0xFF00E676)),
               ],
             ),
             const SizedBox(height: 20),
@@ -125,7 +141,7 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF1E293B).withOpacity(0.8),
+                color: const Color(0xFF1E293B).withValues(alpha: 0.8),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: Colors.white12),
               ),
@@ -165,13 +181,17 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
         decoration: BoxDecoration(
           color: const Color(0xFF1E293B),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Column(
           children: [
             Text(title, style: const TextStyle(fontSize: 11, color: Colors.white54)),
             const SizedBox(height: 6),
-            Text(val, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: color)),
+            // บังคับให้อยู่บรรทัดเดียว การ์ดทั้งสามจึงสูงเท่ากัน ("2048 / 4095" เดิมขึ้นสองบรรทัด)
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(val, maxLines: 1, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: color)),
+            ),
           ],
         ),
       ),

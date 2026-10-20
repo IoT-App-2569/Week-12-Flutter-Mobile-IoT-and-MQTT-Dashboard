@@ -1,19 +1,34 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:iot_mqtt_basics/main.dart';
+import 'package:iot_mqtt_basics/telemetry_data.dart';
 
 void main() {
-  testWidgets('shows broker field, disconnected status and blocks publish before connect',
-      (WidgetTester tester) async {
-    await tester.pumpWidget(const MqttBasicsApp());
+  group('TelemetryData.tryParse', () {
+    test('parses a valid packet', () {
+      final d = TelemetryData.tryParse('{"voltage": 1.65, "raw": 2048, "uptime": 10}');
+      expect(d, isNotNull);
+      expect(d!.voltage, 1.65);
+      expect(d.raw, 2048);
+      expect(d.uptime, 10);
+    });
 
-    expect(find.text('Lab 12.1: MQTT Client Basics'), findsOneWidget);
-    expect(find.text('127.0.0.1'), findsOneWidget);
-    expect(find.text('ยังไม่ได้เชื่อมต่อ (Disconnected)'), findsOneWidget);
+    test('accepts integer voltage and missing optional fields', () {
+      final d = TelemetryData.tryParse('{"voltage": 3}');
+      expect(d!.voltage, 3.0);
+      expect(d.raw, 0);
+      expect(d.uptime, 0);
+    });
 
-    await tester.tap(find.text('Publish Test Message (Ping)'));
-    await tester.pump();
-
-    expect(find.textContaining('ไม่สามารถส่งข้อความได้เนื่องจากยังไม่ได้เชื่อมต่อ'), findsOneWidget);
+    for (final bad in [
+      '{"voltage": null, "raw": null, "uptime": 31}',
+      '{"voltage": 5.0, "raw": 6200, "uptime": 32}',
+      '{"voltage": -1.2, "raw": -10, "uptime": 33}',
+      'hello',
+      '{"voltage": "2.5", "raw": 3102, "uptime": 34}',
+      '[1, 2, 3]',
+      '{"raw": 100}',
+    ]) {
+      test('rejects $bad', () => expect(TelemetryData.tryParse(bad), isNull));
+    }
   });
 }

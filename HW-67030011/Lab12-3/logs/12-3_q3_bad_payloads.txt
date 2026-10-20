@@ -1,0 +1,6 @@
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": null, "raw": null, "uptime": 31}'
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": 5.0, "raw": 6200, "uptime": 32}'
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": -1.2, "raw": -10, "uptime": 33}'
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m 'hello'
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": "2.5", "raw": 3102, "uptime": 34}'
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '[1, 2, 3]'

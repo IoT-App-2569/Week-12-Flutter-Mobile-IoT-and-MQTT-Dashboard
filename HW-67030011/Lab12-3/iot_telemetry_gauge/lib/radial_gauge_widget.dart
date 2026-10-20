@@ -93,10 +93,13 @@ class _GaugePainter extends CustomPainter {
     final currentSweep = sweepAngle * ratio;
 
     final activePaint = Paint()
+      // SweepGradient นับมุม 0 ที่ตำแหน่ง 3 นาฬิกา แต่ส่วนโค้งเริ่มที่ 135° จึงต้องหมุน Gradient ไปที่ startAngle
+      // และให้ไล่สีเท่าช่วง sweepAngle (270°) ไม่เช่นนั้นปลายเกจช่วงแรงดันสูงจะวนกลับเป็นสีฟ้า
       ..shader = const SweepGradient(
         colors: [Color(0xFF00E5FF), Color(0xFF00E676), Color(0xFFFFD600), Color(0xFFFF5252)],
         startAngle: 0.0,
-        endAngle: math.pi * 2,
+        endAngle: sweepAngle,
+        transform: GradientRotation(startAngle),
       ).createShader(Rect.fromCircle(center: center, radius: radius))
       ..style = PaintingStyle.stroke
       ..strokeWidth = 18
