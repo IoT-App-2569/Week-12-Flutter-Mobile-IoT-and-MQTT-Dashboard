@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:mqtt_client/mqtt_client.dart';
@@ -40,6 +41,8 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
       TextEditingController(text: '127.0.0.1');
   
   MqttServerClient? _client;
+  // เก็บ Subscription ของสตรีม updates ไว้ เพื่อไม่ให้ listen ซ้ำเมื่อ onConnected ถูกเรียกอีกครั้งหลัง Auto-Reconnect
+  StreamSubscription<List<MqttReceivedMessage<MqttMessage>>>? _updatesSub;
   String _statusText = 'ยังไม่ได้เชื่อมต่อ (Disconnected)';
   Color _statusColor = Colors.redAccent;
   final List<String> _receivedLogs = [];
@@ -47,6 +50,7 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
   @override
   void dispose() {
     _brokerIpController.dispose();
+    _updatesSub?.cancel();
     _client?.disconnect();
     super.dispose();
   }
@@ -57,6 +61,11 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
       _statusColor = Colors.amber;
     });
 
+    // กด Connect ซ้ำ: ปิด Client เดิมก่อน ไม่ให้มีหลาย Connection ค้างอยู่ที่ Broker
+    await _updatesSub?.cancel();
+    _updatesSub = null;
+    _client?.disconnect();
+
     final broker = _brokerIpController.text.trim();
     final clientId = 'Flutter_Lab12_1_${DateTime.now().millisecondsSinceEpoch}';
 
@@ -64,6 +73,8 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
     _client!.port = 1883;
     _client!.keepAlivePeriod = 20;
     _client!.autoReconnect = true;
+    // mqtt_client ใช้ MQTT 3.1 (p1) เป็นค่าเริ่มต้น จึงสั่งให้ใช้ 3.1.1 (p2) แบบเดียวกับ ESP32 และ mosquitto_*
+    _client!.setProtocolV311();
 
     _client!.onConnected = () {
       setState(() {
@@ -73,7 +84,22 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
       _subscribeToTestTopic();
     };
 
+    // เมื่อ autoReconnect = true การหลุดที่ไม่ได้ตั้งใจจะไม่เรียก onDisconnected แต่เรียก onAutoReconnect แทน
+    _client!.onAutoReconnect = () {
+      if (!mounted) return;
+      setState(() {
+        _statusText = 'การเชื่อมต่อหลุด กำลังเชื่อมต่อใหม่ (Reconnecting)...';
+        _statusColor = Colors.amber;
+      });
+      _appendLog('⚠️ Broker หลุด กำลัง Auto-Reconnect');
+    };
+
+    _client!.onAutoReconnected = () {
+      _appendLog('🔁 Auto-Reconnect สำเร็จ');
+    };
+
     _client!.onDisconnected = () {
+      if (!mounted) return;
       setState(() {
         _statusText = 'การเชื่อมต่อหลุด (Disconnected)';
         _statusColor = Colors.redAccent;
@@ -110,7 +136,9 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
     _client?.subscribe(topic, MqttQos.atMostOnce);
     _appendLog('📢 Subscribed to: $topic');
 
-    _client?.updates?.listen((List<MqttReceivedMessage<MqttMessage>> c) {
+    // onConnected ถูกเรียกทุกครั้งที่เชื่อมต่อได้ (รวมหลัง Auto-Reconnect) ถ้า listen ซ้ำจะได้ข้อความเดียวกันหลายรอบ
+    _updatesSub?.cancel();
+    _updatesSub = _client?.updates?.listen((List<MqttReceivedMessage<MqttMessage>> c) {
       final recMess = c[0].payload as MqttPublishMessage;
       final pt = MqttPublishPayload.bytesToStringAsString(
         recMess.payload.message,
@@ -139,6 +167,7 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
   }
 
   void _appendLog(String log) {
+    if (!mounted) return;
     setState(() {
       _receivedLogs.insert(0, '[${DateTime.now().toLocal().toString().substring(11, 19)}] $log');
       if (_receivedLogs.length > 50) _receivedLogs.removeLast();
@@ -171,7 +200,7 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: _statusColor.withOpacity(0.15),
+                color: _statusColor.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: _statusColor),
               ),
