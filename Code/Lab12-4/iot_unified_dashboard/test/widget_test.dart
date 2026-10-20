@@ -5,5 +5,7 @@ void main() {
   testWidgets('Unified IoT app smoke test', (WidgetTester tester) async {
     await tester.pumpWidget(const UnifiedIotApp());
     expect(find.byType(UnifiedIotApp), findsOneWidget);
+    expect(find.text('Telemetry Gauge'), findsOneWidget);
+    expect(find.text('Actuator Switch'), findsOneWidget);
   });
 }
