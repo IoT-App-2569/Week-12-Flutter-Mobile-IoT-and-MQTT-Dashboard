@@ -1,0 +1,6 @@
+$ mosquitto_sub -h 127.0.0.1 -p 1883 -t "iot/esp32/control" -v
+iot/esp32/control {"led":"ON"}
+iot/esp32/control {"led":"OFF"}
+iot/esp32/control {"led":"ON"}
+iot/esp32/control {"led":"ON"}
+iot/esp32/control {"led":"OFF"}

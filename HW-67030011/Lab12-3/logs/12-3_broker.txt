@@ -1,0 +1,1209 @@
+$ mosquitto -v -p 1883
+1792466055: mosquitto version 2.0.22 starting
+1792466055: Using default config.
+1792466055: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1792466055: Create a configuration file which defines a listener to allow remote access.
+1792466055: For more details see https://mosquitto.org/documentation/authentication-methods/
+1792466055: Opening ipv4 listen socket on port 1883.
+1792466055: Opening ipv6 listen socket on port 1883.
+1792466055: mosquitto version 2.0.22 running
+1792466084: New connection from 127.0.0.1:53452 on port 1883.
+1792466084: New client connected from 127.0.0.1:53452 as Flutter_Telemetry_1792466084496 (p1, c1, k0).
+1792466084: No will message specified.
+1792466084: Sending CONNACK to Flutter_Telemetry_1792466084496 (0, 0)
+1792466084: Received SUBSCRIBE from Flutter_Telemetry_1792466084496
+1792466084: 	iot/esp32/telemetry (QoS 0)
+1792466084: Flutter_Telemetry_1792466084496 0 iot/esp32/telemetry
+1792466084: Sending SUBACK to Flutter_Telemetry_1792466084496
+1792466090: New connection from 127.0.0.1:53460 on port 1883.
+1792466090: New client connected from 127.0.0.1:53460 as auto-70BD3B9E-B11D-CC61-7362-448B035E7527 (p2, c1, k60).
+1792466090: No will message specified.
+1792466090: Sending CONNACK to auto-70BD3B9E-B11D-CC61-7362-448B035E7527 (0, 0)
+1792466090: Received PUBLISH from auto-70BD3B9E-B11D-CC61-7362-448B035E7527 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466090: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466090: Received DISCONNECT from auto-70BD3B9E-B11D-CC61-7362-448B035E7527
+1792466090: Client auto-70BD3B9E-B11D-CC61-7362-448B035E7527 disconnected.
+1792466092: New connection from 127.0.0.1:53464 on port 1883.
+1792466092: New client connected from 127.0.0.1:53464 as auto-95905A4D-505C-169A-62DD-65A12A097DB9 (p2, c1, k60).
+1792466092: No will message specified.
+1792466092: Sending CONNACK to auto-95905A4D-505C-169A-62DD-65A12A097DB9 (0, 0)
+1792466092: Received PUBLISH from auto-95905A4D-505C-169A-62DD-65A12A097DB9 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466092: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466092: Received DISCONNECT from auto-95905A4D-505C-169A-62DD-65A12A097DB9
+1792466092: Client auto-95905A4D-505C-169A-62DD-65A12A097DB9 disconnected.
+1792466105: New connection from 127.0.0.1:53474 on port 1883.
+1792466105: New client connected from 127.0.0.1:53474 as PyTelemetrySim (p2, c1, k60).
+1792466105: No will message specified.
+1792466105: Sending CONNACK to PyTelemetrySim (0, 0)
+1792466105: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466105: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466105: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466105: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466106: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466106: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466106: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466106: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466107: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466107: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466107: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466107: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466108: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466108: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466108: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466108: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466109: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466109: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466109: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466109: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466110: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466110: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466110: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466110: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466111: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466111: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466111: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466111: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466112: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466112: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466112: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466112: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466113: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466113: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466113: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466113: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466114: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466114: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466114: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466114: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466115: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466115: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466115: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466115: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466116: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466116: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466116: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466116: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466117: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466117: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466117: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466117: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466118: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466118: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466118: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466118: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466119: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466119: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466119: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466119: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466120: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466120: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466120: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466120: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466121: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466121: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466121: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466121: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466122: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466122: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466122: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466122: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466123: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466123: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466123: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466123: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466124: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466124: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466124: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466124: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466125: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466125: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466125: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466125: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466126: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466126: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466126: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466126: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466127: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466127: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466127: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466127: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466128: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466128: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466128: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466128: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466129: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466129: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466130: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466130: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466130: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466130: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466131: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466131: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466131: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466131: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466132: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466132: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466132: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466132: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466133: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466133: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466133: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466133: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466134: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466134: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466134: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466134: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466135: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466135: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466135: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466135: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466136: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466136: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466136: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466136: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466137: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466137: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466137: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466137: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466138: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466138: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466138: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466138: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466139: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466139: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466139: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466139: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466140: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466140: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466140: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466140: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466141: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466141: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466141: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466141: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466142: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466142: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466142: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466142: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466143: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466143: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466143: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466143: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466144: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466144: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466144: New connection from 127.0.0.1:53500 on port 1883.
+1792466144: New client connected from 127.0.0.1:53500 as auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (p2, c1, k60).
+1792466144: No will message specified.
+1792466144: Sending CONNACK to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (0, 0)
+1792466144: Received SUBSCRIBE from auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F
+1792466144: 	iot/esp32/telemetry (QoS 0)
+1792466144: auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F 0 iot/esp32/telemetry
+1792466144: Sending SUBACK to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F
+1792466144: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466144: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466144: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466145: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466145: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466145: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466145: New connection from 127.0.0.1:53501 on port 1883.
+1792466145: New client connected from 127.0.0.1:53501 as auto-B7DA0F78-7F8B-CEBC-8434-DB061B986A85 (p2, c1, k60).
+1792466145: No will message specified.
+1792466145: Sending CONNACK to auto-B7DA0F78-7F8B-CEBC-8434-DB061B986A85 (0, 0)
+1792466145: Received PUBLISH from auto-B7DA0F78-7F8B-CEBC-8434-DB061B986A85 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466145: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466145: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466145: Received DISCONNECT from auto-B7DA0F78-7F8B-CEBC-8434-DB061B986A85
+1792466145: Client auto-B7DA0F78-7F8B-CEBC-8434-DB061B986A85 disconnected.
+1792466145: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466145: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466145: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466145: New connection from 127.0.0.1:53502 on port 1883.
+1792466145: New client connected from 127.0.0.1:53502 as auto-AC63970B-2E72-A5B3-D3BA-EB7AEF3E6072 (p2, c1, k60).
+1792466145: No will message specified.
+1792466145: Sending CONNACK to auto-AC63970B-2E72-A5B3-D3BA-EB7AEF3E6072 (0, 0)
+1792466145: Received PUBLISH from auto-AC63970B-2E72-A5B3-D3BA-EB7AEF3E6072 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466145: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466145: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466145: Received DISCONNECT from auto-AC63970B-2E72-A5B3-D3BA-EB7AEF3E6072
+1792466145: Client auto-AC63970B-2E72-A5B3-D3BA-EB7AEF3E6072 disconnected.
+1792466146: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466146: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466146: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466146: New connection from 127.0.0.1:53503 on port 1883.
+1792466146: New client connected from 127.0.0.1:53503 as auto-F6A455D0-93F0-6B2E-BC2D-735FA6496A9C (p2, c1, k60).
+1792466146: No will message specified.
+1792466146: Sending CONNACK to auto-F6A455D0-93F0-6B2E-BC2D-735FA6496A9C (0, 0)
+1792466146: Received PUBLISH from auto-F6A455D0-93F0-6B2E-BC2D-735FA6496A9C (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Received DISCONNECT from auto-F6A455D0-93F0-6B2E-BC2D-735FA6496A9C
+1792466146: Client auto-F6A455D0-93F0-6B2E-BC2D-735FA6496A9C disconnected.
+1792466146: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: New connection from 127.0.0.1:53504 on port 1883.
+1792466146: New client connected from 127.0.0.1:53504 as auto-ED52186A-D081-50DF-C122-3BC848F95C2F (p2, c1, k60).
+1792466146: No will message specified.
+1792466146: Sending CONNACK to auto-ED52186A-D081-50DF-C122-3BC848F95C2F (0, 0)
+1792466146: Received PUBLISH from auto-ED52186A-D081-50DF-C122-3BC848F95C2F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466146: Received DISCONNECT from auto-ED52186A-D081-50DF-C122-3BC848F95C2F
+1792466146: Client auto-ED52186A-D081-50DF-C122-3BC848F95C2F disconnected.
+1792466147: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: New connection from 127.0.0.1:53505 on port 1883.
+1792466147: New client connected from 127.0.0.1:53505 as auto-E126935A-4360-662E-5440-C64550FC6E36 (p2, c1, k60).
+1792466147: No will message specified.
+1792466147: Sending CONNACK to auto-E126935A-4360-662E-5440-C64550FC6E36 (0, 0)
+1792466147: Received PUBLISH from auto-E126935A-4360-662E-5440-C64550FC6E36 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: Received DISCONNECT from auto-E126935A-4360-662E-5440-C64550FC6E36
+1792466147: Client auto-E126935A-4360-662E-5440-C64550FC6E36 disconnected.
+1792466147: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466147: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: New connection from 127.0.0.1:53506 on port 1883.
+1792466148: New client connected from 127.0.0.1:53506 as auto-2BC0A6AA-AA88-C1E9-1343-C306070D471C (p2, c1, k60).
+1792466148: No will message specified.
+1792466148: Sending CONNACK to auto-2BC0A6AA-AA88-C1E9-1343-C306070D471C (0, 0)
+1792466148: Received PUBLISH from auto-2BC0A6AA-AA88-C1E9-1343-C306070D471C (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Received DISCONNECT from auto-2BC0A6AA-AA88-C1E9-1343-C306070D471C
+1792466148: Client auto-2BC0A6AA-AA88-C1E9-1343-C306070D471C disconnected.
+1792466148: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: New connection from 127.0.0.1:53509 on port 1883.
+1792466148: New client connected from 127.0.0.1:53509 as auto-233EBC98-868E-859B-92E2-FABE86FFDCB3 (p2, c1, k60).
+1792466148: No will message specified.
+1792466148: Sending CONNACK to auto-233EBC98-868E-859B-92E2-FABE86FFDCB3 (0, 0)
+1792466148: Received PUBLISH from auto-233EBC98-868E-859B-92E2-FABE86FFDCB3 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Received DISCONNECT from auto-233EBC98-868E-859B-92E2-FABE86FFDCB3
+1792466148: Client auto-233EBC98-868E-859B-92E2-FABE86FFDCB3 disconnected.
+1792466148: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466148: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: New connection from 127.0.0.1:53510 on port 1883.
+1792466149: New client connected from 127.0.0.1:53510 as auto-9481840E-A488-8048-5B1E-95E7EBA66EAC (p2, c1, k60).
+1792466149: No will message specified.
+1792466149: Sending CONNACK to auto-9481840E-A488-8048-5B1E-95E7EBA66EAC (0, 0)
+1792466149: Received PUBLISH from auto-9481840E-A488-8048-5B1E-95E7EBA66EAC (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Received DISCONNECT from auto-9481840E-A488-8048-5B1E-95E7EBA66EAC
+1792466149: Client auto-9481840E-A488-8048-5B1E-95E7EBA66EAC disconnected.
+1792466149: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: New connection from 127.0.0.1:53511 on port 1883.
+1792466149: New client connected from 127.0.0.1:53511 as auto-43E03181-6983-9C67-16C7-F109DB04B6F4 (p2, c1, k60).
+1792466149: No will message specified.
+1792466149: Sending CONNACK to auto-43E03181-6983-9C67-16C7-F109DB04B6F4 (0, 0)
+1792466149: Received PUBLISH from auto-43E03181-6983-9C67-16C7-F109DB04B6F4 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466149: Received DISCONNECT from auto-43E03181-6983-9C67-16C7-F109DB04B6F4
+1792466149: Client auto-43E03181-6983-9C67-16C7-F109DB04B6F4 disconnected.
+1792466150: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: New connection from 127.0.0.1:53512 on port 1883.
+1792466150: New client connected from 127.0.0.1:53512 as auto-F4878B81-39E1-47A3-CDAE-E20B82ACC821 (p2, c1, k60).
+1792466150: No will message specified.
+1792466150: Sending CONNACK to auto-F4878B81-39E1-47A3-CDAE-E20B82ACC821 (0, 0)
+1792466150: Received PUBLISH from auto-F4878B81-39E1-47A3-CDAE-E20B82ACC821 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Received DISCONNECT from auto-F4878B81-39E1-47A3-CDAE-E20B82ACC821
+1792466150: Client auto-F4878B81-39E1-47A3-CDAE-E20B82ACC821 disconnected.
+1792466150: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: New connection from 127.0.0.1:53513 on port 1883.
+1792466150: New client connected from 127.0.0.1:53513 as auto-64C58F01-0C13-5F7A-B7ED-55355F36775C (p2, c1, k60).
+1792466150: No will message specified.
+1792466150: Sending CONNACK to auto-64C58F01-0C13-5F7A-B7ED-55355F36775C (0, 0)
+1792466150: Received PUBLISH from auto-64C58F01-0C13-5F7A-B7ED-55355F36775C (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466150: Received DISCONNECT from auto-64C58F01-0C13-5F7A-B7ED-55355F36775C
+1792466150: Client auto-64C58F01-0C13-5F7A-B7ED-55355F36775C disconnected.
+1792466151: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: New connection from 127.0.0.1:53514 on port 1883.
+1792466151: New client connected from 127.0.0.1:53514 as auto-07FE79EB-2AAD-C3EA-0E3E-2E85D7BBCD76 (p2, c1, k60).
+1792466151: No will message specified.
+1792466151: Sending CONNACK to auto-07FE79EB-2AAD-C3EA-0E3E-2E85D7BBCD76 (0, 0)
+1792466151: Received PUBLISH from auto-07FE79EB-2AAD-C3EA-0E3E-2E85D7BBCD76 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Received DISCONNECT from auto-07FE79EB-2AAD-C3EA-0E3E-2E85D7BBCD76
+1792466151: Client auto-07FE79EB-2AAD-C3EA-0E3E-2E85D7BBCD76 disconnected.
+1792466151: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: New connection from 127.0.0.1:53515 on port 1883.
+1792466151: New client connected from 127.0.0.1:53515 as auto-6AD1BF06-68AA-5ADA-518C-A5F2CD95FB42 (p2, c1, k60).
+1792466151: No will message specified.
+1792466151: Sending CONNACK to auto-6AD1BF06-68AA-5ADA-518C-A5F2CD95FB42 (0, 0)
+1792466151: Received PUBLISH from auto-6AD1BF06-68AA-5ADA-518C-A5F2CD95FB42 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466151: Received DISCONNECT from auto-6AD1BF06-68AA-5ADA-518C-A5F2CD95FB42
+1792466151: Client auto-6AD1BF06-68AA-5ADA-518C-A5F2CD95FB42 disconnected.
+1792466152: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466152: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466152: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466152: New connection from 127.0.0.1:53518 on port 1883.
+1792466152: New client connected from 127.0.0.1:53518 as auto-69720EC9-DB2F-49A4-0077-011F59BC172C (p2, c1, k60).
+1792466152: No will message specified.
+1792466152: Sending CONNACK to auto-69720EC9-DB2F-49A4-0077-011F59BC172C (0, 0)
+1792466152: Received PUBLISH from auto-69720EC9-DB2F-49A4-0077-011F59BC172C (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466152: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466152: Sending PUBLISH to auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466152: Received DISCONNECT from auto-69720EC9-DB2F-49A4-0077-011F59BC172C
+1792466152: Client auto-69720EC9-DB2F-49A4-0077-011F59BC172C disconnected.
+1792466152: Received DISCONNECT from auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F
+1792466152: Client auto-8A5F08D2-3479-2377-AC26-BA18CBB18E1F disconnected.
+1792466152: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466152: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: New connection from 127.0.0.1:53519 on port 1883.
+1792466153: New client connected from 127.0.0.1:53519 as auto-A741DF64-B3EF-48E5-4E08-01A8CE0EFE9A (p2, c1, k60).
+1792466153: No will message specified.
+1792466153: Sending CONNACK to auto-A741DF64-B3EF-48E5-4E08-01A8CE0EFE9A (0, 0)
+1792466153: Received PUBLISH from auto-A741DF64-B3EF-48E5-4E08-01A8CE0EFE9A (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: Received DISCONNECT from auto-A741DF64-B3EF-48E5-4E08-01A8CE0EFE9A
+1792466153: Client auto-A741DF64-B3EF-48E5-4E08-01A8CE0EFE9A disconnected.
+1792466153: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: New connection from 127.0.0.1:53520 on port 1883.
+1792466153: New client connected from 127.0.0.1:53520 as auto-45936630-21E8-0A8D-B170-7F2E6498A4B7 (p2, c1, k60).
+1792466153: No will message specified.
+1792466153: Sending CONNACK to auto-45936630-21E8-0A8D-B170-7F2E6498A4B7 (0, 0)
+1792466153: Received PUBLISH from auto-45936630-21E8-0A8D-B170-7F2E6498A4B7 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: Received DISCONNECT from auto-45936630-21E8-0A8D-B170-7F2E6498A4B7
+1792466153: Client auto-45936630-21E8-0A8D-B170-7F2E6498A4B7 disconnected.
+1792466153: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466153: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: New connection from 127.0.0.1:53521 on port 1883.
+1792466154: New client connected from 127.0.0.1:53521 as auto-02470A80-8D7B-6AE9-6950-589043716F1E (p2, c1, k60).
+1792466154: No will message specified.
+1792466154: Sending CONNACK to auto-02470A80-8D7B-6AE9-6950-589043716F1E (0, 0)
+1792466154: Received PUBLISH from auto-02470A80-8D7B-6AE9-6950-589043716F1E (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: Received DISCONNECT from auto-02470A80-8D7B-6AE9-6950-589043716F1E
+1792466154: Client auto-02470A80-8D7B-6AE9-6950-589043716F1E disconnected.
+1792466154: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: New connection from 127.0.0.1:53522 on port 1883.
+1792466154: New client connected from 127.0.0.1:53522 as auto-69086B77-D0DC-4A1D-EE4C-F4AF55DC9A34 (p2, c1, k60).
+1792466154: No will message specified.
+1792466154: Sending CONNACK to auto-69086B77-D0DC-4A1D-EE4C-F4AF55DC9A34 (0, 0)
+1792466154: Received PUBLISH from auto-69086B77-D0DC-4A1D-EE4C-F4AF55DC9A34 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466154: Received DISCONNECT from auto-69086B77-D0DC-4A1D-EE4C-F4AF55DC9A34
+1792466154: Client auto-69086B77-D0DC-4A1D-EE4C-F4AF55DC9A34 disconnected.
+1792466155: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466155: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466155: New connection from 127.0.0.1:53525 on port 1883.
+1792466155: New client connected from 127.0.0.1:53525 as auto-F80B2D28-B6FE-B99B-0E89-A8626848C6A2 (p2, c1, k60).
+1792466155: No will message specified.
+1792466155: Sending CONNACK to auto-F80B2D28-B6FE-B99B-0E89-A8626848C6A2 (0, 0)
+1792466155: Received PUBLISH from auto-F80B2D28-B6FE-B99B-0E89-A8626848C6A2 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466155: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466155: Received DISCONNECT from auto-F80B2D28-B6FE-B99B-0E89-A8626848C6A2
+1792466155: Client auto-F80B2D28-B6FE-B99B-0E89-A8626848C6A2 disconnected.
+1792466155: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466155: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466155: New connection from 127.0.0.1:53530 on port 1883.
+1792466155: New client connected from 127.0.0.1:53530 as auto-A19DE29F-6975-817D-B6B4-8944FE05F42F (p2, c1, k60).
+1792466155: No will message specified.
+1792466155: Sending CONNACK to auto-A19DE29F-6975-817D-B6B4-8944FE05F42F (0, 0)
+1792466155: Received PUBLISH from auto-A19DE29F-6975-817D-B6B4-8944FE05F42F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466155: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466155: Received DISCONNECT from auto-A19DE29F-6975-817D-B6B4-8944FE05F42F
+1792466155: Client auto-A19DE29F-6975-817D-B6B4-8944FE05F42F disconnected.
+1792466156: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466156: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466156: New connection from 127.0.0.1:53536 on port 1883.
+1792466156: New client connected from 127.0.0.1:53536 as auto-C1334C45-BAB7-08D1-7C59-C21B6C491EDB (p2, c1, k60).
+1792466156: No will message specified.
+1792466156: Sending CONNACK to auto-C1334C45-BAB7-08D1-7C59-C21B6C491EDB (0, 0)
+1792466156: Received PUBLISH from auto-C1334C45-BAB7-08D1-7C59-C21B6C491EDB (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466156: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466156: Received DISCONNECT from auto-C1334C45-BAB7-08D1-7C59-C21B6C491EDB
+1792466156: Client auto-C1334C45-BAB7-08D1-7C59-C21B6C491EDB disconnected.
+1792466156: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466156: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466157: New connection from 127.0.0.1:53537 on port 1883.
+1792466157: New client connected from 127.0.0.1:53537 as auto-0D1B78E7-04AF-8667-F786-8570D7A95E92 (p2, c1, k60).
+1792466157: No will message specified.
+1792466157: Sending CONNACK to auto-0D1B78E7-04AF-8667-F786-8570D7A95E92 (0, 0)
+1792466157: Received PUBLISH from auto-0D1B78E7-04AF-8667-F786-8570D7A95E92 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466157: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466157: Received DISCONNECT from auto-0D1B78E7-04AF-8667-F786-8570D7A95E92
+1792466157: Client auto-0D1B78E7-04AF-8667-F786-8570D7A95E92 disconnected.
+1792466157: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466157: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466157: New connection from 127.0.0.1:53538 on port 1883.
+1792466157: New client connected from 127.0.0.1:53538 as auto-E8425521-41A3-FD8A-73B3-A9AAC00A2389 (p2, c1, k60).
+1792466157: No will message specified.
+1792466157: Sending CONNACK to auto-E8425521-41A3-FD8A-73B3-A9AAC00A2389 (0, 0)
+1792466157: Received PUBLISH from auto-E8425521-41A3-FD8A-73B3-A9AAC00A2389 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466157: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466157: Received DISCONNECT from auto-E8425521-41A3-FD8A-73B3-A9AAC00A2389
+1792466157: Client auto-E8425521-41A3-FD8A-73B3-A9AAC00A2389 disconnected.
+1792466157: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466157: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466158: New connection from 127.0.0.1:53539 on port 1883.
+1792466158: New client connected from 127.0.0.1:53539 as auto-5AC819C4-B64F-CEAA-2E14-520271007BD4 (p2, c1, k60).
+1792466158: No will message specified.
+1792466158: Sending CONNACK to auto-5AC819C4-B64F-CEAA-2E14-520271007BD4 (0, 0)
+1792466158: Received PUBLISH from auto-5AC819C4-B64F-CEAA-2E14-520271007BD4 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466158: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466158: Received DISCONNECT from auto-5AC819C4-B64F-CEAA-2E14-520271007BD4
+1792466158: Client auto-5AC819C4-B64F-CEAA-2E14-520271007BD4 disconnected.
+1792466158: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466158: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466158: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466158: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466158: New connection from 127.0.0.1:53540 on port 1883.
+1792466158: New client connected from 127.0.0.1:53540 as auto-30F56FC3-7F04-0B3B-86A3-2A09494F0740 (p2, c1, k60).
+1792466158: No will message specified.
+1792466158: Sending CONNACK to auto-30F56FC3-7F04-0B3B-86A3-2A09494F0740 (0, 0)
+1792466158: Received PUBLISH from auto-30F56FC3-7F04-0B3B-86A3-2A09494F0740 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466158: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466158: Received DISCONNECT from auto-30F56FC3-7F04-0B3B-86A3-2A09494F0740
+1792466158: Client auto-30F56FC3-7F04-0B3B-86A3-2A09494F0740 disconnected.
+1792466159: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466159: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466159: New connection from 127.0.0.1:53541 on port 1883.
+1792466159: New client connected from 127.0.0.1:53541 as auto-3A1C7BE1-E331-59A4-842C-14B7C3D0C28B (p2, c1, k60).
+1792466159: No will message specified.
+1792466159: Sending CONNACK to auto-3A1C7BE1-E331-59A4-842C-14B7C3D0C28B (0, 0)
+1792466159: Received PUBLISH from auto-3A1C7BE1-E331-59A4-842C-14B7C3D0C28B (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466159: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466159: Received DISCONNECT from auto-3A1C7BE1-E331-59A4-842C-14B7C3D0C28B
+1792466159: Client auto-3A1C7BE1-E331-59A4-842C-14B7C3D0C28B disconnected.
+1792466159: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466159: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466159: New connection from 127.0.0.1:53544 on port 1883.
+1792466159: New client connected from 127.0.0.1:53544 as auto-8DAC2C6A-FB2B-AA63-8BD3-A1E8DDFE432D (p2, c1, k60).
+1792466159: No will message specified.
+1792466159: Sending CONNACK to auto-8DAC2C6A-FB2B-AA63-8BD3-A1E8DDFE432D (0, 0)
+1792466159: Received PUBLISH from auto-8DAC2C6A-FB2B-AA63-8BD3-A1E8DDFE432D (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466159: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466159: Received DISCONNECT from auto-8DAC2C6A-FB2B-AA63-8BD3-A1E8DDFE432D
+1792466159: Client auto-8DAC2C6A-FB2B-AA63-8BD3-A1E8DDFE432D disconnected.
+1792466160: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466160: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466160: New connection from 127.0.0.1:53547 on port 1883.
+1792466160: New client connected from 127.0.0.1:53547 as auto-67922436-8C4B-6433-D1D1-7B80B0A0E7FA (p2, c1, k60).
+1792466160: No will message specified.
+1792466160: Sending CONNACK to auto-67922436-8C4B-6433-D1D1-7B80B0A0E7FA (0, 0)
+1792466160: Received PUBLISH from auto-67922436-8C4B-6433-D1D1-7B80B0A0E7FA (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466160: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466160: Received DISCONNECT from auto-67922436-8C4B-6433-D1D1-7B80B0A0E7FA
+1792466160: Client auto-67922436-8C4B-6433-D1D1-7B80B0A0E7FA disconnected.
+1792466160: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466160: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466161: New connection from 127.0.0.1:53548 on port 1883.
+1792466161: New client connected from 127.0.0.1:53548 as auto-ACC71DA2-5E79-BABB-5B5F-91343DB84678 (p2, c1, k60).
+1792466161: No will message specified.
+1792466161: Sending CONNACK to auto-ACC71DA2-5E79-BABB-5B5F-91343DB84678 (0, 0)
+1792466161: Received PUBLISH from auto-ACC71DA2-5E79-BABB-5B5F-91343DB84678 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466161: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466161: Received DISCONNECT from auto-ACC71DA2-5E79-BABB-5B5F-91343DB84678
+1792466161: Client auto-ACC71DA2-5E79-BABB-5B5F-91343DB84678 disconnected.
+1792466161: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466161: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466161: New connection from 127.0.0.1:53550 on port 1883.
+1792466161: New client connected from 127.0.0.1:53550 as auto-0CA1C775-488A-E8CC-EE7A-0759ECE1ED31 (p2, c1, k60).
+1792466161: No will message specified.
+1792466161: Sending CONNACK to auto-0CA1C775-488A-E8CC-EE7A-0759ECE1ED31 (0, 0)
+1792466161: Received PUBLISH from auto-0CA1C775-488A-E8CC-EE7A-0759ECE1ED31 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466161: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466161: Received DISCONNECT from auto-0CA1C775-488A-E8CC-EE7A-0759ECE1ED31
+1792466161: Client auto-0CA1C775-488A-E8CC-EE7A-0759ECE1ED31 disconnected.
+1792466161: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466161: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466162: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466162: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466162: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466162: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466163: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466163: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466163: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466163: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466164: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466164: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466164: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466164: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466165: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466165: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466165: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466165: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466166: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466166: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466166: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466166: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466167: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466167: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466167: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466167: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466168: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466168: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466168: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466168: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466169: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466169: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466169: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466169: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466170: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466170: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466170: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466170: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466171: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466171: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466171: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466171: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466172: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466172: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466172: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466172: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466173: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466173: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466173: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466173: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466174: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466174: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466174: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466174: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466175: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466175: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466175: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466175: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466176: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466176: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466176: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466176: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466177: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466177: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466177: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466177: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466178: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466178: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466178: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466178: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466179: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466179: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466179: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466179: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466180: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466180: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466180: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466180: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466181: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466181: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466181: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466181: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466182: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466182: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466182: Client PyTelemetrySim closed its connection.
+1792466183: New connection from 127.0.0.1:53600 on port 1883.
+1792466183: New client connected from 127.0.0.1:53600 as auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (p2, c1, k60).
+1792466183: No will message specified.
+1792466183: Sending CONNACK to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (0, 0)
+1792466183: Received SUBSCRIBE from auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8
+1792466183: 	iot/esp32/telemetry (QoS 0)
+1792466183: auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 0 iot/esp32/telemetry
+1792466183: Sending SUBACK to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8
+1792466184: New connection from 127.0.0.1:53601 on port 1883.
+1792466184: New client connected from 127.0.0.1:53601 as auto-7E47869A-6003-1DD4-78B7-5F05B822D077 (p2, c1, k60).
+1792466184: No will message specified.
+1792466184: Sending CONNACK to auto-7E47869A-6003-1DD4-78B7-5F05B822D077 (0, 0)
+1792466184: Received PUBLISH from auto-7E47869A-6003-1DD4-78B7-5F05B822D077 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466184: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466184: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466184: Received DISCONNECT from auto-7E47869A-6003-1DD4-78B7-5F05B822D077
+1792466184: Client auto-7E47869A-6003-1DD4-78B7-5F05B822D077 disconnected.
+1792466184: New connection from 127.0.0.1:53604 on port 1883.
+1792466184: New client connected from 127.0.0.1:53604 as auto-46A2B7A9-3A30-AEFA-6B59-5F4BEDD4004D (p2, c1, k60).
+1792466184: No will message specified.
+1792466184: Sending CONNACK to auto-46A2B7A9-3A30-AEFA-6B59-5F4BEDD4004D (0, 0)
+1792466184: Received PUBLISH from auto-46A2B7A9-3A30-AEFA-6B59-5F4BEDD4004D (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466184: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466184: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466184: Received DISCONNECT from auto-46A2B7A9-3A30-AEFA-6B59-5F4BEDD4004D
+1792466184: Client auto-46A2B7A9-3A30-AEFA-6B59-5F4BEDD4004D disconnected.
+1792466185: New connection from 127.0.0.1:53605 on port 1883.
+1792466185: New client connected from 127.0.0.1:53605 as auto-F875DC90-9D3A-2EE0-8B0E-F929F3B873CC (p2, c1, k60).
+1792466185: No will message specified.
+1792466185: Sending CONNACK to auto-F875DC90-9D3A-2EE0-8B0E-F929F3B873CC (0, 0)
+1792466185: Received PUBLISH from auto-F875DC90-9D3A-2EE0-8B0E-F929F3B873CC (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466185: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466185: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466185: Received DISCONNECT from auto-F875DC90-9D3A-2EE0-8B0E-F929F3B873CC
+1792466185: Client auto-F875DC90-9D3A-2EE0-8B0E-F929F3B873CC disconnected.
+1792466185: New connection from 127.0.0.1:53606 on port 1883.
+1792466185: New client connected from 127.0.0.1:53606 as auto-E662181C-80DE-1E63-C369-D14EDE32C4F4 (p2, c1, k60).
+1792466185: No will message specified.
+1792466185: Sending CONNACK to auto-E662181C-80DE-1E63-C369-D14EDE32C4F4 (0, 0)
+1792466185: Received PUBLISH from auto-E662181C-80DE-1E63-C369-D14EDE32C4F4 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466185: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466185: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466185: Received DISCONNECT from auto-E662181C-80DE-1E63-C369-D14EDE32C4F4
+1792466185: Client auto-E662181C-80DE-1E63-C369-D14EDE32C4F4 disconnected.
+1792466186: New connection from 127.0.0.1:53607 on port 1883.
+1792466186: New client connected from 127.0.0.1:53607 as auto-D4EFE3EA-A154-BE90-7538-84B8E7BE9453 (p2, c1, k60).
+1792466186: No will message specified.
+1792466186: Sending CONNACK to auto-D4EFE3EA-A154-BE90-7538-84B8E7BE9453 (0, 0)
+1792466186: Received PUBLISH from auto-D4EFE3EA-A154-BE90-7538-84B8E7BE9453 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466186: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466186: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466186: Received DISCONNECT from auto-D4EFE3EA-A154-BE90-7538-84B8E7BE9453
+1792466186: Client auto-D4EFE3EA-A154-BE90-7538-84B8E7BE9453 disconnected.
+1792466187: New connection from 127.0.0.1:53608 on port 1883.
+1792466187: New client connected from 127.0.0.1:53608 as auto-4C670927-B6BC-49BD-AC83-7243A4202CDC (p2, c1, k60).
+1792466187: No will message specified.
+1792466187: Sending CONNACK to auto-4C670927-B6BC-49BD-AC83-7243A4202CDC (0, 0)
+1792466187: Received PUBLISH from auto-4C670927-B6BC-49BD-AC83-7243A4202CDC (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466187: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466187: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466187: Received DISCONNECT from auto-4C670927-B6BC-49BD-AC83-7243A4202CDC
+1792466187: Client auto-4C670927-B6BC-49BD-AC83-7243A4202CDC disconnected.
+1792466187: New connection from 127.0.0.1:53609 on port 1883.
+1792466187: New client connected from 127.0.0.1:53609 as auto-3C0E2E5A-67E7-0F76-9E80-989706D774BB (p2, c1, k60).
+1792466187: No will message specified.
+1792466187: Sending CONNACK to auto-3C0E2E5A-67E7-0F76-9E80-989706D774BB (0, 0)
+1792466187: Received PUBLISH from auto-3C0E2E5A-67E7-0F76-9E80-989706D774BB (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466187: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466187: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466187: Received DISCONNECT from auto-3C0E2E5A-67E7-0F76-9E80-989706D774BB
+1792466187: Client auto-3C0E2E5A-67E7-0F76-9E80-989706D774BB disconnected.
+1792466188: New connection from 127.0.0.1:53610 on port 1883.
+1792466188: New client connected from 127.0.0.1:53610 as auto-3FF4CFBC-92A6-3394-72E8-B8065BFF9156 (p2, c1, k60).
+1792466188: No will message specified.
+1792466188: Sending CONNACK to auto-3FF4CFBC-92A6-3394-72E8-B8065BFF9156 (0, 0)
+1792466188: Received PUBLISH from auto-3FF4CFBC-92A6-3394-72E8-B8065BFF9156 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466188: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466188: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466188: Received DISCONNECT from auto-3FF4CFBC-92A6-3394-72E8-B8065BFF9156
+1792466188: Client auto-3FF4CFBC-92A6-3394-72E8-B8065BFF9156 disconnected.
+1792466188: New connection from 127.0.0.1:53613 on port 1883.
+1792466188: New client connected from 127.0.0.1:53613 as auto-CD9CB779-94D2-F07D-629D-2CB44F17B272 (p2, c1, k60).
+1792466188: No will message specified.
+1792466188: Sending CONNACK to auto-CD9CB779-94D2-F07D-629D-2CB44F17B272 (0, 0)
+1792466188: Received PUBLISH from auto-CD9CB779-94D2-F07D-629D-2CB44F17B272 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466188: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466188: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466188: Received DISCONNECT from auto-CD9CB779-94D2-F07D-629D-2CB44F17B272
+1792466188: Client auto-CD9CB779-94D2-F07D-629D-2CB44F17B272 disconnected.
+1792466189: New connection from 127.0.0.1:53614 on port 1883.
+1792466189: New client connected from 127.0.0.1:53614 as auto-E66AE70B-0CE6-7E30-0058-3B4393EF28D4 (p2, c1, k60).
+1792466189: No will message specified.
+1792466189: Sending CONNACK to auto-E66AE70B-0CE6-7E30-0058-3B4393EF28D4 (0, 0)
+1792466189: Received PUBLISH from auto-E66AE70B-0CE6-7E30-0058-3B4393EF28D4 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466189: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466189: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466189: Received DISCONNECT from auto-E66AE70B-0CE6-7E30-0058-3B4393EF28D4
+1792466189: Client auto-E66AE70B-0CE6-7E30-0058-3B4393EF28D4 disconnected.
+1792466189: New connection from 127.0.0.1:53615 on port 1883.
+1792466189: New client connected from 127.0.0.1:53615 as auto-C2132695-7AEA-4B8B-11B4-4B13CE1F9445 (p2, c1, k60).
+1792466189: No will message specified.
+1792466189: Sending CONNACK to auto-C2132695-7AEA-4B8B-11B4-4B13CE1F9445 (0, 0)
+1792466189: Received PUBLISH from auto-C2132695-7AEA-4B8B-11B4-4B13CE1F9445 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466189: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466189: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466189: Received DISCONNECT from auto-C2132695-7AEA-4B8B-11B4-4B13CE1F9445
+1792466189: Client auto-C2132695-7AEA-4B8B-11B4-4B13CE1F9445 disconnected.
+1792466190: New connection from 127.0.0.1:53618 on port 1883.
+1792466190: New client connected from 127.0.0.1:53618 as auto-D79E2A1B-52B7-C4D1-0E0A-D9C511BC6FD2 (p2, c1, k60).
+1792466190: No will message specified.
+1792466190: Sending CONNACK to auto-D79E2A1B-52B7-C4D1-0E0A-D9C511BC6FD2 (0, 0)
+1792466190: Received PUBLISH from auto-D79E2A1B-52B7-C4D1-0E0A-D9C511BC6FD2 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466190: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466190: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466190: Received DISCONNECT from auto-D79E2A1B-52B7-C4D1-0E0A-D9C511BC6FD2
+1792466190: Client auto-D79E2A1B-52B7-C4D1-0E0A-D9C511BC6FD2 disconnected.
+1792466191: New connection from 127.0.0.1:53619 on port 1883.
+1792466191: New client connected from 127.0.0.1:53619 as auto-683DF118-A885-7298-7BC4-37C6A4140D9D (p2, c1, k60).
+1792466191: No will message specified.
+1792466191: Sending CONNACK to auto-683DF118-A885-7298-7BC4-37C6A4140D9D (0, 0)
+1792466191: Received PUBLISH from auto-683DF118-A885-7298-7BC4-37C6A4140D9D (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466191: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466191: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466191: Received DISCONNECT from auto-683DF118-A885-7298-7BC4-37C6A4140D9D
+1792466191: Client auto-683DF118-A885-7298-7BC4-37C6A4140D9D disconnected.
+1792466191: New connection from 127.0.0.1:53620 on port 1883.
+1792466191: New client connected from 127.0.0.1:53620 as auto-E31617DA-4586-3988-6D75-205DE646D125 (p2, c1, k60).
+1792466191: No will message specified.
+1792466191: Sending CONNACK to auto-E31617DA-4586-3988-6D75-205DE646D125 (0, 0)
+1792466191: Received PUBLISH from auto-E31617DA-4586-3988-6D75-205DE646D125 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466191: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466191: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466191: Received DISCONNECT from auto-E31617DA-4586-3988-6D75-205DE646D125
+1792466191: Client auto-E31617DA-4586-3988-6D75-205DE646D125 disconnected.
+1792466192: New connection from 127.0.0.1:53621 on port 1883.
+1792466192: New client connected from 127.0.0.1:53621 as auto-92D0C6F8-D94A-49C5-1C9E-EB7BC4C2E39F (p2, c1, k60).
+1792466192: No will message specified.
+1792466192: Sending CONNACK to auto-92D0C6F8-D94A-49C5-1C9E-EB7BC4C2E39F (0, 0)
+1792466192: Received PUBLISH from auto-92D0C6F8-D94A-49C5-1C9E-EB7BC4C2E39F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466192: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466192: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466192: Received DISCONNECT from auto-92D0C6F8-D94A-49C5-1C9E-EB7BC4C2E39F
+1792466192: Client auto-92D0C6F8-D94A-49C5-1C9E-EB7BC4C2E39F disconnected.
+1792466192: New connection from 127.0.0.1:53624 on port 1883.
+1792466192: New client connected from 127.0.0.1:53624 as auto-1C2015E4-0592-AB2B-9C05-3B4646CD3C9E (p2, c1, k60).
+1792466192: No will message specified.
+1792466192: Sending CONNACK to auto-1C2015E4-0592-AB2B-9C05-3B4646CD3C9E (0, 0)
+1792466192: Received PUBLISH from auto-1C2015E4-0592-AB2B-9C05-3B4646CD3C9E (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466192: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466192: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466192: Received DISCONNECT from auto-1C2015E4-0592-AB2B-9C05-3B4646CD3C9E
+1792466192: Client auto-1C2015E4-0592-AB2B-9C05-3B4646CD3C9E disconnected.
+1792466193: New connection from 127.0.0.1:53625 on port 1883.
+1792466193: New client connected from 127.0.0.1:53625 as auto-59204543-8E99-B385-B3AC-168D9D81C9B5 (p2, c1, k60).
+1792466193: No will message specified.
+1792466193: Sending CONNACK to auto-59204543-8E99-B385-B3AC-168D9D81C9B5 (0, 0)
+1792466193: Received PUBLISH from auto-59204543-8E99-B385-B3AC-168D9D81C9B5 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466193: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466193: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466193: Received DISCONNECT from auto-59204543-8E99-B385-B3AC-168D9D81C9B5
+1792466193: Client auto-59204543-8E99-B385-B3AC-168D9D81C9B5 disconnected.
+1792466193: New connection from 127.0.0.1:53626 on port 1883.
+1792466193: New client connected from 127.0.0.1:53626 as auto-FAD4CD16-3ABF-80EE-2520-B2736A36DF6E (p2, c1, k60).
+1792466193: No will message specified.
+1792466193: Sending CONNACK to auto-FAD4CD16-3ABF-80EE-2520-B2736A36DF6E (0, 0)
+1792466193: Received PUBLISH from auto-FAD4CD16-3ABF-80EE-2520-B2736A36DF6E (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466193: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466193: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466193: Received DISCONNECT from auto-FAD4CD16-3ABF-80EE-2520-B2736A36DF6E
+1792466193: Client auto-FAD4CD16-3ABF-80EE-2520-B2736A36DF6E disconnected.
+1792466194: New connection from 127.0.0.1:53627 on port 1883.
+1792466194: New client connected from 127.0.0.1:53627 as auto-427F4052-A0BB-3009-4A16-AA7F9F645963 (p2, c1, k60).
+1792466194: No will message specified.
+1792466194: Sending CONNACK to auto-427F4052-A0BB-3009-4A16-AA7F9F645963 (0, 0)
+1792466194: Received PUBLISH from auto-427F4052-A0BB-3009-4A16-AA7F9F645963 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466194: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466194: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466194: Received DISCONNECT from auto-427F4052-A0BB-3009-4A16-AA7F9F645963
+1792466194: Client auto-427F4052-A0BB-3009-4A16-AA7F9F645963 disconnected.
+1792466195: New connection from 127.0.0.1:53629 on port 1883.
+1792466195: New client connected from 127.0.0.1:53629 as auto-98284A20-F92A-91E0-72DE-C81789AD6430 (p2, c1, k60).
+1792466195: No will message specified.
+1792466195: Sending CONNACK to auto-98284A20-F92A-91E0-72DE-C81789AD6430 (0, 0)
+1792466195: Received PUBLISH from auto-98284A20-F92A-91E0-72DE-C81789AD6430 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466195: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466195: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466195: Received DISCONNECT from auto-98284A20-F92A-91E0-72DE-C81789AD6430
+1792466195: Client auto-98284A20-F92A-91E0-72DE-C81789AD6430 disconnected.
+1792466195: New connection from 127.0.0.1:53630 on port 1883.
+1792466195: New client connected from 127.0.0.1:53630 as auto-C0924A8A-1D3B-2C75-E3D2-CE4BC5AB39CB (p2, c1, k60).
+1792466195: No will message specified.
+1792466195: Sending CONNACK to auto-C0924A8A-1D3B-2C75-E3D2-CE4BC5AB39CB (0, 0)
+1792466195: Received PUBLISH from auto-C0924A8A-1D3B-2C75-E3D2-CE4BC5AB39CB (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466195: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466195: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466195: Received DISCONNECT from auto-C0924A8A-1D3B-2C75-E3D2-CE4BC5AB39CB
+1792466195: Client auto-C0924A8A-1D3B-2C75-E3D2-CE4BC5AB39CB disconnected.
+1792466196: New connection from 127.0.0.1:53631 on port 1883.
+1792466196: New client connected from 127.0.0.1:53631 as auto-F5C15E50-516B-80E5-3A28-EF9FCFB5A60A (p2, c1, k60).
+1792466196: No will message specified.
+1792466196: Sending CONNACK to auto-F5C15E50-516B-80E5-3A28-EF9FCFB5A60A (0, 0)
+1792466196: Received PUBLISH from auto-F5C15E50-516B-80E5-3A28-EF9FCFB5A60A (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466196: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466196: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466196: Received DISCONNECT from auto-F5C15E50-516B-80E5-3A28-EF9FCFB5A60A
+1792466196: Client auto-F5C15E50-516B-80E5-3A28-EF9FCFB5A60A disconnected.
+1792466196: New connection from 127.0.0.1:53634 on port 1883.
+1792466196: New client connected from 127.0.0.1:53634 as auto-10DC1C2F-BBF6-8DA0-FE5B-7A644E806799 (p2, c1, k60).
+1792466196: No will message specified.
+1792466196: Sending CONNACK to auto-10DC1C2F-BBF6-8DA0-FE5B-7A644E806799 (0, 0)
+1792466196: Received PUBLISH from auto-10DC1C2F-BBF6-8DA0-FE5B-7A644E806799 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466196: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466196: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466196: Received DISCONNECT from auto-10DC1C2F-BBF6-8DA0-FE5B-7A644E806799
+1792466196: Client auto-10DC1C2F-BBF6-8DA0-FE5B-7A644E806799 disconnected.
+1792466197: New connection from 127.0.0.1:53635 on port 1883.
+1792466197: New client connected from 127.0.0.1:53635 as auto-6F629353-244E-A52C-A373-27F1A80A3063 (p2, c1, k60).
+1792466197: No will message specified.
+1792466197: Sending CONNACK to auto-6F629353-244E-A52C-A373-27F1A80A3063 (0, 0)
+1792466197: Received PUBLISH from auto-6F629353-244E-A52C-A373-27F1A80A3063 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466197: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466197: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466197: Received DISCONNECT from auto-6F629353-244E-A52C-A373-27F1A80A3063
+1792466197: Client auto-6F629353-244E-A52C-A373-27F1A80A3063 disconnected.
+1792466197: New connection from 127.0.0.1:53636 on port 1883.
+1792466197: New client connected from 127.0.0.1:53636 as auto-C5E3B2A8-EEAB-7878-444D-77A628D48F60 (p2, c1, k60).
+1792466197: No will message specified.
+1792466197: Sending CONNACK to auto-C5E3B2A8-EEAB-7878-444D-77A628D48F60 (0, 0)
+1792466197: Received PUBLISH from auto-C5E3B2A8-EEAB-7878-444D-77A628D48F60 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466197: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466197: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466197: Received DISCONNECT from auto-C5E3B2A8-EEAB-7878-444D-77A628D48F60
+1792466197: Client auto-C5E3B2A8-EEAB-7878-444D-77A628D48F60 disconnected.
+1792466198: New connection from 127.0.0.1:53637 on port 1883.
+1792466198: New client connected from 127.0.0.1:53637 as auto-0D51CE12-DC20-D2ED-284D-6EB4A3AA2521 (p2, c1, k60).
+1792466198: No will message specified.
+1792466198: Sending CONNACK to auto-0D51CE12-DC20-D2ED-284D-6EB4A3AA2521 (0, 0)
+1792466198: Received PUBLISH from auto-0D51CE12-DC20-D2ED-284D-6EB4A3AA2521 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466198: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466198: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466198: Received DISCONNECT from auto-0D51CE12-DC20-D2ED-284D-6EB4A3AA2521
+1792466198: Client auto-0D51CE12-DC20-D2ED-284D-6EB4A3AA2521 disconnected.
+1792466199: New connection from 127.0.0.1:53638 on port 1883.
+1792466199: New client connected from 127.0.0.1:53638 as auto-F6D9D830-60BB-63ED-6FE8-833557D70082 (p2, c1, k60).
+1792466199: No will message specified.
+1792466199: Sending CONNACK to auto-F6D9D830-60BB-63ED-6FE8-833557D70082 (0, 0)
+1792466199: Received PUBLISH from auto-F6D9D830-60BB-63ED-6FE8-833557D70082 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466199: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466199: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466199: Received DISCONNECT from auto-F6D9D830-60BB-63ED-6FE8-833557D70082
+1792466199: Client auto-F6D9D830-60BB-63ED-6FE8-833557D70082 disconnected.
+1792466199: New connection from 127.0.0.1:53639 on port 1883.
+1792466199: New client connected from 127.0.0.1:53639 as auto-8E0E751B-81F2-B364-1008-12B35F77BAB3 (p2, c1, k60).
+1792466199: No will message specified.
+1792466199: Sending CONNACK to auto-8E0E751B-81F2-B364-1008-12B35F77BAB3 (0, 0)
+1792466199: Received PUBLISH from auto-8E0E751B-81F2-B364-1008-12B35F77BAB3 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466199: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466199: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466199: Received DISCONNECT from auto-8E0E751B-81F2-B364-1008-12B35F77BAB3
+1792466199: Client auto-8E0E751B-81F2-B364-1008-12B35F77BAB3 disconnected.
+1792466200: New connection from 127.0.0.1:53640 on port 1883.
+1792466200: New client connected from 127.0.0.1:53640 as auto-2EC16802-51BE-4B3A-8681-A3B10C53443E (p2, c1, k60).
+1792466200: No will message specified.
+1792466200: Sending CONNACK to auto-2EC16802-51BE-4B3A-8681-A3B10C53443E (0, 0)
+1792466200: Received PUBLISH from auto-2EC16802-51BE-4B3A-8681-A3B10C53443E (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466200: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466200: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466200: Received DISCONNECT from auto-2EC16802-51BE-4B3A-8681-A3B10C53443E
+1792466200: Client auto-2EC16802-51BE-4B3A-8681-A3B10C53443E disconnected.
+1792466200: New connection from 127.0.0.1:53643 on port 1883.
+1792466200: New client connected from 127.0.0.1:53643 as auto-EC8013F5-28BA-151E-F80B-8073413A23E9 (p2, c1, k60).
+1792466200: No will message specified.
+1792466200: Sending CONNACK to auto-EC8013F5-28BA-151E-F80B-8073413A23E9 (0, 0)
+1792466200: Received PUBLISH from auto-EC8013F5-28BA-151E-F80B-8073413A23E9 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466200: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466200: Sending PUBLISH to auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466200: Received DISCONNECT from auto-EC8013F5-28BA-151E-F80B-8073413A23E9
+1792466200: Client auto-EC8013F5-28BA-151E-F80B-8073413A23E9 disconnected.
+1792466200: Received DISCONNECT from auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8
+1792466200: Client auto-2ED44B14-BBBD-C9DD-F4E9-46D0B605D7B8 disconnected.
+1792466221: New connection from 127.0.0.1:53662 on port 1883.
+1792466221: New client connected from 127.0.0.1:53662 as auto-BB623ABF-7E6B-F2FF-DF62-A85A18C08E75 (p2, c1, k60).
+1792466221: No will message specified.
+1792466221: Sending CONNACK to auto-BB623ABF-7E6B-F2FF-DF62-A85A18C08E75 (0, 0)
+1792466221: Received PUBLISH from auto-BB623ABF-7E6B-F2FF-DF62-A85A18C08E75 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466221: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466221: Received DISCONNECT from auto-BB623ABF-7E6B-F2FF-DF62-A85A18C08E75
+1792466221: Client auto-BB623ABF-7E6B-F2FF-DF62-A85A18C08E75 disconnected.
+1792466222: New connection from 127.0.0.1:53665 on port 1883.
+1792466222: New client connected from 127.0.0.1:53665 as auto-B27EB5B9-F81F-C003-C719-A3623CE5CA45 (p2, c1, k60).
+1792466222: No will message specified.
+1792466222: Sending CONNACK to auto-B27EB5B9-F81F-C003-C719-A3623CE5CA45 (0, 0)
+1792466222: Received PUBLISH from auto-B27EB5B9-F81F-C003-C719-A3623CE5CA45 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466222: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466222: Received DISCONNECT from auto-B27EB5B9-F81F-C003-C719-A3623CE5CA45
+1792466222: Client auto-B27EB5B9-F81F-C003-C719-A3623CE5CA45 disconnected.
+1792466223: New connection from 127.0.0.1:53666 on port 1883.
+1792466223: New client connected from 127.0.0.1:53666 as auto-89166D26-7563-E747-8B7F-DB699942F66D (p2, c1, k60).
+1792466223: No will message specified.
+1792466223: Sending CONNACK to auto-89166D26-7563-E747-8B7F-DB699942F66D (0, 0)
+1792466223: Received PUBLISH from auto-89166D26-7563-E747-8B7F-DB699942F66D (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466223: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466223: Received DISCONNECT from auto-89166D26-7563-E747-8B7F-DB699942F66D
+1792466223: Client auto-89166D26-7563-E747-8B7F-DB699942F66D disconnected.
+1792466224: New connection from 127.0.0.1:53667 on port 1883.
+1792466224: New client connected from 127.0.0.1:53667 as auto-3CD13094-B5BE-B29C-FCBA-5C88BFA50983 (p2, c1, k60).
+1792466224: No will message specified.
+1792466224: Sending CONNACK to auto-3CD13094-B5BE-B29C-FCBA-5C88BFA50983 (0, 0)
+1792466224: Received PUBLISH from auto-3CD13094-B5BE-B29C-FCBA-5C88BFA50983 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (5 bytes))
+1792466224: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (5 bytes))
+1792466224: Received DISCONNECT from auto-3CD13094-B5BE-B29C-FCBA-5C88BFA50983
+1792466224: Client auto-3CD13094-B5BE-B29C-FCBA-5C88BFA50983 disconnected.
+1792466225: New connection from 127.0.0.1:53670 on port 1883.
+1792466225: New client connected from 127.0.0.1:53670 as auto-35058688-32AD-9A28-64E4-5D8ADAAB0F94 (p2, c1, k60).
+1792466225: No will message specified.
+1792466225: Sending CONNACK to auto-35058688-32AD-9A28-64E4-5D8ADAAB0F94 (0, 0)
+1792466225: Received PUBLISH from auto-35058688-32AD-9A28-64E4-5D8ADAAB0F94 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466225: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466225: Received DISCONNECT from auto-35058688-32AD-9A28-64E4-5D8ADAAB0F94
+1792466225: Client auto-35058688-32AD-9A28-64E4-5D8ADAAB0F94 disconnected.
+1792466226: New connection from 127.0.0.1:53671 on port 1883.
+1792466226: New client connected from 127.0.0.1:53671 as auto-6072CF75-5ED0-893A-5D94-F2DE70D29600 (p2, c1, k60).
+1792466226: No will message specified.
+1792466226: Sending CONNACK to auto-6072CF75-5ED0-893A-5D94-F2DE70D29600 (0, 0)
+1792466226: Received PUBLISH from auto-6072CF75-5ED0-893A-5D94-F2DE70D29600 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (9 bytes))
+1792466226: Sending PUBLISH to Flutter_Telemetry_1792466084496 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (9 bytes))
+1792466226: Received DISCONNECT from auto-6072CF75-5ED0-893A-5D94-F2DE70D29600
+1792466226: Client auto-6072CF75-5ED0-893A-5D94-F2DE70D29600 disconnected.
+1792466293: Client Flutter_Telemetry_1792466084496 closed its connection.
+1792466309: New connection from 127.0.0.1:53792 on port 1883.
+1792466310: New client connected from 127.0.0.1:53792 as Flutter_Telemetry_1792466309859 (p2, c1, k20).
+1792466310: No will message specified.
+1792466310: Sending CONNACK to Flutter_Telemetry_1792466309859 (0, 0)
+1792466310: Received SUBSCRIBE from Flutter_Telemetry_1792466309859
+1792466310: 	iot/esp32/telemetry (QoS 0)
+1792466310: Flutter_Telemetry_1792466309859 0 iot/esp32/telemetry
+1792466310: Sending SUBACK to Flutter_Telemetry_1792466309859
+1792466313: New connection from 127.0.0.1:53799 on port 1883.
+1792466313: New client connected from 127.0.0.1:53799 as auto-94174769-E745-8CEF-2C20-1551AAC85390 (p2, c1, k60).
+1792466313: No will message specified.
+1792466313: Sending CONNACK to auto-94174769-E745-8CEF-2C20-1551AAC85390 (0, 0)
+1792466313: Received PUBLISH from auto-94174769-E745-8CEF-2C20-1551AAC85390 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466313: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466313: Received DISCONNECT from auto-94174769-E745-8CEF-2C20-1551AAC85390
+1792466313: Client auto-94174769-E745-8CEF-2C20-1551AAC85390 disconnected.
+1792466315: New connection from 127.0.0.1:53802 on port 1883.
+1792466315: New client connected from 127.0.0.1:53802 as auto-2D9DD9CA-F021-A196-8672-50408FFF985B (p2, c1, k60).
+1792466315: No will message specified.
+1792466315: Sending CONNACK to auto-2D9DD9CA-F021-A196-8672-50408FFF985B (0, 0)
+1792466315: Received PUBLISH from auto-2D9DD9CA-F021-A196-8672-50408FFF985B (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466315: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466315: Received DISCONNECT from auto-2D9DD9CA-F021-A196-8672-50408FFF985B
+1792466315: Client auto-2D9DD9CA-F021-A196-8672-50408FFF985B disconnected.
+1792466316: New connection from 127.0.0.1:53804 on port 1883.
+1792466316: New client connected from 127.0.0.1:53804 as auto-0031C102-951B-56EB-D461-0A372920D467 (p2, c1, k60).
+1792466316: No will message specified.
+1792466316: Sending CONNACK to auto-0031C102-951B-56EB-D461-0A372920D467 (0, 0)
+1792466316: Received PUBLISH from auto-0031C102-951B-56EB-D461-0A372920D467 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466316: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466316: Received DISCONNECT from auto-0031C102-951B-56EB-D461-0A372920D467
+1792466316: Client auto-0031C102-951B-56EB-D461-0A372920D467 disconnected.
+1792466317: New connection from 127.0.0.1:53807 on port 1883.
+1792466317: New client connected from 127.0.0.1:53807 as auto-0B78AC2D-6FCD-4282-4E65-AAA045FA50B8 (p2, c1, k60).
+1792466317: No will message specified.
+1792466317: Sending CONNACK to auto-0B78AC2D-6FCD-4282-4E65-AAA045FA50B8 (0, 0)
+1792466317: Received PUBLISH from auto-0B78AC2D-6FCD-4282-4E65-AAA045FA50B8 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466317: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466317: Received DISCONNECT from auto-0B78AC2D-6FCD-4282-4E65-AAA045FA50B8
+1792466317: Client auto-0B78AC2D-6FCD-4282-4E65-AAA045FA50B8 disconnected.
+1792466319: New connection from 127.0.0.1:53808 on port 1883.
+1792466319: New client connected from 127.0.0.1:53808 as auto-BA3ADB1D-6612-4612-23F5-8F4C70E88A27 (p2, c1, k60).
+1792466319: No will message specified.
+1792466319: Sending CONNACK to auto-BA3ADB1D-6612-4612-23F5-8F4C70E88A27 (0, 0)
+1792466319: Received PUBLISH from auto-BA3ADB1D-6612-4612-23F5-8F4C70E88A27 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466319: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466319: Received DISCONNECT from auto-BA3ADB1D-6612-4612-23F5-8F4C70E88A27
+1792466319: Client auto-BA3ADB1D-6612-4612-23F5-8F4C70E88A27 disconnected.
+1792466320: New connection from 127.0.0.1:53809 on port 1883.
+1792466320: New client connected from 127.0.0.1:53809 as auto-1DC5BBB8-4C30-1B0A-E647-B42D076A33D3 (p2, c1, k60).
+1792466320: No will message specified.
+1792466320: Sending CONNACK to auto-1DC5BBB8-4C30-1B0A-E647-B42D076A33D3 (0, 0)
+1792466320: Received PUBLISH from auto-1DC5BBB8-4C30-1B0A-E647-B42D076A33D3 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (5 bytes))
+1792466320: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (5 bytes))
+1792466320: Received DISCONNECT from auto-1DC5BBB8-4C30-1B0A-E647-B42D076A33D3
+1792466320: Client auto-1DC5BBB8-4C30-1B0A-E647-B42D076A33D3 disconnected.
+1792466321: New connection from 127.0.0.1:53812 on port 1883.
+1792466321: New client connected from 127.0.0.1:53812 as auto-21D91C0E-C9E0-3071-8190-747670087A5D (p2, c1, k60).
+1792466321: No will message specified.
+1792466321: Sending CONNACK to auto-21D91C0E-C9E0-3071-8190-747670087A5D (0, 0)
+1792466321: Received PUBLISH from auto-21D91C0E-C9E0-3071-8190-747670087A5D (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466321: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466321: Received DISCONNECT from auto-21D91C0E-C9E0-3071-8190-747670087A5D
+1792466321: Client auto-21D91C0E-C9E0-3071-8190-747670087A5D disconnected.
+1792466322: New connection from 127.0.0.1:53813 on port 1883.
+1792466322: New client connected from 127.0.0.1:53813 as auto-0D29CD49-FC01-AB46-B072-5AC4F8824614 (p2, c1, k60).
+1792466322: No will message specified.
+1792466322: Sending CONNACK to auto-0D29CD49-FC01-AB46-B072-5AC4F8824614 (0, 0)
+1792466322: Received PUBLISH from auto-0D29CD49-FC01-AB46-B072-5AC4F8824614 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (9 bytes))
+1792466322: Sending PUBLISH to Flutter_Telemetry_1792466309859 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (9 bytes))
+1792466322: Received DISCONNECT from auto-0D29CD49-FC01-AB46-B072-5AC4F8824614
+1792466322: Client auto-0D29CD49-FC01-AB46-B072-5AC4F8824614 disconnected.
+1792466329: Received PINGREQ from Flutter_Telemetry_1792466309859
+1792466329: Sending PINGRESP to Flutter_Telemetry_1792466309859
+1792466349: Received PINGREQ from Flutter_Telemetry_1792466309859
+1792466349: Sending PINGRESP to Flutter_Telemetry_1792466309859
+1792466359: Client Flutter_Telemetry_1792466309859 closed its connection.
+1792466375: New connection from 127.0.0.1:53908 on port 1883.
+1792466375: New client connected from 127.0.0.1:53908 as Flutter_Telemetry_1792466375239 (p2, c1, k20).
+1792466375: No will message specified.
+1792466375: Sending CONNACK to Flutter_Telemetry_1792466375239 (0, 0)
+1792466375: Received SUBSCRIBE from Flutter_Telemetry_1792466375239
+1792466375: 	iot/esp32/telemetry (QoS 0)
+1792466375: Flutter_Telemetry_1792466375239 0 iot/esp32/telemetry
+1792466375: Sending SUBACK to Flutter_Telemetry_1792466375239
+1792466379: New connection from 127.0.0.1:53917 on port 1883.
+1792466379: New client connected from 127.0.0.1:53917 as auto-B1A677B2-5CAA-326C-48B9-1E98B0FDA3FB (p2, c1, k60).
+1792466379: No will message specified.
+1792466379: Sending CONNACK to auto-B1A677B2-5CAA-326C-48B9-1E98B0FDA3FB (0, 0)
+1792466379: Received PUBLISH from auto-B1A677B2-5CAA-326C-48B9-1E98B0FDA3FB (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466379: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466379: Received DISCONNECT from auto-B1A677B2-5CAA-326C-48B9-1E98B0FDA3FB
+1792466379: Client auto-B1A677B2-5CAA-326C-48B9-1E98B0FDA3FB disconnected.
+1792466381: New connection from 127.0.0.1:53918 on port 1883.
+1792466381: New client connected from 127.0.0.1:53918 as auto-38A0E45D-F3C1-1CBF-3F16-3EC0A0A21221 (p2, c1, k60).
+1792466381: No will message specified.
+1792466381: Sending CONNACK to auto-38A0E45D-F3C1-1CBF-3F16-3EC0A0A21221 (0, 0)
+1792466381: Received PUBLISH from auto-38A0E45D-F3C1-1CBF-3F16-3EC0A0A21221 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466381: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466381: Received DISCONNECT from auto-38A0E45D-F3C1-1CBF-3F16-3EC0A0A21221
+1792466381: Client auto-38A0E45D-F3C1-1CBF-3F16-3EC0A0A21221 disconnected.
+1792466382: New connection from 127.0.0.1:53921 on port 1883.
+1792466382: New client connected from 127.0.0.1:53921 as auto-89FB799C-F63A-A27B-B28A-BC4A6B02A4BF (p2, c1, k60).
+1792466382: No will message specified.
+1792466382: Sending CONNACK to auto-89FB799C-F63A-A27B-B28A-BC4A6B02A4BF (0, 0)
+1792466382: Received PUBLISH from auto-89FB799C-F63A-A27B-B28A-BC4A6B02A4BF (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466382: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466382: Received DISCONNECT from auto-89FB799C-F63A-A27B-B28A-BC4A6B02A4BF
+1792466382: Client auto-89FB799C-F63A-A27B-B28A-BC4A6B02A4BF disconnected.
+1792466383: New connection from 127.0.0.1:53924 on port 1883.
+1792466383: New client connected from 127.0.0.1:53924 as auto-0982C25E-85A8-F3A4-9F98-EF11F7FA14DA (p2, c1, k60).
+1792466383: No will message specified.
+1792466383: Sending CONNACK to auto-0982C25E-85A8-F3A4-9F98-EF11F7FA14DA (0, 0)
+1792466383: Received PUBLISH from auto-0982C25E-85A8-F3A4-9F98-EF11F7FA14DA (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466383: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466383: Received DISCONNECT from auto-0982C25E-85A8-F3A4-9F98-EF11F7FA14DA
+1792466383: Client auto-0982C25E-85A8-F3A4-9F98-EF11F7FA14DA disconnected.
+1792466384: New connection from 127.0.0.1:53925 on port 1883.
+1792466384: New client connected from 127.0.0.1:53925 as auto-09C1BF50-09EE-15D9-0C73-DDB2362626C2 (p2, c1, k60).
+1792466384: No will message specified.
+1792466384: Sending CONNACK to auto-09C1BF50-09EE-15D9-0C73-DDB2362626C2 (0, 0)
+1792466384: Received PUBLISH from auto-09C1BF50-09EE-15D9-0C73-DDB2362626C2 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466384: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466384: Received DISCONNECT from auto-09C1BF50-09EE-15D9-0C73-DDB2362626C2
+1792466384: Client auto-09C1BF50-09EE-15D9-0C73-DDB2362626C2 disconnected.
+1792466386: New connection from 127.0.0.1:53928 on port 1883.
+1792466386: New client connected from 127.0.0.1:53928 as auto-7E52B4E2-1361-9920-2372-4F4682B0FD56 (p2, c1, k60).
+1792466386: No will message specified.
+1792466386: Sending CONNACK to auto-7E52B4E2-1361-9920-2372-4F4682B0FD56 (0, 0)
+1792466386: Received PUBLISH from auto-7E52B4E2-1361-9920-2372-4F4682B0FD56 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (5 bytes))
+1792466386: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (5 bytes))
+1792466386: Received DISCONNECT from auto-7E52B4E2-1361-9920-2372-4F4682B0FD56
+1792466386: Client auto-7E52B4E2-1361-9920-2372-4F4682B0FD56 disconnected.
+1792466387: New connection from 127.0.0.1:53929 on port 1883.
+1792466387: New client connected from 127.0.0.1:53929 as auto-C034730A-4540-EC89-6DAF-C28DB2A07ECB (p2, c1, k60).
+1792466387: No will message specified.
+1792466387: Sending CONNACK to auto-C034730A-4540-EC89-6DAF-C28DB2A07ECB (0, 0)
+1792466387: Received PUBLISH from auto-C034730A-4540-EC89-6DAF-C28DB2A07ECB (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466387: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (45 bytes))
+1792466387: Received DISCONNECT from auto-C034730A-4540-EC89-6DAF-C28DB2A07ECB
+1792466387: Client auto-C034730A-4540-EC89-6DAF-C28DB2A07ECB disconnected.
+1792466388: New connection from 127.0.0.1:53930 on port 1883.
+1792466388: New client connected from 127.0.0.1:53930 as auto-83C3AE1E-0791-F611-10FA-688D7AD68676 (p2, c1, k60).
+1792466388: No will message specified.
+1792466388: Sending CONNACK to auto-83C3AE1E-0791-F611-10FA-688D7AD68676 (0, 0)
+1792466388: Received PUBLISH from auto-83C3AE1E-0791-F611-10FA-688D7AD68676 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (9 bytes))
+1792466388: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (9 bytes))
+1792466388: Received DISCONNECT from auto-83C3AE1E-0791-F611-10FA-688D7AD68676
+1792466388: Client auto-83C3AE1E-0791-F611-10FA-688D7AD68676 disconnected.
+1792466390: New connection from 127.0.0.1:53933 on port 1883.
+1792466390: New client connected from 127.0.0.1:53933 as PyTelemetrySim (p2, c1, k60).
+1792466390: No will message specified.
+1792466390: Sending CONNACK to PyTelemetrySim (0, 0)
+1792466390: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466390: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466390: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466390: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466391: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466391: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466391: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466391: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466392: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466392: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466392: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466392: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466393: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466393: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466393: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466393: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466394: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466394: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466394: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466394: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466395: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466395: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466395: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466395: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466395: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466395: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466396: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466396: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466396: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466396: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466397: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466397: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466397: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466397: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466398: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466398: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466398: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466398: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466399: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466399: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466399: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466399: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466400: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466400: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466400: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466400: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466401: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466401: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466401: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466401: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466402: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466402: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466402: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466402: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466403: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466403: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466403: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466403: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466404: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466404: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (42 bytes))
+1792466404: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466404: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466405: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466405: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466405: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466405: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466406: Received PUBLISH from PyTelemetrySim (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466406: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466406: Client PyTelemetrySim closed its connection.
+1792466415: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466415: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466418: New connection from 127.0.0.1:53963 on port 1883.
+1792466418: New client connected from 127.0.0.1:53963 as auto-FDC4BEF0-76CB-6B47-5543-D8E8C20DABAD (p2, c1, k60).
+1792466418: No will message specified.
+1792466418: Sending CONNACK to auto-FDC4BEF0-76CB-6B47-5543-D8E8C20DABAD (0, 0)
+1792466418: Received PUBLISH from auto-FDC4BEF0-76CB-6B47-5543-D8E8C20DABAD (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466418: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (43 bytes))
+1792466418: Received DISCONNECT from auto-FDC4BEF0-76CB-6B47-5543-D8E8C20DABAD
+1792466418: Client auto-FDC4BEF0-76CB-6B47-5543-D8E8C20DABAD disconnected.
+1792466421: New connection from 127.0.0.1:53964 on port 1883.
+1792466421: New client connected from 127.0.0.1:53964 as auto-087AD21B-500E-233A-03B4-18A23582B85F (p2, c1, k60).
+1792466421: No will message specified.
+1792466421: Sending CONNACK to auto-087AD21B-500E-233A-03B4-18A23582B85F (0, 0)
+1792466421: Received PUBLISH from auto-087AD21B-500E-233A-03B4-18A23582B85F (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466421: Sending PUBLISH to Flutter_Telemetry_1792466375239 (d0, q0, r0, m0, 'iot/esp32/telemetry', ... (44 bytes))
+1792466421: Received DISCONNECT from auto-087AD21B-500E-233A-03B4-18A23582B85F
+1792466421: Client auto-087AD21B-500E-233A-03B4-18A23582B85F disconnected.
+1792466435: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466435: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466455: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466455: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466475: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466475: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466495: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466495: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466515: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466515: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466535: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466535: Sending PINGRESP to Flutter_Telemetry_1792466375239
+1792466555: Received PINGREQ from Flutter_Telemetry_1792466375239
+1792466555: Sending PINGRESP to Flutter_Telemetry_1792466375239

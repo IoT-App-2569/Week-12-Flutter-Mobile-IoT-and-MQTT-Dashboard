@@ -1,0 +1,17 @@
+$ ./mock_esp32.sh
+==========================================================
+  [MOCK ESP32] ESP32 behaviour simulator (broker 127.0.0.1:1883)
+==========================================================
+[1/3] publish ONLINE to iot/esp32/status (retained)
+[2/3] streaming sine-wave telemetry to iot/esp32/telemetry every 500 ms
+[3/3] waiting for commands on iot/esp32/control (Ctrl+C = power off)
+----------------------------------------------------------
+[10:35:26] command: {"led":"ON"}
+  -> LED ON  (GPIO 2 = HIGH), ACK sent
+[10:36:32] command: {"led":"OFF"}
+  -> LED OFF (GPIO 2 = LOW), ACK sent
+^C
+[STOP] publishing OFFLINE to iot/esp32/status (retained)
+./mock_esp32.sh: line 32:   130 Terminated: 15          ( start=$(date +%s); t=0; while true; do
+    v=$(awk -v t=$t 'BEGIN { printf "%.2f", 1.65 + 1.5 * sin(t * 0.2) }'); raw=$(awk -v v=$v 'BEGIN { printf "%d", (v / 3.3) * 4095 }'); up=$(( $(date +%s) - start )); mosquitto_pub -h "$BROKER" -p "$PORT" -t "$TELEMETRY" -m "{\"voltage\": $v, \"raw\": $raw, \"uptime\": $up}"; t=$((t + 1)); sleep 0.5;
+done )

@@ -1,0 +1,11 @@
+$ ipconfig getifaddr en0
+10.15.15.56
+$ mosquitto -p 1884 -d
+$ mosquitto_pub -h 10.15.15.56 -p 1884 -t "test/flutter/ping" -m "hello"
+Error: Connection refused
+$ mosquitto_pub -h 127.0.0.1 -p 1884 -t "test/flutter/ping" -m "hello" && echo OK
+OK
+$ grep listener mosquitto.conf
+listener 1883 0.0.0.0
+$ mosquitto_pub -h 10.15.15.56 -p 1883 -t "test/broker/echo" -m "Echo via LAN IP" && echo OK
+OK

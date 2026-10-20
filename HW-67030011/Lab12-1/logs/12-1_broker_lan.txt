@@ -1,0 +1,140 @@
+$ mosquitto -c mosquitto.conf -v
+1792465130: mosquitto version 2.0.22 starting
+1792465130: Config loaded from mosquitto.conf.
+1792465130: Opening ipv4 listen socket on port 1883.
+1792465130: mosquitto version 2.0.22 running
+1792465131: New connection from 127.0.0.1:51941 on port 1883.
+1792465131: New client connected from 127.0.0.1:51941 as Flutter_Lab12_1_1792465027577 (p1, c1, k20).
+1792465131: Will message specified (14 bytes) (r0, q1).
+1792465131: 	iot/flutter/lwt
+1792465131: Sending CONNACK to Flutter_Lab12_1_1792465027577 (0, 0)
+1792465131: Received SUBSCRIBE from Flutter_Lab12_1_1792465027577
+1792465131: 	test/broker/echo (QoS 0)
+1792465131: Flutter_Lab12_1_1792465027577 0 test/broker/echo
+1792465131: Sending SUBACK to Flutter_Lab12_1_1792465027577
+1792465131: New connection from 127.0.0.1:51942 on port 1883.
+1792465131: New connection from 127.0.0.1:51943 on port 1883.
+1792465131: New client connected from 127.0.0.1:51942 as auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D (p2, c1, k60).
+1792465131: No will message specified.
+1792465131: Sending CONNACK to auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D (0, 0)
+1792465131: New client connected from 127.0.0.1:51943 as auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0 (p2, c1, k60).
+1792465131: No will message specified.
+1792465131: Sending CONNACK to auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0 (0, 0)
+1792465131: Received SUBSCRIBE from auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465131: 	iot/flutter/lwt (QoS 0)
+1792465131: auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D 0 iot/flutter/lwt
+1792465131: Sending SUBACK to auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465131: Received SUBSCRIBE from auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465131: 	test/flutter/ping (QoS 0)
+1792465131: auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0 0 test/flutter/ping
+1792465131: Sending SUBACK to auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465142: New connection from 127.0.0.1:51952 on port 1883.
+1792465142: New client connected from 127.0.0.1:51952 as auto-734F9DF6-5C32-E856-E769-4ED2224BAD40 (p2, c1, k60).
+1792465142: No will message specified.
+1792465142: Sending CONNACK to auto-734F9DF6-5C32-E856-E769-4ED2224BAD40 (0, 0)
+1792465142: Received PUBLISH from auto-734F9DF6-5C32-E856-E769-4ED2224BAD40 (d0, q0, r0, m0, 'test/broker/echo', ... (25 bytes))
+1792465142: Sending PUBLISH to Flutter_Lab12_1_1792465027577 (d0, q0, r0, m0, 'test/broker/echo', ... (25 bytes))
+1792465142: Received DISCONNECT from auto-734F9DF6-5C32-E856-E769-4ED2224BAD40
+1792465142: Client auto-734F9DF6-5C32-E856-E769-4ED2224BAD40 disconnected.
+1792465147: Received PINGREQ from Flutter_Lab12_1_1792465027577
+1792465147: Sending PINGRESP to Flutter_Lab12_1_1792465027577
+1792465165: New connection from 10.15.15.56:51970 on port 1883.
+1792465165: New client connected from 10.15.15.56:51970 as auto-14C49920-A20B-80E5-C686-470EC630C744 (p2, c1, k60).
+1792465165: No will message specified.
+1792465165: Sending CONNACK to auto-14C49920-A20B-80E5-C686-470EC630C744 (0, 0)
+1792465165: Received PUBLISH from auto-14C49920-A20B-80E5-C686-470EC630C744 (d0, q0, r0, m0, 'test/broker/echo', ... (15 bytes))
+1792465165: Sending PUBLISH to Flutter_Lab12_1_1792465027577 (d0, q0, r0, m0, 'test/broker/echo', ... (15 bytes))
+1792465165: Received DISCONNECT from auto-14C49920-A20B-80E5-C686-470EC630C744
+1792465165: Client auto-14C49920-A20B-80E5-C686-470EC630C744 disconnected.
+1792465167: Received PINGREQ from Flutter_Lab12_1_1792465027577
+1792465167: Sending PINGRESP to Flutter_Lab12_1_1792465027577
+1792465172: New connection from 10.15.15.56:51978 on port 1883.
+1792465172: New client connected from 10.15.15.56:51978 as auto-4677E766-39E5-0E09-C014-65A4B98FA332 (p2, c1, k60).
+1792465172: No will message specified.
+1792465172: Sending CONNACK to auto-4677E766-39E5-0E09-C014-65A4B98FA332 (0, 0)
+1792465172: Received PUBLISH from auto-4677E766-39E5-0E09-C014-65A4B98FA332 (d0, q0, r0, m0, 'test/broker/echo', ... (15 bytes))
+1792465172: Sending PUBLISH to Flutter_Lab12_1_1792465027577 (d0, q0, r0, m0, 'test/broker/echo', ... (15 bytes))
+1792465172: Received DISCONNECT from auto-4677E766-39E5-0E09-C014-65A4B98FA332
+1792465172: Client auto-4677E766-39E5-0E09-C014-65A4B98FA332 disconnected.
+1792465186: New connection from 127.0.0.1:51988 on port 1883.
+1792465186: New client connected from 127.0.0.1:51988 as Flutter_Lab12_1 (p2, c1, k60).
+1792465186: No will message specified.
+1792465186: Sending CONNACK to Flutter_Lab12_1 (0, 0)
+1792465186: Received SUBSCRIBE from Flutter_Lab12_1
+1792465186: 	test/# (QoS 0)
+1792465186: Flutter_Lab12_1 0 test/#
+1792465186: Sending SUBACK to Flutter_Lab12_1
+1792465187: Received PINGREQ from Flutter_Lab12_1_1792465027577
+1792465187: Sending PINGRESP to Flutter_Lab12_1_1792465027577
+1792465188: New connection from 127.0.0.1:51989 on port 1883.
+1792465188: Client Flutter_Lab12_1 already connected, closing old connection.
+1792465188: New client connected from 127.0.0.1:51989 as Flutter_Lab12_1 (p2, c1, k60).
+1792465188: No will message specified.
+1792465188: Sending CONNACK to Flutter_Lab12_1 (0, 0)
+1792465188: Received SUBSCRIBE from Flutter_Lab12_1
+1792465188: 	test/# (QoS 0)
+1792465188: Flutter_Lab12_1 0 test/#
+1792465188: Sending SUBACK to Flutter_Lab12_1
+1792465189: New connection from 127.0.0.1:51992 on port 1883.
+1792465189: Client Flutter_Lab12_1 already connected, closing old connection.
+1792465189: New client connected from 127.0.0.1:51992 as Flutter_Lab12_1 (p2, c1, k60).
+1792465189: No will message specified.
+1792465189: Sending CONNACK to Flutter_Lab12_1 (0, 0)
+1792465189: Received SUBSCRIBE from Flutter_Lab12_1
+1792465189: 	test/# (QoS 0)
+1792465189: Flutter_Lab12_1 0 test/#
+1792465189: Sending SUBACK to Flutter_Lab12_1
+1792465190: New connection from 127.0.0.1:51993 on port 1883.
+1792465190: Client Flutter_Lab12_1 already connected, closing old connection.
+1792465190: New client connected from 127.0.0.1:51993 as Flutter_Lab12_1 (p2, c1, k60).
+1792465190: No will message specified.
+1792465190: Sending CONNACK to Flutter_Lab12_1 (0, 0)
+1792465190: Received SUBSCRIBE from Flutter_Lab12_1
+1792465190: 	test/# (QoS 0)
+1792465190: Flutter_Lab12_1 0 test/#
+1792465190: Sending SUBACK to Flutter_Lab12_1
+1792465191: Received PINGREQ from auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465191: Sending PINGRESP to auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465191: Received PINGREQ from auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465191: Sending PINGRESP to auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465191: Received DISCONNECT from Flutter_Lab12_1
+1792465191: Client Flutter_Lab12_1 disconnected.
+1792465191: New connection from 127.0.0.1:51994 on port 1883.
+1792465191: New client connected from 127.0.0.1:51994 as Flutter_Lab12_1 (p2, c1, k60).
+1792465191: No will message specified.
+1792465191: Sending CONNACK to Flutter_Lab12_1 (0, 0)
+1792465191: Received SUBSCRIBE from Flutter_Lab12_1
+1792465191: 	test/# (QoS 0)
+1792465191: Flutter_Lab12_1 0 test/#
+1792465191: Sending SUBACK to Flutter_Lab12_1
+1792465192: Received DISCONNECT from Flutter_Lab12_1
+1792465192: Client Flutter_Lab12_1 disconnected.
+1792465207: Received PINGREQ from Flutter_Lab12_1_1792465027577
+1792465207: Sending PINGRESP to Flutter_Lab12_1_1792465027577
+1792465227: Received PINGREQ from Flutter_Lab12_1_1792465027577
+1792465227: Sending PINGRESP to Flutter_Lab12_1_1792465027577
+1792465247: Received PINGREQ from Flutter_Lab12_1_1792465027577
+1792465247: Sending PINGRESP to Flutter_Lab12_1_1792465027577
+1792465250: Received PINGREQ from auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465250: Sending PINGRESP to auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465250: Received PINGREQ from auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465250: Sending PINGRESP to auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465267: Received PINGREQ from Flutter_Lab12_1_1792465027577
+1792465267: Sending PINGRESP to Flutter_Lab12_1_1792465027577
+1792465282: Client Flutter_Lab12_1_1792465027577 closed its connection.
+1792465282: Sending PUBLISH to auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D (d0, q0, r0, m0, 'iot/flutter/lwt', ... (14 bytes))
+1792465310: Received PINGREQ from auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465310: Sending PINGRESP to auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D
+1792465310: Received PINGREQ from auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465310: Sending PINGRESP to auto-4EC5B36C-50CF-3AAF-5494-BE632C2852E0
+1792465313: New connection from 127.0.0.1:52199 on port 1883.
+1792465313: New client connected from 127.0.0.1:52199 as Flutter_Lab12_1_1792465313463 (p2, c1, k20).
+1792465313: Will message specified (14 bytes) (r0, q1).
+1792465313: 	iot/flutter/lwt
+1792465313: Sending CONNACK to Flutter_Lab12_1_1792465313463 (0, 0)
+1792465313: Received SUBSCRIBE from Flutter_Lab12_1_1792465313463
+1792465313: 	test/broker/echo (QoS 0)
+1792465313: Flutter_Lab12_1_1792465313463 0 test/broker/echo
+1792465313: Sending SUBACK to Flutter_Lab12_1_1792465313463
+1792465315: mosquitto version 2.0.22 terminating
+1792465315: Sending PUBLISH to auto-BA04E8C0-CC60-4551-D0AB-70F5BACAAC7D (d0, q0, r0, m0, 'iot/flutter/lwt', ... (14 bytes))

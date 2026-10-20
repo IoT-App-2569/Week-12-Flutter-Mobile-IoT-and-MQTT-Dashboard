@@ -1,0 +1,8 @@
+#!/bin/bash
+# เทียบเท่า PowerShell Loop ในกิจกรรม 12-3.3: ส่งค่า Sine 30 ค่า ทุก 500 ms
+for i in $(seq 1 30); do
+  v=$(python3 -c "import math; print(round(1.65 + 1.5 * math.sin($i * 0.4), 2))")
+  raw=$(python3 -c "print(int(($v / 3.3) * 4095))")
+  mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m "{\"voltage\": $v, \"raw\": $raw, \"uptime\": $i}"
+  sleep 0.5
+done

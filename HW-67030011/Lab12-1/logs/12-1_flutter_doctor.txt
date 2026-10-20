@@ -1,0 +1,17 @@
+$ flutter doctor
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel stable, 3.44.4, on macOS 15.5 24F74 darwin-arm64, locale en-TH)
+[✓] Android toolchain - develop for Android devices (Android SDK version 36.0.0)
+[!] Xcode - develop for iOS and macOS (Xcode 16.2)
+    ! CocoaPods not installed.
+        CocoaPods is a package manager for iOS or macOS platform code.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/to/platform-plugins
+      For installation instructions, see https://guides.cocoapods.org/using/getting-started.html#installation
+[✓] Chrome - develop for the web
+[✓] Connected device (2 available)
+    ! Error: Browsing on the local area network for KBBK-IPHONE. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+      The device must be opted into Developer Mode to connect wirelessly. (code -27)
+[✓] Network resources
+
+! Doctor found issues in 1 category.
