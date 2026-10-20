@@ -1,5 +1,6 @@
 {
     "csharp-dev-tools.solutionViewer.selectedWorkspaceSolutions": [
         "Example_codes/Lab12-2/iot_actuator_switch/build/windows/x64/iot_mqtt_basics.slnx"
-    ]
+    ],
+    "cmake.sourceDirectory": "/Users/chutiporn/Week-12-Flutter-Mobile-IoT-and-MQTT-Dashboard/Example_codes/Lab12-4/esp32_firmware"
 }
