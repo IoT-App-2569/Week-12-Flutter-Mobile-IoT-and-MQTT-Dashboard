@@ -1,0 +1,10 @@
+$ flutter analyze --no-pub
+Analyzing iot_actuator_switch...                                
+
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/actuator_control_screen.dart:164:48 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/actuator_control_screen.dart:167:61 • deprecated_member_use
+   info • 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss. Try replacing the use of the deprecated member with the replacement • lib/actuator_control_screen.dart:173:58 • deprecated_member_use
+   info • 'activeColor' is deprecated and shouldn't be used. Use activeThumbColor instead. This feature was deprecated after v3.31.0-2.0.pre. Try replacing the use of the deprecated member with the replacement • lib/actuator_control_screen.dart:218:23 • deprecated_member_use
+  error • The name 'MqttBasicsApp' isn't a class. Try correcting the name to match an existing class • test/widget_test.dart:8:35 • creation_with_non_type
+
+5 issues found. (ran in 1.3s)

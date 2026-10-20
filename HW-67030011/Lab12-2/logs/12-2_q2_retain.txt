@@ -1,0 +1,6 @@
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "online"
+$ mosquitto_sub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -v -C 1 -W 3
+iot/esp32/status offline
+$ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "online" -r
+$ mosquitto_sub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -v -C 1 -W 3
+iot/esp32/status online

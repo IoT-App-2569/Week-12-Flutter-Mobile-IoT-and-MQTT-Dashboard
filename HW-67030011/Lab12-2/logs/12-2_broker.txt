@@ -1,0 +1,204 @@
+$ mosquitto -v -p 1883
+1792465654: mosquitto version 2.0.22 starting
+1792465654: Using default config.
+1792465654: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1792465654: Create a configuration file which defines a listener to allow remote access.
+1792465654: For more details see https://mosquitto.org/documentation/authentication-methods/
+1792465654: Opening ipv4 listen socket on port 1883.
+1792465654: Opening ipv6 listen socket on port 1883.
+1792465654: mosquitto version 2.0.22 running
+1792465654: New connection from 127.0.0.1:52795 on port 1883.
+1792465654: New client connected from 127.0.0.1:52795 as auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 (p2, c1, k60).
+1792465654: No will message specified.
+1792465654: Sending CONNACK to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 (0, 0)
+1792465654: Received SUBSCRIBE from auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465654: 	iot/esp32/control (QoS 0)
+1792465654: auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 0 iot/esp32/control
+1792465654: Sending SUBACK to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465683: New connection from 127.0.0.1:52838 on port 1883.
+1792465683: New client connected from 127.0.0.1:52838 as Flutter_Switch_1792465683416 (p1, c1, k20).
+1792465683: No will message specified.
+1792465683: Sending CONNACK to Flutter_Switch_1792465683416 (0, 0)
+1792465683: Received SUBSCRIBE from Flutter_Switch_1792465683416
+1792465683: 	iot/esp32/status (QoS 0)
+1792465683: Flutter_Switch_1792465683416 0 iot/esp32/status
+1792465683: Sending SUBACK to Flutter_Switch_1792465683416
+1792465683: Received SUBSCRIBE from Flutter_Switch_1792465683416
+1792465683: 	iot/esp32/led_ack (QoS 0)
+1792465683: Flutter_Switch_1792465683416 0 iot/esp32/led_ack
+1792465683: Sending SUBACK to Flutter_Switch_1792465683416
+1792465695: New connection from 127.0.0.1:52861 on port 1883.
+1792465695: New client connected from 127.0.0.1:52861 as auto-69109C11-8930-EC9D-1EF0-AE68830A8390 (p2, c1, k60).
+1792465695: No will message specified.
+1792465695: Sending CONNACK to auto-69109C11-8930-EC9D-1EF0-AE68830A8390 (0, 0)
+1792465695: Received PUBLISH from auto-69109C11-8930-EC9D-1EF0-AE68830A8390 (d0, q0, r1, m0, 'iot/esp32/status', ... (6 bytes))
+1792465695: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/status', ... (6 bytes))
+1792465695: Received DISCONNECT from auto-69109C11-8930-EC9D-1EF0-AE68830A8390
+1792465695: Client auto-69109C11-8930-EC9D-1EF0-AE68830A8390 disconnected.
+1792465702: Received PUBLISH from Flutter_Switch_1792465683416 (d0, q1, r0, m3, 'iot/esp32/control', ... (12 bytes))
+1792465702: Sending PUBLISH to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 (d0, q0, r0, m0, 'iot/esp32/control', ... (12 bytes))
+1792465702: Sending PUBACK to Flutter_Switch_1792465683416 (m3, rc0)
+1792465703: Received PINGREQ from Flutter_Switch_1792465683416
+1792465703: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465705: New connection from 127.0.0.1:52869 on port 1883.
+1792465705: New client connected from 127.0.0.1:52869 as auto-B46DEF1E-0FFD-F243-C529-DA8849E58319 (p2, c1, k60).
+1792465705: No will message specified.
+1792465705: Sending CONNACK to auto-B46DEF1E-0FFD-F243-C529-DA8849E58319 (0, 0)
+1792465705: Received PUBLISH from auto-B46DEF1E-0FFD-F243-C529-DA8849E58319 (d0, q0, r0, m0, 'iot/esp32/led_ack', ... (32 bytes))
+1792465705: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/led_ack', ... (32 bytes))
+1792465705: Received DISCONNECT from auto-B46DEF1E-0FFD-F243-C529-DA8849E58319
+1792465705: Client auto-B46DEF1E-0FFD-F243-C529-DA8849E58319 disconnected.
+1792465714: Received PINGREQ from auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465714: Sending PINGRESP to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465716: Received PUBLISH from Flutter_Switch_1792465683416 (d0, q1, r0, m4, 'iot/esp32/control', ... (13 bytes))
+1792465716: Sending PUBLISH to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 (d0, q0, r0, m0, 'iot/esp32/control', ... (13 bytes))
+1792465716: Sending PUBACK to Flutter_Switch_1792465683416 (m4, rc0)
+1792465718: New connection from 127.0.0.1:52879 on port 1883.
+1792465718: New client connected from 127.0.0.1:52879 as auto-01A39501-AC52-670F-6265-E77A3FCC8EDD (p2, c1, k60).
+1792465718: No will message specified.
+1792465718: Sending CONNACK to auto-01A39501-AC52-670F-6265-E77A3FCC8EDD (0, 0)
+1792465718: Received PUBLISH from auto-01A39501-AC52-670F-6265-E77A3FCC8EDD (d0, q0, r0, m0, 'iot/esp32/led_ack', ... (33 bytes))
+1792465718: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/led_ack', ... (33 bytes))
+1792465718: Received DISCONNECT from auto-01A39501-AC52-670F-6265-E77A3FCC8EDD
+1792465718: Client auto-01A39501-AC52-670F-6265-E77A3FCC8EDD disconnected.
+1792465723: Received PINGREQ from Flutter_Switch_1792465683416
+1792465723: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465730: New connection from 127.0.0.1:52891 on port 1883.
+1792465730: New client connected from 127.0.0.1:52891 as auto-D7E03AB8-F4FC-8467-226E-0159D17F2989 (p2, c1, k60).
+1792465730: No will message specified.
+1792465730: Sending CONNACK to auto-D7E03AB8-F4FC-8467-226E-0159D17F2989 (0, 0)
+1792465730: Received PUBLISH from auto-D7E03AB8-F4FC-8467-226E-0159D17F2989 (d0, q0, r1, m0, 'iot/esp32/status', ... (7 bytes))
+1792465730: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/status', ... (7 bytes))
+1792465730: Received DISCONNECT from auto-D7E03AB8-F4FC-8467-226E-0159D17F2989
+1792465730: Client auto-D7E03AB8-F4FC-8467-226E-0159D17F2989 disconnected.
+1792465732: New connection from 127.0.0.1:52892 on port 1883.
+1792465732: New client connected from 127.0.0.1:52892 as auto-66028B7D-C680-E0AE-EB6B-721FA8C49FCA (p2, c1, k60).
+1792465732: No will message specified.
+1792465732: Sending CONNACK to auto-66028B7D-C680-E0AE-EB6B-721FA8C49FCA (0, 0)
+1792465732: Received PUBLISH from auto-66028B7D-C680-E0AE-EB6B-721FA8C49FCA (d0, q0, r1, m0, 'iot/esp32/status', ... (6 bytes))
+1792465732: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/status', ... (6 bytes))
+1792465732: Received DISCONNECT from auto-66028B7D-C680-E0AE-EB6B-721FA8C49FCA
+1792465732: Client auto-66028B7D-C680-E0AE-EB6B-721FA8C49FCA disconnected.
+1792465743: Received PINGREQ from Flutter_Switch_1792465683416
+1792465743: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465745: Received PUBLISH from Flutter_Switch_1792465683416 (d0, q1, r0, m5, 'iot/esp32/control', ... (12 bytes))
+1792465745: Sending PUBLISH to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 (d0, q0, r0, m0, 'iot/esp32/control', ... (12 bytes))
+1792465745: Sending PUBACK to Flutter_Switch_1792465683416 (m5, rc0)
+1792465748: New connection from 127.0.0.1:52904 on port 1883.
+1792465748: New client connected from 127.0.0.1:52904 as auto-FEEBFC55-3221-18F1-4553-B24F1447CCCA (p2, c1, k60).
+1792465748: No will message specified.
+1792465748: Sending CONNACK to auto-FEEBFC55-3221-18F1-4553-B24F1447CCCA (0, 0)
+1792465748: Received PUBLISH from auto-FEEBFC55-3221-18F1-4553-B24F1447CCCA (d0, q0, r1, m0, 'iot/esp32/status', ... (7 bytes))
+1792465748: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/status', ... (7 bytes))
+1792465748: Received DISCONNECT from auto-FEEBFC55-3221-18F1-4553-B24F1447CCCA
+1792465748: Client auto-FEEBFC55-3221-18F1-4553-B24F1447CCCA disconnected.
+1792465763: Received PINGREQ from Flutter_Switch_1792465683416
+1792465763: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465775: Received PINGREQ from auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465775: Sending PINGRESP to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465783: Received PINGREQ from Flutter_Switch_1792465683416
+1792465783: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465787: New connection from 127.0.0.1:52933 on port 1883.
+1792465787: New client connected from 127.0.0.1:52933 as auto-FF778600-7C50-B401-8901-295C09C48CBA (p2, c1, k60).
+1792465787: No will message specified.
+1792465787: Sending CONNACK to auto-FF778600-7C50-B401-8901-295C09C48CBA (0, 0)
+1792465787: Received PUBLISH from auto-FF778600-7C50-B401-8901-295C09C48CBA (d0, q0, r0, m0, 'iot/esp32/status', ... (6 bytes))
+1792465787: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/status', ... (6 bytes))
+1792465787: Received DISCONNECT from auto-FF778600-7C50-B401-8901-295C09C48CBA
+1792465787: Client auto-FF778600-7C50-B401-8901-295C09C48CBA disconnected.
+1792465787: New connection from 127.0.0.1:52934 on port 1883.
+1792465787: New client connected from 127.0.0.1:52934 as auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA (p2, c1, k60).
+1792465787: No will message specified.
+1792465787: Sending CONNACK to auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA (0, 0)
+1792465787: Received SUBSCRIBE from auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA
+1792465787: 	iot/esp32/status (QoS 0)
+1792465787: auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA 0 iot/esp32/status
+1792465787: Sending SUBACK to auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA
+1792465787: Sending PUBLISH to auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA (d0, q0, r1, m0, 'iot/esp32/status', ... (7 bytes))
+1792465787: Received DISCONNECT from auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA
+1792465787: Client auto-15BDFFCB-BB4F-1748-7FBA-75572538A1AA disconnected.
+1792465787: New connection from 127.0.0.1:52935 on port 1883.
+1792465787: New client connected from 127.0.0.1:52935 as auto-36397605-77AD-8960-B201-48153E666301 (p2, c1, k60).
+1792465787: No will message specified.
+1792465787: Sending CONNACK to auto-36397605-77AD-8960-B201-48153E666301 (0, 0)
+1792465787: Received PUBLISH from auto-36397605-77AD-8960-B201-48153E666301 (d0, q0, r1, m0, 'iot/esp32/status', ... (6 bytes))
+1792465787: Sending PUBLISH to Flutter_Switch_1792465683416 (d0, q0, r0, m0, 'iot/esp32/status', ... (6 bytes))
+1792465787: Received DISCONNECT from auto-36397605-77AD-8960-B201-48153E666301
+1792465787: Client auto-36397605-77AD-8960-B201-48153E666301 disconnected.
+1792465787: New connection from 127.0.0.1:52936 on port 1883.
+1792465787: New client connected from 127.0.0.1:52936 as auto-7A28EF7D-013E-62F0-47E1-85163385EE98 (p2, c1, k60).
+1792465787: No will message specified.
+1792465787: Sending CONNACK to auto-7A28EF7D-013E-62F0-47E1-85163385EE98 (0, 0)
+1792465787: Received SUBSCRIBE from auto-7A28EF7D-013E-62F0-47E1-85163385EE98
+1792465787: 	iot/esp32/status (QoS 0)
+1792465787: auto-7A28EF7D-013E-62F0-47E1-85163385EE98 0 iot/esp32/status
+1792465787: Sending SUBACK to auto-7A28EF7D-013E-62F0-47E1-85163385EE98
+1792465787: Sending PUBLISH to auto-7A28EF7D-013E-62F0-47E1-85163385EE98 (d0, q0, r1, m0, 'iot/esp32/status', ... (6 bytes))
+1792465787: Received DISCONNECT from auto-7A28EF7D-013E-62F0-47E1-85163385EE98
+1792465787: Client auto-7A28EF7D-013E-62F0-47E1-85163385EE98 disconnected.
+1792465803: Received PINGREQ from Flutter_Switch_1792465683416
+1792465803: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465823: Received PINGREQ from Flutter_Switch_1792465683416
+1792465823: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465824: New connection from 127.0.0.1:52988 on port 1883.
+1792465824: Client <unknown> closed its connection.
+1792465834: Received PINGREQ from auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465834: Sending PINGRESP to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465843: Received PINGREQ from Flutter_Switch_1792465683416
+1792465843: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465845: New connection from 127.0.0.1:53047 on port 1883.
+1792465845: Client <unknown> closed its connection.
+1792465863: Received PINGREQ from Flutter_Switch_1792465683416
+1792465863: Sending PINGRESP to Flutter_Switch_1792465683416
+1792465864: Client Flutter_Switch_1792465683416 closed its connection.
+1792465880: New connection from 127.0.0.1:53144 on port 1883.
+1792465880: New client connected from 127.0.0.1:53144 as Flutter_Switch_1792465880588 (p2, c1, k20).
+1792465880: No will message specified.
+1792465880: Sending CONNACK to Flutter_Switch_1792465880588 (0, 0)
+1792465880: Received SUBSCRIBE from Flutter_Switch_1792465880588
+1792465880: 	iot/esp32/status (QoS 0)
+1792465880: Flutter_Switch_1792465880588 0 iot/esp32/status
+1792465880: Sending SUBACK to Flutter_Switch_1792465880588
+1792465880: Sending PUBLISH to Flutter_Switch_1792465880588 (d0, q0, r1, m0, 'iot/esp32/status', ... (6 bytes))
+1792465880: Received SUBSCRIBE from Flutter_Switch_1792465880588
+1792465880: 	iot/esp32/led_ack (QoS 0)
+1792465880: Flutter_Switch_1792465880588 0 iot/esp32/led_ack
+1792465880: Sending SUBACK to Flutter_Switch_1792465880588
+1792465884: Received PUBLISH from Flutter_Switch_1792465880588 (d0, q1, r0, m3, 'iot/esp32/control', ... (12 bytes))
+1792465884: Sending PUBLISH to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 (d0, q0, r0, m0, 'iot/esp32/control', ... (12 bytes))
+1792465884: Sending PUBACK to Flutter_Switch_1792465880588 (m3, rc0)
+1792465885: New connection from 127.0.0.1:53151 on port 1883.
+1792465885: New client connected from 127.0.0.1:53151 as auto-206C3AA4-41E1-ED47-7B1F-7E18F57FA84F (p2, c1, k60).
+1792465885: No will message specified.
+1792465885: Sending CONNACK to auto-206C3AA4-41E1-ED47-7B1F-7E18F57FA84F (0, 0)
+1792465885: Received PUBLISH from auto-206C3AA4-41E1-ED47-7B1F-7E18F57FA84F (d0, q0, r0, m0, 'iot/esp32/led_ack', ... (32 bytes))
+1792465885: Sending PUBLISH to Flutter_Switch_1792465880588 (d0, q0, r0, m0, 'iot/esp32/led_ack', ... (32 bytes))
+1792465885: Received DISCONNECT from auto-206C3AA4-41E1-ED47-7B1F-7E18F57FA84F
+1792465885: Client auto-206C3AA4-41E1-ED47-7B1F-7E18F57FA84F disconnected.
+1792465894: Received PINGREQ from auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465894: Sending PINGRESP to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465895: Received PUBLISH from Flutter_Switch_1792465880588 (d0, q1, r0, m4, 'iot/esp32/control', ... (13 bytes))
+1792465895: Sending PUBLISH to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63 (d0, q0, r0, m0, 'iot/esp32/control', ... (13 bytes))
+1792465895: Sending PUBACK to Flutter_Switch_1792465880588 (m4, rc0)
+1792465899: New connection from 127.0.0.1:53164 on port 1883.
+1792465899: New client connected from 127.0.0.1:53164 as auto-ED1BA7EB-9DD0-C074-1953-5CCC9D2FBD77 (p2, c1, k60).
+1792465899: No will message specified.
+1792465899: Sending CONNACK to auto-ED1BA7EB-9DD0-C074-1953-5CCC9D2FBD77 (0, 0)
+1792465899: Received PUBLISH from auto-ED1BA7EB-9DD0-C074-1953-5CCC9D2FBD77 (d0, q0, r1, m0, 'iot/esp32/status', ... (7 bytes))
+1792465899: Sending PUBLISH to Flutter_Switch_1792465880588 (d0, q0, r0, m0, 'iot/esp32/status', ... (7 bytes))
+1792465899: Received DISCONNECT from auto-ED1BA7EB-9DD0-C074-1953-5CCC9D2FBD77
+1792465899: Client auto-ED1BA7EB-9DD0-C074-1953-5CCC9D2FBD77 disconnected.
+1792465900: Received PINGREQ from Flutter_Switch_1792465880588
+1792465900: Sending PINGRESP to Flutter_Switch_1792465880588
+1792465920: Received PINGREQ from Flutter_Switch_1792465880588
+1792465920: Sending PINGRESP to Flutter_Switch_1792465880588
+1792465940: Received PINGREQ from Flutter_Switch_1792465880588
+1792465940: Sending PINGRESP to Flutter_Switch_1792465880588
+1792465955: Received PINGREQ from auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465955: Sending PINGRESP to auto-7F32A4C6-0372-C2B7-9C4E-454350D7CD63
+1792465960: Received PINGREQ from Flutter_Switch_1792465880588
+1792465960: Sending PINGRESP to Flutter_Switch_1792465880588
+1792465980: Received PINGREQ from Flutter_Switch_1792465880588
+1792465980: Sending PINGRESP to Flutter_Switch_1792465880588
+1792466000: Received PINGREQ from Flutter_Switch_1792465880588
+1792466000: Sending PINGRESP to Flutter_Switch_1792465880588
