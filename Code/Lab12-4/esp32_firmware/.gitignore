@@ -1,0 +1,9 @@
+build/
+build_*_*/
+dependencies.lock
+managed_components/
+*.old
+sdkconfig.old
+
+# Secrets
+.env

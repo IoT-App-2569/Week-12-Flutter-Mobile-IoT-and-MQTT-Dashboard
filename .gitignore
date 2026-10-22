@@ -33,3 +33,8 @@ sdkconfig.old
 **/windows/flutter/ephemeral/
 **/linux/flutter/ephemeral/
 **/macos/Flutter/ephemeral/
+
+# Secrets
+.env
+**/.env
+!**/.env.example
