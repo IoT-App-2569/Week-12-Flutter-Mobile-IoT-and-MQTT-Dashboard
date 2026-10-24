@@ -338,27 +338,33 @@ flutter run -d <device-id>
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "online" -r
 ```
 *สังเกตหน้าจอ Flutter แถบสถานะด้านบนจะเปลี่ยนเป็นสีเขียวทันที*
+<img width="1582" height="892" alt="image" src="https://github.com/user-attachments/assets/aa903ca4-c7f4-47e4-9dec-2f22a912960e" />
 
 #### 2. เฝ้าดูคำสั่งที่ส่งมาจากแอป Flutter
 ```powershell
 mosquitto_sub -h 127.0.0.1 -p 1883 -t "iot/esp32/control" -v
 ```
 *เมื่อแตะสวิตช์บน Flutter จะเห็นแพ็กเก็ต `{"led":"ON"}` หรือ `{"led":"OFF"}` ปรากฏในเทอร์มินัล*
+<img width="1131" height="91" alt="image" src="https://github.com/user-attachments/assets/e9591630-aedf-4692-96e7-b629209a3295" />
 
 #### 3. ส่งคำสั่งยืนยันกลับไปยังแอป (เสมือนบอร์ดเปลี่ยนสถานะขา GPIO สำเร็จ)
 ```powershell
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/led_ack" -m '{"led_state": true, "ack": true}'
 ```
 *สังเกตสวิตช์และไอคอนหลอดไฟบนมือถือจะเรืองแสงสีเขียวทันที*
+<img width="1652" height="930" alt="image" src="https://github.com/user-attachments/assets/6ed5751a-c50d-48b3-9cd7-9b91084f464d" />
 
 #### 4. จำลองเหตุการณ์บอร์ดดับหรือเน็ตหลุด (เสมือน Broker ส่ง LWT)
 ```powershell
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "offline" -r
 ```
 *สังเกตว่าหน้าจอจะแจ้งเตือนว่า ESP32 ออฟไลน์ทันที และสวิตช์จะไม่ยอมให้สั่งการ*
+<img width="1598" height="910" alt="image" src="https://github.com/user-attachments/assets/c22ac1e8-3a85-46fb-a354-76295240d3c1" />
 
 ---
 
 ## 4. สรุปผลและคำถามท้ายการทดลอง
 1. ประโยชน์ของการรอสัญญาณ ACK จากหัวข้อ `iot/esp32/led_ack` แทนการเปลี่ยน UI ทันที (Optimistic Update) คืออะไร?
+- เพื่อยืนยันว่า บอร์ดทำงานสำเร็จจริง ป้องกันปัญหาหน้าจอแสดงผลไม่ตรงกับสถานะจริงของอุปกรณ์หากส่งคำสั่งไม่สำเร็จ หรือบอร์ดเกิดข้อผิดพลาด
 2. ทำไมเราจึงควรตั้งแฟล็ก Retain (`-r`) สำหรับหัวข้อสถานะ `iot/esp32/status`?
+- เพื่อให้ Broker บันทึกสถานะล่าสุดไว้ ทำให้แอป Flutter ที่เพิ่งเปิดขึ้นมาได้รับสถานะ Online/Offline ของบอร์ดทันทีโดยไม่ต้องรอให้บอร์ดส่งข้อมูลใหม่
