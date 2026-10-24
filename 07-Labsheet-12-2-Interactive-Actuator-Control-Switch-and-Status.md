@@ -357,6 +357,8 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "offline" -r
 ```
 *สังเกตว่าหน้าจอจะแจ้งเตือนว่า ESP32 ออฟไลน์ทันที และสวิตช์จะไม่ยอมให้สั่งการ*
 
+<img width="943" height="932" alt="image" src="https://github.com/user-attachments/assets/8cb7fd35-0ee5-4de1-944e-7808cc8e22ad" />
+
 ---
 
 ## 4. สรุปผลและคำถามท้ายการทดลอง
