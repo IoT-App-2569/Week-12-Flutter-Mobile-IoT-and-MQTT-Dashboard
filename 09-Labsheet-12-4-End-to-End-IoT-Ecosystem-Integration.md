@@ -330,10 +330,10 @@ powershell -ExecutionPolicy Bypass -File .\mock_esp32.ps1
 
 | รายการทดสอบ | การกระทำเชิงกายภาพ (Hardware Action) / การจำลอง (Mock Action) | พฤติกรรมที่คาดหวังบน Flutter App | ผลการทดลองจริง (ผ่าน/ไม่ผ่าน) |
 | :--- | :--- | :--- | :--- |
-| **Test Case 1: Telemetry Monitoring** | **ฮาร์ดแวร์:** หมุน Potentiometer จากซ้ายสุดไปขวาสุด<br>**จำลอง:** สคริปต์ PowerShell สตรีมค่า Sine Wave อัตโนมัติ | เข็มบน Radial Gauge หมุนระหว่าง 0.0V ถึง 3.3V อย่างนุ่มนวล ค่าดิบ ADC เปลี่ยนแปลง และกราฟประวัติ Live Sparkline ขยับต่อเนื่อง | |
-| **Test Case 2: Actuator Remote Control** | แตะสวิตช์บนแอปเพื่อเปิดหรือปิดไฟ LED | **ฮาร์ดแวร์:** หลอดไฟ LED บนขา GPIO 2 สว่างขึ้น<br>**จำลอง:** PowerShell แสดงข้อความ `ได้รับคำสั่ง: {"command": "ON"}` สวิตช์และไอคอนบนแอปเรืองแสงสีเขียว พร้อมการสั่นตอบสนอง (Haptic Feedback) | |
-| **Test Case 3: State Sync & Physical ACK** | ปลดสายหรือสลับสถานะหลอดไฟโดยตรง หรือปล่อยให้สคริปต์ส่งสัญญาณ ACK | แอปพลิเคชันได้รับค่า ACK และปรับปรุงสวิตช์ตามความเป็นจริง หากไม่ได้รับ ACK สวิตช์จะไม่อัปเดตสถานะคงที่ | |
-| **Test Case 4: Fault Tolerance (LWT)** | **ฮาร์ดแวร์:** ถอดสาย USB จ่ายไฟของบอร์ด ESP32 ออกกะทันหัน<br>**จำลอง:** กด `Ctrl + C` บนหน้าต่าง PowerShell ที่รัน `mock_esp32.ps1` | ป้ายสถานะฮาร์ดแวร์บนแอปเปลี่ยนเป็น "OFFLINE" สีแดง และสวิตช์สั่งการจะถูกปิดกั้น (Disabled) ไม่ให้ส่งคำสั่ง | |
+| **Test Case 1: Telemetry Monitoring** | **ฮาร์ดแวร์:** หมุน Potentiometer จากซ้ายสุดไปขวาสุด<br>**จำลอง:** สคริปต์ PowerShell สตรีมค่า Sine Wave อัตโนมัติ | เข็มบน Radial Gauge หมุนระหว่าง 0.0V ถึง 3.3V อย่างนุ่มนวล ค่าดิบ ADC เปลี่ยนแปลง และกราฟประวัติ Live Sparkline ขยับต่อเนื่อง | ✅ ผ่าน |
+| **Test Case 2: Actuator Remote Control** | แตะสวิตช์บนแอปเพื่อเปิดหรือปิดไฟ LED | **ฮาร์ดแวร์:** หลอดไฟ LED บนขา GPIO 2 สว่างขึ้น<br>**จำลอง:** PowerShell แสดงข้อความ `ได้รับคำสั่ง: {"command": "ON"}` สวิตช์และไอคอนบนแอปเรืองแสงสีเขียว พร้อมการสั่นตอบสนอง (Haptic Feedback) | ✅ ผ่าน |
+| **Test Case 3: State Sync & Physical ACK** | ปลดสายหรือสลับสถานะหลอดไฟโดยตรง หรือปล่อยให้สคริปต์ส่งสัญญาณ ACK | แอปพลิเคชันได้รับค่า ACK และปรับปรุงสวิตช์ตามความเป็นจริง หากไม่ได้รับ ACK สวิตช์จะไม่อัปเดตสถานะคงที่ | ✅ ผ่าน |
+| **Test Case 4: Fault Tolerance (LWT)** | **ฮาร์ดแวร์:** ถอดสาย USB จ่ายไฟของบอร์ด ESP32 ออกกะทันหัน<br>**จำลอง:** กด `Ctrl + C` บนหน้าต่าง PowerShell ที่รัน `mock_esp32.ps1` | ป้ายสถานะฮาร์ดแวร์บนแอปเปลี่ยนเป็น "OFFLINE" สีแดง และสวิตช์สั่งการจะถูกปิดกั้น (Disabled) ไม่ให้ส่งคำสั่ง | ✅ ผ่าน |
 
 > [!TIP]
 > **คำสั่งจำลองแบบทีละขั้นตอนด้วยตนเอง (Manual PowerShell One-Liners):**  
@@ -371,9 +371,129 @@ powershell -ExecutionPolicy Bypass -File .\mock_esp32.ps1
 | **Local Wi-Fi LAN** | สมาร์ตโฟนและบอร์ด ESP32 ต่อเข้ากับ Wi-Fi Router เดียวกันในห้องทดลอง | ประมาณ 20 – 60 ms | รวดเร็ว ตอบสนองแทบจะทันที |
 | **Mobile Hotspot / 4G** | สมาร์ตโฟนเชื่อมต่อ 4G/5G ชี้มายัง Broker ผ่าน Public IP หรือ Tailscale/VPN | ประมาณ 80 – 250 ms | ขึ้นอยู่กับความแรงสัญญาณและ Routing |
 
+## ผลการทดลอง
+
+### กิจกรรม 12-4.1 แอปพลิเคชันรวมศูนย์ (Unified Multi-tab App)
+
+<img width="1456" height="820" alt="image" src="https://github.com/user-attachments/assets/91da94f0-1b06-4374-8068-a497fe2361e6" />
+
+แอปมี 2 แท็บผ่าน `NavigationBar` คือ **Telemetry Gauge** และ **Actuator Switch** โดยใช้ `IndexedStack` รักษาการเชื่อมต่อ MQTT ของทั้งสองหน้าไว้พร้อมกัน
+
+### กิจกรรม 12-4.2 เฟิร์มแวร์ ESP32 (ทางเลือก A: Hardware Mode)
+
+| รายการ | ค่า |
+|:---|:---|
+| เฟิร์มแวร์ | `Example_codes/Lab12-4/esp32_firmware/main/main.c` |
+| ESP-IDF | v6.0.2 |
+| IP ของ ESP32 | 172.20.10.3 |
+| Broker | `mqtt://172.20.10.4:1883` |
+| Client ID | `ESP32_0dD204` |
+| อัตราการส่ง Telemetry | ทุก 500 ms |
+
+<img width="1472" height="742" alt="image" src="https://github.com/user-attachments/assets/f9c981c3-7660-4fcc-97cb-83125b548abe" />
+
+### กิจกรรม 12-4.3 Verification Test Matrix
+
+| รายการทดสอบ | การกระทำเชิงกายภาพ | พฤติกรรมที่สังเกตได้บน Flutter App | ผล |
+|:---|:---|:---|:---:|
+| **Test Case 1: Telemetry Monitoring** | หมุน Potentiometer จากสุดด้านหนึ่งไปอีกด้าน | เข็มเปลี่ยนจาก 3.30 V เป็น 0.00 V อย่างนุ่มนวล ค่า ADC เปลี่ยนจาก 4095 เป็น 0 การ์ดสูงสุด/ต่ำสุดเป็น 3.30 V / 0.00 V และกราฟ Live Trend ลดลงตามการหมุน | ✅ ผ่าน |
+| **Test Case 2: Actuator Remote Control** | แตะสวิตช์บนแอป | LED สีแดงที่ GPIO 2 และ Onboard LED สีน้ำเงินติด/ดับตามคำสั่ง หลอดไฟในแอปเรืองแสงสีเขียว | ✅ ผ่าน |
+| **Test Case 3: State Sync & Physical ACK** | ESP32 ส่ง ACK กลับหลังเปลี่ยนสถานะ GPIO | สวิตช์เปลี่ยนตาม `led_state` ใน ACK จากบอร์ดจริง สถานะ Waiting ACK แสดงเพียงชั่วครู่เพราะบอร์ดตอบกลับเร็ว | ✅ ผ่าน |
+| **Test Case 4: Fault Tolerance (LWT)** | ถอดสาย USB ของบอร์ดออกกะทันหัน | หลัง Keep Alive หมดเวลา Broker ส่ง LWT `offline` แถบสถานะเปลี่ยนเป็น OFFLINE สีแดง และสวิตช์ถูกปิดกั้น | ✅ ผ่าน |
+
+**Test Case 1**
+
+<img width="1456" height="813" alt="image" src="https://github.com/user-attachments/assets/8986ae54-95a8-42e6-9c3e-e799795c9d92" />
+
+
+**Test Case 2–3**
+
+<img width="1917" height="1136" alt="image" src="https://github.com/user-attachments/assets/07da9160-72d2-414f-b9f8-2d147b717fad" />
+
+<img width="1108" height="1477" alt="image" src="https://github.com/user-attachments/assets/4fdfcc5e-3e33-464e-80a4-e7eaf5004dc1" />
+
+<img width="1917" height="1132" alt="image" src="https://github.com/user-attachments/assets/ee8b2729-ae6f-4426-ba5f-449b2938ba8d" />
+
+<img width="819" height="1456" alt="image" src="https://github.com/user-attachments/assets/e905fb74-9d66-40a4-95ac-5a88992a9883" />
+
+
+**Test Case 4**
+
+<img width="1917" height="1138" alt="image" src="https://github.com/user-attachments/assets/3fb07e80-57c0-4bbe-bd1c-ae679fad75d3" />
+
+
+**ข้อสังเกต:** บอร์ด ESP32 DevKit ต่อ Onboard LED สีน้ำเงินไว้ที่ GPIO 2 จึงติดพร้อมกับ LED ภายนอก
+
+### กิจกรรม 12-4.4 การวัดความหน่วงเวลา (Control Latency Benchmark)
+
+วัดด้วยสคริปต์ Python (`rtt_test.py`) ที่ส่ง `{"led": "ON/OFF"}` ไป `iot/esp32/control` แล้วจับเวลาจนได้รับ `iot/esp32/led_ack` จากบอร์ดจริง จำนวน 20 ครั้ง ซึ่งเป็นเส้นทางเดียวกับแอป Flutter
+
+
+<img width="927" height="320" alt="image" src="https://github.com/user-attachments/assets/150428f0-53a4-4338-8004-d510e0fa89a5" />
+
+
+| สภาพแวดล้อมเครือข่าย | ประเภทการเชื่อมต่อ | สำเร็จ | Min | Max | เฉลี่ย | Std Dev | ข้อสังเกต |
+|:---|:---|:---:|:---:|:---:|:---:|:---:|:---|
+| **Local LAN ผ่าน Mobile Hotspot** | ESP32 และคอมพิวเตอร์ต่อ iPhone Hotspot เดียวกัน | 20/20 | 108.84 ms | 602.92 ms | **254.43 ms** | 106.15 ms | ไม่มีคำสั่งสูญหาย แต่หน่วงกว่าค่าคาดหวัง |
+| **Mobile 4G ผ่าน Public IP / VPN** | สมาร์ตโฟนต่อ 4G ชี้มายัง Broker | – | – | – | – | – | ไม่ได้ทดสอบ เพราะต้องเปิด Broker สู่ Public IP หรือตั้งค่า VPN เพิ่มเติม |
+
+**วิเคราะห์ผล**
+- RTT เฉลี่ย 254 ms สูงกว่าค่าที่ใบงานคาดไว้สำหรับ LAN (20–60 ms) สาเหตุหลักคือ ESP32 เปิดโหมดประหยัดพลังงาน Wi-Fi (Modem Sleep) เป็นค่าเริ่มต้น (log แสดง `wifi:pm start, type: 1` และ `listen interval 307200 us`) บอร์ดจะปิดวิทยุและตื่นมาฟังทุกประมาณ 300 ms คำสั่งที่มาถึงขณะบอร์ดหลับจึงต้องรอ ทำให้ RTT กระจายตัวสูง (Std Dev 106 ms)
+- การใช้ iPhone Hotspot เป็นตัวกลางเพิ่มความหน่วงจากการ Forward แพ็กเก็ตระหว่างอุปกรณ์ และรบกวนจากเครือข่ายรอบข้างทำให้บางครั้งสูงถึง 602 ms
+- แม้หน่วงกว่าที่คาด แต่ยังต่ำกว่า 1 วินาที ผู้ใช้รู้สึกว่าตอบสนองทันใจพอสำหรับการเปิด-ปิดไฟ และสำเร็จครบทุกครั้ง
+- หากต้องการความหน่วงต่ำ สามารถเรียก `esp_wifi_set_ps(WIFI_PS_NONE)` เพื่อปิดโหมดประหยัดพลังงาน แลกกับการใช้พลังงานที่สูงขึ้น
+
+### ปัญหาที่พบและการแก้ไข
+
+| ปัญหา | สาเหตุ | วิธีแก้ |
+|:---|:---|:---|
+| เฟิร์มแวร์ 11.2 ใช้กับแอป 12.4 ไม่ได้ | ใช้ topic `iot/node01/...` ไม่ตรงกับ `iot/esp32/...` ของสัปดาห์ที่ 12 | ใช้เฟิร์มแวร์จาก `Example_codes/Lab12-4` และแก้ SSID, รหัสผ่าน และ IP Broker |
+| แฟลชครั้งแรก build ไม่ผ่าน `expected '}' before 'P'` | พิมพ์ตัวอักษรเกินท้ายบรรทัด `MQTT_BROKER_URI` | ลบตัวอักษรที่เกินออก |
+| `ModuleNotFoundError: No module named 'paho'` | รันใน ESP-IDF Terminal ที่ใช้ Python คนละตัว | รันใน PowerShell ธรรมดาที่ติดตั้ง paho-mqtt ไว้ |
+| กราฟ Live Trend ถูก NavigationBar บังบางส่วน | หน้าต่างแอปมีความสูงไม่พอ | ขยายหน้าต่างหรือเลื่อนหน้าจอลง |
+
+---
 ---
 
 ## 4. สรุปผลและคำถามท้ายบทเรียน
 1. เหตุใดการใช้ `IndexedStack` ใน `MainNavigationShell` จึงมีความสำคัญอย่างยิ่งสำหรับแอปพลิเคชัน IoT แบบ Multi-tab เมื่อเทียบกับการสลับวิดเจ็ตด้วย `body: _pages[_currentIndex]`?
+
+| ประเด็น | `body: _pages[_currentIndex]` | `IndexedStack` |
+|:---|:---|:---|
+| วิดเจ็ตหน้าอื่น | ถูกถอดออกจาก Widget Tree และเรียก `dispose()` ทุกครั้งที่สลับแท็บ | ถูกสร้างไว้ครบทุกหน้าและคงอยู่ตลอด แสดงเฉพาะหน้าที่เลือก |
+| การเชื่อมต่อ MQTT | `dispose()` เรียก `_client?.disconnect()` เมื่อกลับมาต้อง `initState()` และ Connect ใหม่ เสียเวลาและเกิด Client ID ใหม่ทุกครั้ง | ทั้ง 2 หน้าเชื่อมต่อ Broker ค้างไว้ตลอด |
+| ข้อมูลระหว่างอยู่หน้าอื่น | Telemetry ที่ส่งมาระหว่างอยู่หน้า Switch จะหายไป | หน้า Gauge ยังรับข้อมูลต่อเนื่อง กลับมาเห็นกราฟครบ |
+| สถานะหน้าจอ | ค่าสูงสุด/ต่ำสุด, ประวัติ 30 จุด และสถานะ LED รีเซ็ตเป็นค่าเริ่มต้น | คงค่าเดิมทั้งหมด |
+| สถานะ ONLINE | ต้องพึ่ง Retained Message ทุกครั้งที่กลับมาหน้า Switch | รู้สถานะตลอด และได้ LWT ทันทีแม้อยู่หน้าอื่น |
+
+แอป IoT ต้องรับข้อมูลจากอุปกรณ์อย่างต่อเนื่อง การตัดและต่อการเชื่อมต่อทุกครั้งที่สลับแท็บทำให้ข้อมูลขาดช่วงและสิ้นเปลืองทรัพยากร จากการทดลองเมื่อกลับมาแท็บ Telemetry Gauge กราฟยังมีข้อมูลต่อเนื่อง ข้อแลกเปลี่ยนคือทุกหน้าใช้หน่วยความจำพร้อมกัน ในแอปที่มีหลายหน้ามาก ควรย้ายการเชื่อมต่อ MQTT ไปไว้ใน Service กลางเพียงตัวเดียว (เช่น ใช้ Provider หรือ Riverpod) แทนให้แต่ละหน้าเปิดการเชื่อมต่อของตัวเอง ซึ่งปัจจุบันแอปเปิดไว้ 2 การเชื่อมต่อ
+
 2. เมื่อเปรียบเทียบการพัฒนาด้วย Flutter ในสัปดาห์นี้ กับการเปิดหน้าเว็บ HTTP บนเบราว์เซอร์ในสัปดาห์ที่ 8-10 ข้อใดให้ประสบการณ์การใช้งาน (UX) และความเสถียรที่ดีกว่าเมื่อข้อมูลเซนเซอร์มาด้วยความถี่สูง? เพราะเหตุใด?
+
+**Flutter + MQTT ดีกว่า** ด้วยเหตุผลดังนี้
+| ประเด็น | หน้าเว็บ HTTP บน ESP32 (สัปดาห์ 8–10) | Flutter + MQTT (สัปดาห์ 12) |
+|:---|:---|:---|
+| รูปแบบการรับข้อมูล | Polling: เบราว์เซอร์ต้องส่ง Request ถามซ้ำๆ แต่ละครั้งต้องเปิด TCP ใหม่และมี HTTP Header หลายร้อยไบต์ | Push: เปิดการเชื่อมต่อค้างไว้ Broker ส่งข้อมูลมาทันทีที่มี โดย MQTT Fixed Header เพียง 2 ไบต์ |
+| ภาระของ ESP32 | ต้องเป็นเว็บเซิร์ฟเวอร์ ตอบ Request ทุกครั้ง หากเปิดหลายเครื่องพร้อมกัน ภาระเพิ่มตามจำนวนผู้ใช้ | ส่งข้อมูลครั้งเดียวไป Broker แล้ว Broker กระจายให้ทุก Client ภาระคงที่ |
+| ความลื่นไหล | ช่วง Polling ทำให้ข้อมูลมาเป็นจังหวะ หากถี่เกินไปจะคิวค้างและหน้าเว็บกระตุก | Render ด้วย Engine กราฟิกแบบ Native 60 fps พร้อม `TweenAnimationBuilder` ทำให้เข็มเคลื่อนนุ่มนวล |
+| การรู้สถานะอุปกรณ์ | รู้ว่าบอร์ดดับเมื่อ Request Timeout เท่านั้น | รู้ทันทีผ่าน LWT และ Retained Message |
+| ความเสถียรเมื่อเน็ตไม่ดี | Request ล้มเหลวทีละครั้ง ต้องเขียนจัดการเอง | มี Keep Alive, Auto-reconnect และเลือก QoS ได้ |
+| การเข้าถึง | ต้องอยู่วง LAN เดียวกับบอร์ด | ผ่าน Broker ข้ามเครือข่ายได้ |
+
+ข้อดีของหน้าเว็บคือเปิดได้ทันทีจากทุกอุปกรณ์โดยไม่ต้องติดตั้งแอป และไม่ต้องมี Broker เหมาะกับหน้าตั้งค่าที่ใช้นานๆ ครั้ง แต่สำหรับข้อมูลความถี่สูงทุก 500 ms แบบในใบงานนี้ สถาปัตยกรรม Push ของ MQTT ร่วมกับ Native UI ของ Flutter ให้ทั้งความลื่นไหลและความเสถียรที่ดีกว่า
+
+
 3. หากต้องการนำแอปพลิเคชันนี้ไปเผยแพร่จริงบน Google Play Store หรือ Apple App Store ขั้นตอนความปลอดภัยที่ต้องปรับปรุงเพิ่มเติมมีอะไรบ้าง? (พิจารณาเรื่อง MQTTS / TLS พอร์ต 8883, การเข้ารหัส Token ยืนยันตัวตน, และการเก็บรักษา Credential)
+```
+ระบบปัจจุบันเหมาะกับห้องทดลองเท่านั้น เพราะใช้พอร์ต 1883 แบบไม่เข้ารหัส, `allow_anonymous true` และ IP แบบ Hard-code ใครอยู่วงเดียวกันก็ดักฟังหรือสั่งงานอุปกรณ์ได้ ก่อนเผยแพร่ต้องปรับปรุง
+1. เข้ารหัสด้วย MQTTS (TLS พอร์ต 8883): ใช้ `client.secure = true` ใน `mqtt_client` ร่วมกับใบรับรองที่ออกโดย CA สาธารณะ (เช่น Let's Encrypt) และให้ ESP32 ใช้ MQTTS แบบใบงาน 11.3 ปิดพอร์ต 1883 ทั้งหมด สำหรับแอปควรทำ Certificate Pinning ป้องกัน Man-in-the-Middle และ Apple App Transport Security / Android Network Security Config ก็บังคับใช้ TLS อยู่แล้ว
+2. ยืนยันตัวตนผู้ใช้ด้วย Token: ห้ามฝัง Username/Password ของ Broker ในแอป เพราะถอดรหัสไฟล์ APK/IPA ได้ ให้ผู้ใช้ Login ผ่านระบบ Authentication (เช่น OAuth 2.0 / OpenID Connect) แล้วได้ Token อายุสั้น (JWT) ไปใช้เชื่อมต่อ Broker และต่ออายุด้วย Refresh Token
+3. ควบคุมสิทธิ์ราย Topic (ACL): แต่ละผู้ใช้ Publish/Subscribe ได้เฉพาะ Topic ของอุปกรณ์ตัวเอง เช่น `users/{userId}/devices/{deviceId}/#` ปิด `allow_anonymous` และห้ามใช้ Wildcard `#` ระดับบนสุด ส่วน ESP32 แต่ละตัวยืนยันตัวตนด้วยใบรับรองเฉพาะเครื่อง (mTLS) แบบใบงาน 11.3
+4. เก็บ Credential อย่างปลอดภัย: เก็บ Token ใน Keychain (iOS) และ Android Keystore ผ่านแพ็กเกจ `flutter_secure_storage` ห้ามเก็บใน SharedPreferences หรือไฟล์ธรรมดา และห้ามพิมพ์ Credential ลง Log
+5. ตั้งค่า Broker ผ่านแอป ไม่ Hard-code IP: ใช้โดเมนพร้อมใบรับรอง หรือให้ผู้ใช้ตั้งค่าในแอป
+6. ตรวจสอบข้อมูลขาเข้า: ตรวจรูปแบบและช่วงค่าของ JSON ก่อนใช้ ป้องกันข้อมูลปลอมทำให้แอปทำงานผิด
+7. ความปลอดภัยฝั่งอุปกรณ์: เปิด Secure Boot และ Flash Encryption บน ESP32 และไม่ฝังรหัส Wi-Fi ในเฟิร์มแวร์ ใช้ BLE Provisioning แบบใบงาน 11.4 แทน
+8. ข้อกำหนดของ Store: มีนโยบายความเป็นส่วนตัว (Privacy Policy) แจ้งการเก็บข้อมูล ขอสิทธิ์เท่าที่จำเป็น และทำ Code Obfuscation (`flutter build --obfuscate`)
+
+ทางเลือกที่ง่ายกว่าคือใช้แพลตฟอร์มที่มีระบบเหล่านี้ครบแล้ว เช่น ESP RainMaker (ใบงาน 11.4) หรือ AWS IoT Core ซึ่งมี mTLS, Token และ ACL ในตัว
+```
