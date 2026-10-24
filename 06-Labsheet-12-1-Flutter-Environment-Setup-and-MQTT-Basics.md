@@ -367,10 +367,15 @@ flutter run -d <device-id>
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "test/broker/echo" -m "Echo response from CLI"
 ```
 * ตรวจสอบว่าในช่อง Logs ของ Flutter App แสดงข้อความที่ได้รับอย่างถูกต้อง
+<img width="1627" height="915" alt="image" src="https://github.com/user-attachments/assets/455ca4f9-cb2d-4c58-a906-d26ed804e141" />
+<img width="1050" height="118" alt="image" src="https://github.com/user-attachments/assets/9e9b5d47-9b20-4052-8b84-4eaa2d305ee2" />
 
 ---
 
 ## 4. คำถามท้ายการทดลอง (Review Questions)
 1. เพราะเหตุใดเราจึงต้องสุ่มชื่อ `clientId` เช่นการใส่ Timestamp ต่อท้าย แทนที่จะตั้งชื่อแบบคงที่?
+- เพื่อไม่ให้ชื่อซ้ำกับเครื่องอื่น เพราะโพรโทคอล MQTT ห้ามใช้ clientId ซ้ำกัน หากซ้ำ Broker จะตัดการเชื่อมต่อทันที
 2. หากหน้าจอ Flutter รันบนอุปกรณ์จริง (Physical Android Phone) เหตุใดการกรอก IP `127.0.0.1` จึงไม่สามารถเชื่อมต่อ Broker ได้? และต้องใช้ IP ใด?
+- เพราะ 127.0.0.1 หมายถึงตัวมือถือเอง ไม่ใช่คอมพิวเตอร์ที่เปิด Broker ไว้ ต้องเปลี่ยนไปใช้ IPv4 ของเครื่องคอมพิวเตอร์ ในวง Wi-Fi เดียวกัน
 3. การตั้งค่า `keepAlivePeriod` มีความจำเป็นอย่างไรในสภาพแวดล้อมเครือข่ายไร้สาย?
+- ช่วยส่งสัญญาณชีพรักษาการเชื่อมต่อ TCP ไม่ให้ Router ตัดสายทิ้งเมื่อไม่มีการส่งข้อมูล และช่วยให้ Broker รู้ตัวทันทีเมื่อเน็ตหลุด
