@@ -351,6 +351,8 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/led_ack" -m '{"led_state": true
 ```
 *สังเกตสวิตช์และไอคอนหลอดไฟบนมือถือจะเรืองแสงสีเขียวทันที*
 
+<img width="1268" height="1241" alt="image" src="https://github.com/user-attachments/assets/6fdc6b10-fd97-4cd9-8690-7a16d5991640" />
+
 #### 4. จำลองเหตุการณ์บอร์ดดับหรือเน็ตหลุด (เสมือน Broker ส่ง LWT)
 ```powershell
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "offline" -r
