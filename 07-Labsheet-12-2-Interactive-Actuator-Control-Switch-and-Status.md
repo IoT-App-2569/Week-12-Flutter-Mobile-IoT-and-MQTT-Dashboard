@@ -357,6 +357,43 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "offline" -r
 ```
 *สังเกตว่าหน้าจอจะแจ้งเตือนว่า ESP32 ออฟไลน์ทันที และสวิตช์จะไม่ยอมให้สั่งการ*
 
+## ผลการทดลอง
+
+### กิจกรรม 12-2.1 รันแอป Actuator Control Center
+
+<img width="1456" height="821" alt="image" src="https://github.com/user-attachments/assets/bf7c65cd-6535-4763-b1da-73a5da3bba35" />
+
+เมื่อเปิดแอป แถบสถานะแสดง **OFFLINE** ทันที เพราะ Broker เก็บข้อความ `offline` แบบ Retain ไว้จาก LWT ของ ESP32 ก่อนหน้า ส่วนด้านล่างแสดง "เชื่อมต่อ Broker เรียบร้อย"
+
+### กิจกรรม 12-2.2 การทดสอบด้วย Mock Simulation
+
+| ขั้น | การกระทำ | ผลบนแอป Flutter | ภาพ |
+|:---:|:---|:---|:---:|
+| 0 | แตะสวิตช์ขณะบอร์ด OFFLINE | แสดง SnackBar `⚠️ อุปกรณ์ ESP32 ออฟไลน์อยู่ ไม่สามารถส่งคำสั่งได้` ไม่มีข้อความส่งไป Broker | <img width="1577" height="886" alt="image" src="https://github.com/user-attachments/assets/e8ab3182-ff27-4434-9c2c-ae3c7b8c9702" />
+ |
+| 1 | `mosquitto_pub -t "iot/esp32/status" -m "online" -r` | แถบสถานะเปลี่ยนเป็น **ONLINE** สีเขียว | <img width="1581" height="896" alt="image" src="https://github.com/user-attachments/assets/73a8a919-1a74-4b60-a422-70c6ff6bc550" />
+|
+| 2 | แตะสวิตช์ | แสดง "กำลังรอการยืนยันจากบอร์ด (Waiting ACK)..." สีเหลือง สวิตช์ยังไม่เปลี่ยนและถูกปิดชั่วคราว | <img width="1576" height="888" alt="image" src="https://github.com/user-attachments/assets/5c304ff2-ad6d-49d5-b81d-3257a3a7703e" />
+|
+| 2 | (ฝั่ง CLI) `mosquitto_sub -t "iot/esp32/control"` | ได้รับ `iot/esp32/control {"led":"ON"}` | <img width="1061" height="50" alt="image" src="https://github.com/user-attachments/assets/df252703-535d-481e-ae3e-0dd463c40b92" />
+ |
+| 3 | `mosquitto_pub -t "iot/esp32/led_ack" -m '{\"led_state\": true, \"ack\": true}'` | สวิตช์เปิด หลอดไฟและการ์ดเรืองแสงสีเขียว สถานะ "เปิดสว่าง (Active)" | <img width="1566" height="882" alt="image" src="https://github.com/user-attachments/assets/75699871-38a4-40b5-9b54-9f8ac9de0d96" />
+|
+| 4 | `mosquitto_pub -t "iot/esp32/status" -m "offline" -r` | แถบสถานะกลับเป็น **OFFLINE** สีแดง สวิตช์ถูกปิดกั้นการสั่งงาน | <img width="1578" height="887" alt="image" src="https://github.com/user-attachments/assets/2e63d6e6-e353-4fe1-b21d-3883910cbf9b" />
+|
+
+**ข้อสังเกตและข้อเสนอแนะ**
+- แอปเปลี่ยนสถานะสวิตช์ตาม ACK จากบอร์ดเท่านั้น ไม่เปลี่ยนเองทันทีที่แตะ (Confirmed Update)
+- เมื่อบอร์ด OFFLINE หลอดไฟยังแสดง "เปิดสว่าง (Active)" ตามสถานะล่าสุดที่ทราบ (Last Known State) ซึ่งอาจทำให้ผู้ใช้เข้าใจผิด ควรปรับให้แสดงเป็นสถานะไม่ทราบ หรือทำให้การ์ดเป็นสีเทาเมื่ออุปกรณ์ออฟไลน์
+- หากบอร์ดไม่ส่ง ACK แอปจะค้างที่สถานะ Waiting ACK ตลอด ควรเพิ่ม Timeout (เช่น 3–5 วินาที) แล้วแจ้งว่าคำสั่งล้มเหลว
+
+### ปัญหาที่พบและการแก้ไข
+
+| ปัญหา | สาเหตุ | วิธีแก้ |
+|:---|:---|:---|
+| คำสั่ง ACK ในใบงาน `-m '{"led_state": true, "ack": true}'` ไม่ถูกต้องบน Windows | PowerShell 5.1 ตัดเครื่องหมาย `"` ก่อนส่งให้ `mosquitto_pub` | ใช้ `-m '{\"led_state\": true, \"ack\": true}'` |
+| `activeColor` และ `withOpacity` deprecated | Flutter 3.31 ขึ้นไปเปลี่ยน API | เปลี่ยนเป็น `activeThumbColor` และ `withValues(alpha: ...)` |
+| ชื่อหน้าต่างแอปแสดง `iot_mqtt_basics` | คัดลอกโปรเจกต์จาก 12.1 ทำให้ชื่อใน `pubspec.yaml` เหมือนเดิม | ไม่กระทบการทำงาน |
 ---
 
 ## 4. สรุปผลและคำถามท้ายการทดลอง
