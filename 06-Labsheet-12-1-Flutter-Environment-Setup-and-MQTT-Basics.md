@@ -29,7 +29,8 @@
 ```powershell
 flutter doctor
 ```
-*(ตรวจสอบว่า Flutter และ Windows Desktop หรือ Android Toolchain พร้อมใช้งาน)*
+<img width="965" height="300" alt="image" src="https://github.com/user-attachments/assets/d24520ff-7e04-4706-811b-a530ea9cf339" />
+
 
 #### 2. สร้างโฟลเดอร์และโปรเจกต์ Flutter ใหม่
 ```powershell
@@ -49,6 +50,37 @@ dependencies:
     sdk: flutter
   mqtt_client: ^10.3.0
 ```
+
+## ผลการทดลอง
+
+
+| รายการ | ผล |
+|:---|:---|
+| Flutter | 3.44.4 (stable) |
+| Visual Studio | Community 2022 17.14.42 (Desktop development with C++) |
+| ผล `flutter doctor` | No issues found! |
+
+### กิจกรรม 12-1.3 ทดสอบร่วมกับ Mosquitto CLI
+
+<img width="1558" height="632" alt="image" src="https://github.com/user-attachments/assets/ec18bf22-87b7-491d-9891-6df3dff39af0" />
+
+
+<img width="1068" height="72" alt="image" src="https://github.com/user-attachments/assets/2506749e-362d-4d7b-a068-bd27ef61f25a" />
+
+
+| ทิศทาง | วิธีทดสอบ | ผล |
+|:---|:---|:---|
+| Flutter → Broker | กด Publish Test Message ส่งไป `test/flutter/ping` | `mosquitto_sub` ได้รับ `Hello from Flutter at 2026-10-24T21:54:43` |
+| Broker → Flutter | `mosquitto_pub` ส่งไป `test/broker/echo` | Logs ในแอปแสดง `📩 [test/broker/echo] -> Echo response from CLI` |
+| ส่งก่อนเชื่อมต่อ | กด Publish ขณะยังไม่ Connect | แอปแจ้ง `⚠️ ไม่สามารถส่งข้อความได้เนื่องจากยังไม่ได้เชื่อมต่อ` ไม่เกิดข้อผิดพลาด |
+
+### ปัญหาที่พบและการแก้ไข
+
+| ปัญหา | สาเหตุ | วิธีแก้ |
+|:---|:---|:---|
+| `flutter doctor` แจ้ง Visual Studio not installed | การรันแอปบน Windows Desktop ต้องใช้ C++ toolchain | ติดตั้ง Visual Studio 2022 Community พร้อม workload Desktop development with C++ |
+| `flutter analyze` แจ้ง error ใน `test/widget_test.dart` | ไฟล์ทดสอบตัวอย่างอ้างถึงคลาส `MyApp` ที่ถูกแทนด้วย `MqttBasicsApp` | ลบไฟล์ทดสอบตัวอย่างออก |
+| `withOpacity` is deprecated | Flutter 3.44 แนะนำให้ใช้ `withValues()` | เปลี่ยนเป็น `withValues(alpha: 0.15)` |
 
 ---
 
