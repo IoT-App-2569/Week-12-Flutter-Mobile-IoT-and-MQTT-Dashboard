@@ -489,12 +489,16 @@ python pyTeleSim.py
 ```powershell
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": 1.65, "raw": 2048, "uptime": 10}'
 ```
+<img width="1597" height="908" alt="image" src="https://github.com/user-attachments/assets/f85b4d0d-9ad1-4c58-94b4-6c525c3cf5bf" />
+
 *สังเกตเข็ม Radial Gauge หมุนไปที่กึ่งกลาง (1.65 V) และการ์ดแสดงค่า 2048 / 4095*
 
 - **ทดสอบส่งค่าแรงดันสูงแตะขีดจำกัด (3.15 V):**
 ```powershell
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": 3.15, "raw": 3910, "uptime": 20}'
 ```
+<img width="1612" height="900" alt="image" src="https://github.com/user-attachments/assets/7a9645ad-eab9-4566-a0d3-49d97025ea9f" />
+
 *สังเกตเข็มหมุนเข้าสู่โซนสีแดง และการ์ด "แรงดันสูงสุด" ปรับค่าเป็น `3.15 V` ทันที*
 
 - **จำลองสตรีมข้อมูลต่อเนื่อง 30 ค่าด้วย PowerShell Loop:**
@@ -506,11 +510,14 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/telemetry" -m '{"voltage": 3.15
     Start-Sleep -Milliseconds 500
 }
 ```
+<img width="1627" height="926" alt="image" src="https://github.com/user-attachments/assets/1dd3e3e1-96b4-4165-9c2c-5de16f14223c" />
 
 ---
 
 ## 4. สรุปผลและคำถามท้ายการทดลอง
 1. เหตุใดการใช้ `TweenAnimationBuilder` จึงทำให้เข็มมาตรวัดดูนุ่มนวลและไม่กระตุก แม้ข้อมูลเซนเซอร์จะเข้ามาทุกๆ 500 มิลลิวินาที?
+- เพราะช่วยคำนวณแทรกเฟรมแอนิเมชัน (Interpolation) เปลี่ยนมุมเข็มจากค่าเก่าไปหาค่าใหม่อย่างราบรื่นด้วยความเร็วสูง แทนการกระโดดข้ามตำแหน่งในทันที
 2. การจำกัดความยาวของอาร์เรย์ `_history` ให้เก็บไม่เกิน 30 ตัวอย่าง ส่งผลดีต่อประสิทธิภาพหน่วยความจำของสมาร์ตโฟนอย่างไร?
+- ป้องกันปัญหาหน่วยความจำรั่วไหล (Memory Leak) หรือแอปทำงานช้าลง จากการสะสมข้อมูลย้อนหลังใน RAM ปริมาณมากเกินไปเมื่อเปิดแอปทิ้งไว้นานๆ
 3. หากเซนเซอร์ส่งค่าผิดพลาด เช่น ค่านอกช่วง 0 - 3.3V หรือค่าเป็น `null` โค้ดส่วนใดใน `telemetry_dashboard_screen.dart` ที่ช่วยป้องกันไม่ให้แอปแครช?
-
+- บล็อก try-catch ร่วมกับการใช้ Null Safety และ Type Casting กำหนดค่าเริ่มต้นสำรอง เช่น (data['voltage'] as num?)?.toDouble() ?? 0.0 ซึ่งช่วยป้องกัน Exception และแปลงข้อมูลได้อย่างปลอดภัย
