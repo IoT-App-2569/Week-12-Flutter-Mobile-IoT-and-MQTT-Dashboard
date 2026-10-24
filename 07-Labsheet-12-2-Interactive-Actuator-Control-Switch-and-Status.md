@@ -369,18 +369,12 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "offline" -r
 
 | ขั้น | การกระทำ | ผลบนแอป Flutter | ภาพ |
 |:---:|:---|:---|:---:|
-| 0 | แตะสวิตช์ขณะบอร์ด OFFLINE | แสดง SnackBar `⚠️ อุปกรณ์ ESP32 ออฟไลน์อยู่ ไม่สามารถส่งคำสั่งได้` ไม่มีข้อความส่งไป Broker | <img width="1577" height="886" alt="image" src="https://github.com/user-attachments/assets/e8ab3182-ff27-4434-9c2c-ae3c7b8c9702" />
- |
-| 1 | `mosquitto_pub -t "iot/esp32/status" -m "online" -r` | แถบสถานะเปลี่ยนเป็น **ONLINE** สีเขียว | <img width="1581" height="896" alt="image" src="https://github.com/user-attachments/assets/73a8a919-1a74-4b60-a422-70c6ff6bc550" />
-|
-| 2 | แตะสวิตช์ | แสดง "กำลังรอการยืนยันจากบอร์ด (Waiting ACK)..." สีเหลือง สวิตช์ยังไม่เปลี่ยนและถูกปิดชั่วคราว | <img width="1576" height="888" alt="image" src="https://github.com/user-attachments/assets/5c304ff2-ad6d-49d5-b81d-3257a3a7703e" />
-|
-| 2 | (ฝั่ง CLI) `mosquitto_sub -t "iot/esp32/control"` | ได้รับ `iot/esp32/control {"led":"ON"}` | <img width="1061" height="50" alt="image" src="https://github.com/user-attachments/assets/df252703-535d-481e-ae3e-0dd463c40b92" />
- |
-| 3 | `mosquitto_pub -t "iot/esp32/led_ack" -m '{\"led_state\": true, \"ack\": true}'` | สวิตช์เปิด หลอดไฟและการ์ดเรืองแสงสีเขียว สถานะ "เปิดสว่าง (Active)" | <img width="1566" height="882" alt="image" src="https://github.com/user-attachments/assets/75699871-38a4-40b5-9b54-9f8ac9de0d96" />
-|
-| 4 | `mosquitto_pub -t "iot/esp32/status" -m "offline" -r` | แถบสถานะกลับเป็น **OFFLINE** สีแดง สวิตช์ถูกปิดกั้นการสั่งงาน | <img width="1578" height="887" alt="image" src="https://github.com/user-attachments/assets/2e63d6e6-e353-4fe1-b21d-3883910cbf9b" />
-|
+| 0 | แตะสวิตช์ขณะบอร์ด OFFLINE | แสดง SnackBar `⚠️ อุปกรณ์ ESP32 ออฟไลน์อยู่ ไม่สามารถส่งคำสั่งได้` ไม่มีข้อความส่งไป Broker | <img width="280" alt="offline blocked" src="https://github.com/user-attachments/assets/e8ab3182-ff27-4434-9c2c-ae3c7b8c9702" /> |
+| 1 | `mosquitto_pub -t "iot/esp32/status" -m "online" -r` | แถบสถานะเปลี่ยนเป็น **ONLINE** สีเขียว | <img width="280" alt="online" src="https://github.com/user-attachments/assets/73a8a919-1a74-4b60-a422-70c6ff6bc550" /> |
+| 2 | แตะสวิตช์ | แสดง "กำลังรอการยืนยันจากบอร์ด (Waiting ACK)..." สีเหลือง สวิตช์ยังไม่เปลี่ยนและถูกปิดชั่วคราว | <img width="280" alt="waiting ack" src="https://github.com/user-attachments/assets/5c304ff2-ad6d-49d5-b81d-3257a3a7703e" /> |
+| 2 | (ฝั่ง CLI) `mosquitto_sub -t "iot/esp32/control"` | ได้รับ `iot/esp32/control {"led":"ON"}` | <img width="280" alt="control cmd" src="https://github.com/user-attachments/assets/df252703-535d-481e-ae3e-0dd463c40b92" /> |
+| 3 | `mosquitto_pub -t "iot/esp32/led_ack" -m '{\"led_state\": true, \"ack\": true}'` | สวิตช์เปิด หลอดไฟและการ์ดเรืองแสงสีเขียว สถานะ "เปิดสว่าง (Active)" | <img width="280" alt="ack on" src="https://github.com/user-attachments/assets/75699871-38a4-40b5-9b54-9f8ac9de0d96" /> |
+| 4 | `mosquitto_pub -t "iot/esp32/status" -m "offline" -r` | แถบสถานะกลับเป็น **OFFLINE** สีแดง สวิตช์ถูกปิดกั้นการสั่งงาน | <img width="280" alt="lwt offline" src="https://github.com/user-attachments/assets/2e63d6e6-e353-4fe1-b21d-3883910cbf9b" /> |
 
 **ข้อสังเกตและข้อเสนอแนะ**
 - แอปเปลี่ยนสถานะสวิตช์ตาม ACK จากบอร์ดเท่านั้น ไม่เปลี่ยนเองทันทีที่แตะ (Confirmed Update)
