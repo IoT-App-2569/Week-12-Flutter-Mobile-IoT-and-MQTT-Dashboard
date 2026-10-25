@@ -44,7 +44,7 @@
 
 | การทดลอง | รายละเอียดคลิปสาธิต | ลิงก์วิดีโอ (YouTube Shorts) |
 | :--- | :--- | :--- |
-| **ใบงานที่ 12.4 (ระบบรวม End-to-End)** | การทดสอบระบบครบวงจร: หมุน Potentiometer บนบอร์ดจริงแสดงผลบน Radial Gauge และกดสวิตช์ในแอปเปิด-ปิดหลอดไฟ LED พร้อม ACK | `(ใส่ลิงก์คลิปวิดีโอที่นี่ - ถ้ามี)` |
+| **ใบงานที่ 12.4 (ระบบรวม End-to-End)** | การทดสอบระบบครบวงจร: หมุน Potentiometer บนบอร์ดจริงแสดงผลบน Radial Gauge และกดสวิตช์ในแอปเปิด-ปิดหลอดไฟ LED พร้อม ACK | [YouTube Shorts: สาธิตระบบ End-to-End Lab 12.4](https://youtube.com/shorts/oibHik4V_IE?si=OZgP7Yloer19HrR) |
 
 ---
 
