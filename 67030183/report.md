@@ -172,7 +172,10 @@
 
 ---
 
-### 5.4 ภาพผลการทดลอง ใบงานที่ 12.4
+### 5.4 ภาพและวิดีโอผลการทดลอง ใบงานที่ 12.4
+
+* **วิดีโอสาธิตการทำงานจริง (YouTube Shorts):**  
+  📺 [คลิกดูคลิปสาธิต: หมุน Potentiometer บนบอร์ดจริงแสดงผลบน Gauge และกดสวิตช์ในแอปเปิด-ปิดไฟ LED](https://youtube.com/shorts/oibHik4V_IE?si=OZgP7Yloer19HrR)
 
 **รูปที่ 8: Unified App แท็บที่ 1 (Telemetry Gauge) แสดงค่าแรงดันจริงที่อ่านได้จากบอร์ด ESP32**  
 ![Unified App Telemetry Tab](images/lab12_4_unified_telemetry.png)
