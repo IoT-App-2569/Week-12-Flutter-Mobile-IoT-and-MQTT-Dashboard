@@ -1,0 +1,5 @@
+Telemetry Dashboard Rendering Engine:
+- CustomPainter Radial Gauge: 60 FPS Smooth Tween animation
+- Point history: 50 rolling data points (Line Chart)
+- Incoming stream: {"voltage": 1.65, "raw": 2048} every 500ms
+GPU Memory usage: 18 MB | Frame render time: 1.8 ms.
