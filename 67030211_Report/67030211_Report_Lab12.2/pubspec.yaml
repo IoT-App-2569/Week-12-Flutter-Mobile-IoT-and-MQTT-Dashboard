@@ -1,0 +1,5 @@
+name: iot_dashboard_app
+dependencies:
+  flutter:
+    sdk: flutter
+  mqtt_client: ^10.2.0

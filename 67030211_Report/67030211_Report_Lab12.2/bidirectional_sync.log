@@ -1,6 +1,0 @@
-Bi-Directional State Sync Trace:
-1. User taps Switch in Flutter UI -> Sends command: {"led":"ON"} to topic: iot/esp32/control
-2. ESP32 receives command -> Switches GPIO2 to HIGH
-3. ESP32 publishes ACK to topic: iot/esp32/led_ack with payload: {"status":"ON"}
-4. Flutter receives ACK -> Updates UI Switch color to Green.
-Round-trip execution time: 14 ms. Zero state discrepancy.

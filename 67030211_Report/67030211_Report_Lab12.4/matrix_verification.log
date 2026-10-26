@@ -1,5 +1,0 @@
-Matrix Verification Test:
-Test 1: POT Rotation -> Flutter Gauge Needle tracks in real-time -> PASS (Latency: 12ms)
-Test 2: App Actuator Switch -> Physical LED lights up -> PASS (Latency: 15ms)
-Test 3: Hardware Reboot -> LWT Status displays 'Offline' -> PASS
-Test 4: Hardware Reconnect -> Auto-reconnect & Retain flag restores state -> PASS
