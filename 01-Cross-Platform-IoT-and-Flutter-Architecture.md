@@ -72,14 +72,14 @@
 * **Declarative UI (แบบสมัยใหม่ของ Flutter)**  
    หน้าจอถูกนิยามให้เป็น **ฟังก์ชันของสถานะ (UI = f(State))** นักพัฒนาเพียงแค่ประกาศโครงสร้างหน้าจอตามข้อมูลที่มี เมื่อข้อมูลเซนเซอร์ใน State เปลี่ยนแปลง ระบบของ Flutter จะคำนวณและวาดจุดที่เปลี่ยนแปลงบนหน้าจอใหม่โดยอัตโนมัติ
 
-<p align="center"><img src="Images/Figure_03.svg" alt="การประมวลผลตามสถานะ (UI as a Function of State)" width="80%"></p>
+<p align="center"><img src="Images/Figure_03.svg" alt="การประมวลผลตามสถานะ (UI as a Function of State)" ></p>
 <p align="center"><b>รูปที่ 3</b> การประมวลผลตามสถานะ (UI as a Function of State)</p>
 
 ### วงจรชีวิตของ Stateful Widget (State Lifecycle)
 
 ในการสร้างแดชบอร์ด IoT ที่มีการเชื่อมต่อเครือข่ายและอัปเดตข้อมูลตลอดเวลา เราต้องใช้ `StatefulWidget` ซึ่งมีวงจรชีวิตที่สำคัญดังนี้
 
-<p align="center"><img src="Images/Figure_04.svg" alt="วงจรชีวิตของ Stateful Widget" width="80%"></p>
+<p align="center"><img src="Images/Figure_04.svg" alt="วงจรชีวิตของ Stateful Widget" ></p>
 <p align="center"><b>รูปที่ 4</b> วงจรชีวิตของ Stateful Widget</p>
 
 ---
