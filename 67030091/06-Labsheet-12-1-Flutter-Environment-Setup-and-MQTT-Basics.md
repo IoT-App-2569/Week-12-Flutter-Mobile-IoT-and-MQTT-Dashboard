@@ -368,11 +368,11 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "test/broker/echo" -m "Echo response from 
 ```
 * ตรวจสอบว่าในช่อง Logs ของ Flutter App แสดงข้อความที่ได้รับอย่างถูกต้อง
 
-![alt text](image.png)
+![alt text](images/image.png)
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ---
 

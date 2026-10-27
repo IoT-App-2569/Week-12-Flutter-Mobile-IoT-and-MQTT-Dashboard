@@ -339,7 +339,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "online" -r
 ```
 *สังเกตหน้าจอ Flutter แถบสถานะด้านบนจะเปลี่ยนเป็นสีเขียวทันที*
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 
 #### 2. เฝ้าดูคำสั่งที่ส่งมาจากแอป Flutter
@@ -348,7 +348,7 @@ mosquitto_sub -h 127.0.0.1 -p 1883 -t "iot/esp32/control" -v
 ```
 *เมื่อแตะสวิตช์บน Flutter จะเห็นแพ็กเก็ต `{"led":"ON"}` หรือ `{"led":"OFF"}` ปรากฏในเทอร์มินัล*
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 
 
@@ -357,8 +357,8 @@ mosquitto_sub -h 127.0.0.1 -p 1883 -t "iot/esp32/control" -v
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/led_ack" -m '{"led_state": true, "ack": true}'
 ```
 *สังเกตสวิตช์และไอคอนหลอดไฟบนมือถือจะเรืองแสงสีเขียวทันที*
-![alt text](image-6.png)
-![alt text](image-4.png)
+![alt text](images/image-6.png)
+![alt text](images/image-4.png)
 
 #### 4. จำลองเหตุการณ์บอร์ดดับหรือเน็ตหลุด (เสมือน Broker ส่ง LWT)
 ```powershell
@@ -366,8 +366,8 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "offline" -r
 ```
 *สังเกตว่าหน้าจอจะแจ้งเตือนว่า ESP32 ออฟไลน์ทันที และสวิตช์จะไม่ยอมให้สั่งการ*
 
-![alt text](image-8.png)
-![alt text](image-7.png)
+![alt text](images/image-8.png)
+![alt text](images/image-7.png)
 
 ---
 

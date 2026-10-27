@@ -379,16 +379,16 @@ powershell -ExecutionPolicy Bypass -File .\mock_esp32.ps1
 
 
 - Test Case 1: Telemetry Monitoring*
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 - Test Case 2: Actuator Remote Control
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 - Test Case 3: State Sync & Physical ACK
-![alt text](image-13.png)
+![alt text](images/image-13.png)
 
 - Test Case 4: Fault Tolerance (LWT)
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 ---
 
 
