@@ -1,4 +1,8 @@
 {
+    "dart.flutterSdkPath": "D:\\src\\flutter\\flutter_windows_3.44.4-stable\\flutter",
+    "terminal.integrated.env.windows": {
+        "PATH": "${env:PATH};C:\\Program Files\\mosquitto;D:\\src\\flutter\\flutter_windows_3.44.4-stable\\flutter\\bin"
+    },
     "csharp-dev-tools.solutionViewer.selectedWorkspaceSolutions": [
         "Example_codes/Lab12-2/iot_actuator_switch/build/windows/x64/iot_mqtt_basics.slnx"
     ]
