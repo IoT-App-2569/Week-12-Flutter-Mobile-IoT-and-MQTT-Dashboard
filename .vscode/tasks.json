@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MQTT: Start Mosquitto Broker",
+            "type": "shell",
+            "command": "mosquitto -c mosquitto.conf -v",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "MQTT: Subscribe All Topics (CLI Monitor)",
+            "type": "shell",
+            "command": "mosquitto_sub -h 127.0.0.1 -p 1883 -t \"#\" -v",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Lab 12-3: Run Python Telemetry Simulator",
+            "type": "shell",
+            "command": "python Example_codes/Lab12-3/pyTeleSim.py",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Lab 12-4: Run Mock ESP32 Simulator",
+            "type": "shell",
+            "command": "powershell -ExecutionPolicy Bypass -File Example_codes/Lab12-4/mock_esp32.ps1",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}

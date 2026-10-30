@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Lab 12-1: MQTT Basics (Windows)",
+            "cwd": "Example_codes/Lab12-1/iot_mqtt_basics",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+                "-d",
+                "windows"
+            ]
+        },
+        {
+            "name": "Lab 12-2: Actuator Switch (Windows)",
+            "cwd": "Example_codes/Lab12-2/iot_actuator_switch",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+                "-d",
+                "windows"
+            ]
+        },
+        {
+            "name": "Lab 12-3: Telemetry Gauge (Windows)",
+            "cwd": "Example_codes/Lab12-3/iot_telemetry_gauge",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+                "-d",
+                "windows"
+            ]
+        },
+        {
+            "name": "Lab 12-4: Unified Dashboard (Windows)",
+            "cwd": "Example_codes/Lab12-4/iot_unified_dashboard",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "args": [
+                "-d",
+                "windows"
+            ]
+        }
+    ]
+}
