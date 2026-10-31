@@ -1,6 +1,6 @@
 # mock_esp32.ps1 - สคริปต์จำลองการทำงานของบอร์ด ESP32 บน PowerShell
 param (
-    [string]$Broker = "127.0.0.1",
+    [string]$Broker = "10.0.2.2",
     [int]$Port = 1883
 )
 

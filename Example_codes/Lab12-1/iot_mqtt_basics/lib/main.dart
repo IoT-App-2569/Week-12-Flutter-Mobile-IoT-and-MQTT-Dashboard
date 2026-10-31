@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:mqtt_client/mqtt_client.dart';
 import 'package:mqtt_client/mqtt_server_client.dart';
@@ -37,10 +36,9 @@ class MqttBasicsScreen extends StatefulWidget {
 
 class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
   // หมายเลข IP ของเครื่องคอมพิวเตอร์ที่รัน Mosquitto Broker
-  final TextEditingController _brokerIpController = TextEditingController(
-    text: '127.0.0.1',
-  );
-
+  final TextEditingController _brokerIpController =
+      TextEditingController(text: '10.0.2.2');
+  
   MqttServerClient? _client;
   String _statusText = 'ยังไม่ได้เชื่อมต่อ (Disconnected)';
   Color _statusColor = Colors.redAccent;
@@ -129,21 +127,20 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
 
     const topic = 'test/flutter/ping';
     final builder = MqttClientPayloadBuilder();
-    builder.addString(
-      'Hello from Flutter at ${DateTime.now().toIso8601String()}',
-    );
+    builder.addString('Hello from Flutter at ${DateTime.now().toIso8601String()}');
 
-    _client?.publishMessage(topic, MqttQos.atMostOnce, builder.payload!);
+    _client?.publishMessage(
+      topic,
+      MqttQos.atMostOnce,
+      builder.payload!,
+    );
 
     _appendLog('🚀 Published -> $topic');
   }
 
   void _appendLog(String log) {
     setState(() {
-      _receivedLogs.insert(
-        0,
-        '[${DateTime.now().toLocal().toString().substring(11, 19)}] $log',
-      );
+      _receivedLogs.insert(0, '[${DateTime.now().toLocal().toString().substring(11, 19)}] $log');
       if (_receivedLogs.length > 50) _receivedLogs.removeLast();
     });
   }

@@ -20,7 +20,7 @@ class TelemetryApp extends StatelessWidget {
         ),
       ),
       // กำหนด IP ของ Mosquitto Broker (ใช้ 127.0.0.1 หากรันบนคอมพิวเตอร์เครื่องเดียวกัน)
-      home: const TelemetryDashboardScreen(brokerIp: '127.0.0.1'),
+      home: const TelemetryDashboardScreen(brokerIp: '10.0.2.2'),
       debugShowCheckedModeBanner: false,
     );
   }
