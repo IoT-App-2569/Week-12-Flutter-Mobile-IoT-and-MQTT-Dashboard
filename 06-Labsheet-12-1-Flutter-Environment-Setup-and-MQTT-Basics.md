@@ -367,6 +367,7 @@ flutter run -d <device-id>
 mosquitto_pub -h 127.0.0.1 -p 1883 -t "test/broker/echo" -m "Echo response from CLI"
 ```
 * ตรวจสอบว่าในช่อง Logs ของ Flutter App แสดงข้อความที่ได้รับอย่างถูกต้อง
+<img width="1272" height="957" alt="image" src="https://github.com/user-attachments/assets/e1abead8-2d61-469d-ab92-b53db7422703" />
 
 ---
 
