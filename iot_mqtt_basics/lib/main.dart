@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'actuator_control_screen.dart';
 import 'telemetry_dashboard_screen.dart';
 
 void main() {
-  runApp(const TelemetryApp());
+  runApp(const UnifiedIotApp());
 }
 
-class TelemetryApp extends StatelessWidget {
-  const TelemetryApp({super.key});
+class UnifiedIotApp extends StatelessWidget {
+  const UnifiedIotApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lab 12.3 Telemetry Dashboard',
+      title: 'ESP32 Smart IoT Commander',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xFF0F172A),
         colorScheme: const ColorScheme.dark(
@@ -19,8 +20,56 @@ class TelemetryApp extends StatelessWidget {
           secondary: Color(0xFF00E676),
         ),
       ),
-      home: const TelemetryDashboardScreen(brokerIp: '127.0.0.1'),
+      home: const MainNavigationShell(),
       debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MainNavigationShell extends StatefulWidget {
+  const MainNavigationShell({super.key});
+
+  @override
+  State<MainNavigationShell> createState() => _MainNavigationShellState();
+}
+
+class _MainNavigationShellState extends State<MainNavigationShell> {
+  int _currentIndex = 0;
+  final String brokerIp = '127.0.0.1';
+
+  late final List<Widget> _pages;
+
+  @override
+  void initState() {
+    super.initState();
+    _pages = [
+      TelemetryDashboardScreen(brokerIp: brokerIp),
+      ActuatorControlScreen(brokerIp: brokerIp),
+    ];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: IndexedStack(index: _currentIndex, children: _pages),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _currentIndex,
+        onDestinationSelected: (idx) => setState(() => _currentIndex = idx),
+        backgroundColor: const Color(0xFF1E293B),
+        indicatorColor: const Color(0xFF00E5FF).withOpacity(0.2),
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.speed),
+            selectedIcon: Icon(Icons.speed, color: Color(0xFF00E5FF)),
+            label: 'Telemetry Gauge',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.toggle_on_outlined),
+            selectedIcon: Icon(Icons.toggle_on, color: Color(0xFF00E676)),
+            label: 'Actuator Switch',
+          ),
+        ],
+      ),
     );
   }
 }
