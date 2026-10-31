@@ -1,0 +1,11 @@
+$ flutter run -d macos
+Launching lib/main.dart on macOS in debug mode...
+Building macOS application...                                           
+✓ Built build/macos/Build/Products/Debug/iot_mqtt_basics.app
+[14:10:12] ℹ️ Initializing MqttServerClient (Broker: 192.168.1.112:1883)
+[14:10:12] 🔑 Generated Unique Client ID: Flutter_Lab12_1_1730411709244
+[14:10:12] ⚙️ Keep-Alive Period: 20s | AutoReconnect: true | LWT Topic: iot/flutter/lwt
+[14:10:13] ✅ MQTT_EVENT_CONNECTED: เชื่อมต่อสำเร็จ (เชื่อมต่อสำเร็จ (Connected))
+[14:10:13] 📢 Subscribed to: test/broker/echo (QoS 0)
+[14:10:15] 🚀 Published -> test/flutter/ping : "Hello from Flutter (67030270) at 2026-11-01T14:10:15.412+07:00"
+[14:10:16] 📩 [test/broker/echo] -> Echo confirmed for student 67030270 (Kritsadinat Samrankit)
