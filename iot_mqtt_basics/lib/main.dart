@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'actuator_control_screen.dart';
+import 'telemetry_dashboard_screen.dart';
 
 void main() {
-  runApp(const ActuatorApp());
+  runApp(const TelemetryApp());
 }
 
-class ActuatorApp extends StatelessWidget {
-  const ActuatorApp({super.key});
+class TelemetryApp extends StatelessWidget {
+  const TelemetryApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lab 12.2 Actuator Switch',
+      title: 'Lab 12.3 Telemetry Dashboard',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xFF0F172A),
         colorScheme: const ColorScheme.dark(
@@ -19,7 +19,7 @@ class ActuatorApp extends StatelessWidget {
           secondary: Color(0xFF00E676),
         ),
       ),
-      home: const ActuatorControlScreen(brokerIp: '127.0.0.1'),
+      home: const TelemetryDashboardScreen(brokerIp: '127.0.0.1'),
       debugShowCheckedModeBanner: false,
     );
   }
