@@ -1,0 +1,11 @@
+[Flutter Engine] Launching lib/main.dart on macOS Desktop (Release Profile)...
+[MQTT Client] Initializing MqttServerClient for host: 192.168.1.48, port: 1883
+[MQTT Client] Client ID: flutter_client_67030248_1793300337
+[MQTT Client] Connecting to Mosquitto Broker at 192.168.1.48:1883 (keepAlivePeriod=20s)...
+[MQTT Client] Connected successfully! Connection status: MqttConnectionState.connected
+[MQTT Client] Subscribing to topic: iot/67030248/status (QoS 1)
+[MQTT Client] Subscribing to topic: iot/broadcast (QoS 0)
+[MQTT Client] Subscription confirmed. Status: SUCCESS
+[MQTT Client] Sent PingRequest -> Broker
+[MQTT Client] Received PingResponse <- Broker (Keep-Alive healthy, latency: 1.4ms)
+[UI State] StreamController broadcast listening. Connection Banner updated: CONNECTED ✅
