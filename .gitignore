@@ -33,3 +33,7 @@ sdkconfig.old
 **/windows/flutter/ephemeral/
 **/linux/flutter/ephemeral/
 **/macos/Flutter/ephemeral/
+
+build/
+.dart_tool/
+.obsidian/
