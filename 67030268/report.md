@@ -137,7 +137,8 @@ open ~/mqtt_lab
 
 ### 📷 รูป: แคปหน้าแอป Telemetry Dashboard / Radial Gauge ขณะรับค่าจริง
 *(แคปหน้าแอปที่เข็ม Gauge และกราฟแสดงค่า พร้อมแถบ "👥 กลุ่ม: ..." ทั้ง 3 ชื่อบนหัวแอป)*
-![p1](images/w12_3_p1.jpg)
+![p1]<img width="1232" height="1136" alt="image" src="https://github.com/user-attachments/assets/1b9adb01-7448-439e-8c4b-8f908799bab0" />
+
 
 ### 💻 JSON Telemetry Stream Payload ที่แอปพลิเคชันได้รับและนำไปพล็อตกราฟ
 *(วางตัวอย่างชุดข้อมูล JSON ที่แอปพลิเคชันได้รับจากบอร์ดแล้วนำไปแยกวิเคราะห์ค่าลงสู่กราฟ)*
