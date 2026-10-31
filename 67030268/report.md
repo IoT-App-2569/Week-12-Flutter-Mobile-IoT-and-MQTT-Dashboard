@@ -106,6 +106,8 @@ open ~/mqtt_lab
 [14:22:14.410] 🚀 Publish -> iot/esp32/control (iot/67030268/cmd/led) : {"led":"OFF"} (QoS 1)
 [14:22:14.437] 📩 Receive <- iot/esp32/led_ack (iot/67030268/status/led) : {"led_state": false, "ack": true} (RTT = 27 ms)
 [14:22:14.437] ✅ UI Updated: หลอดไฟ LED ทดสอบ (GPIO 2) -> สถานะ: ปิดการทำงาน (Standby)
+![Uploading image.png…]()
+
 ```
 
 ### ❓ ตอบคำถามท้ายการทดลอง
@@ -137,7 +139,7 @@ open ~/mqtt_lab
 
 ### 📷 รูป: แคปหน้าแอป Telemetry Dashboard / Radial Gauge ขณะรับค่าจริง
 *(แคปหน้าแอปที่เข็ม Gauge และกราฟแสดงค่า พร้อมแถบ "👥 กลุ่ม: ..." ทั้ง 3 ชื่อบนหัวแอป)*
-<img width="948" height="886" alt="image" src="https://github.com/user-attachments/assets/5cef87fd-1c97-41b0-a2a7-fc656fb76643" />
+
 <img width="1232" height="1136" alt="image" src="https://github.com/user-attachments/assets/1b9adb01-7448-439e-8c4b-8f908799bab0" />
 
 
