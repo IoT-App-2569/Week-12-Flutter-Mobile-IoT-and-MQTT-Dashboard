@@ -1,8 +1,0 @@
-[Flutter UI] User tapped LED Toggle Switch -> Request: TURN_ON
-[MQTT Client] Publishing to topic: iot/67030073/cmd/led
-[MQTT Payload] {"command": "ON", "sender": "flutter_67030073", "timestamp": "2026-10-30 01:58:56"} (QoS 1, retain: false)
-[MQTT Client] Publish complete (MessageID: 1042). Waiting for hardware acknowledgment...
-[MQTT Listener] Incoming message on topic: iot/67030073/status/led
-[Hardware ACK] {"led_state": true, "ack": true, "device": "esp32_67030073", "gpio": 2, "rtt_ms": 26}
-[UI State] Physical state confirmed by ESP32 in 26ms! State updated: ACTIVE_CONFIRMED ✅
-[LWT Monitor] Node iot/67030073/status heartbeats active (Status: ONLINE, Broker: 192.168.1.73)
