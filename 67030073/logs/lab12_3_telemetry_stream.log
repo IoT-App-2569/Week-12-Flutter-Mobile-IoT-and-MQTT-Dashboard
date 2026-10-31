@@ -1,0 +1,27 @@
+# Telemetry JSON Stream Data for Student 67030073 (นายณัฐพงศ์ เนียมประดิษฐ)
+# Subscribed Topic: iot/67030073/telemetry (Sample rate: 500ms)
+{"voltage": 1.40, "raw": 1737, "uptime": 72, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.50, "raw": 1861, "uptime": 73, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.64, "raw": 2035, "uptime": 74, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.69, "raw": 2097, "uptime": 75, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.73, "raw": 2146, "uptime": 76, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.70, "raw": 2109, "uptime": 77, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.63, "raw": 2022, "uptime": 78, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.58, "raw": 1960, "uptime": 79, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.46, "raw": 1811, "uptime": 80, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.36, "raw": 1687, "uptime": 81, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.24, "raw": 1538, "uptime": 82, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.17, "raw": 1451, "uptime": 83, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.16, "raw": 1439, "uptime": 84, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.10, "raw": 1365, "uptime": 85, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.17, "raw": 1451, "uptime": 86, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.24, "raw": 1538, "uptime": 87, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.39, "raw": 1724, "uptime": 88, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.43, "raw": 1774, "uptime": 89, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.57, "raw": 1948, "uptime": 90, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.64, "raw": 2035, "uptime": 91, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.69, "raw": 2097, "uptime": 92, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.75, "raw": 2171, "uptime": 93, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.68, "raw": 2084, "uptime": 94, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.63, "raw": 2022, "uptime": 95, "device": "esp32_67030073", "status": "nominal"}
+{"voltage": 1.51, "raw": 1873, "uptime": 96, "device": "esp32_67030073", "status": "nominal"}

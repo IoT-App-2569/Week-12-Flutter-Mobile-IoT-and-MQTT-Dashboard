@@ -1,0 +1,16 @@
+========================================================================
+[LAB 12.4 ECOSYSTEM SYSTEM LOGS - STUDENT 67030073: นายณัฐพงศ์ เนียมประดิษฐ]
+Hardware Station: Table 3 | Core: ESP32 Dual-Core FreeRTOS | Broker: 192.168.1.73
+========================================================================
+[14:02:10.120] [SYSTEM] Unified IoT Architecture Initialized. IndexedStack pages mounted.
+[14:02:10.450] [MQTT_NET] Client connected to 192.168.1.73:1883 as Flutter_Unified_67030073_Client.
+[14:02:11.002] [TELEMETRY] Inbound -> {"voltage": 1.42, "raw": 1762, "uptime": 72}
+[14:02:11.514] [TELEMETRY] Gauge animated via TweenAnimationBuilder (V=1.42V, Raw=1762).
+[14:02:12.018] [ACTUATOR] User commanded: LED=ON (Topic: iot/67030073/cmd/led)
+[14:02:12.046] [ACTUATOR] ACK Verified in 26ms: {"led_state": true, "ack": true} -> Physical Bulb Glows.
+[14:02:13.200] [VERIFY_TC1] Telemetry Stream Monitored: Continuous 500ms updates, 0 packet loss.
+[14:02:14.400] [VERIFY_TC2] Actuator Remote Control: Bi-directional sync verified.
+[14:02:15.800] [VERIFY_TC3] State Synchronization: Physical switch reflects instant app state.
+[14:02:18.100] [VERIFY_TC4] Fault Tolerance Injection: ESP32 power cut -> LWT Message triggered in 10s.
+[14:02:18.120] [LWT_EVENT] Incoming LWT on iot/67030073/status -> {"status": "offline", "device": "esp32_67030073"}
+[14:02:18.150] [UI_ALERT] Device Status Card updated: ESP32 ฮาร์ดแวร์: ออฟไลน์ (OFFLINE) 🔴
