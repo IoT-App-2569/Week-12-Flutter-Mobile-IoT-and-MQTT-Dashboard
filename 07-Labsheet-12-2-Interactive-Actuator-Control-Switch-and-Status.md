@@ -361,7 +361,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "iot/esp32/status" -m "offline" -r
 ## ภาพผลการทดลองLab12-2
 <img width="283" height="655" alt="image" src="https://github.com/user-attachments/assets/3479fc98-f0b9-44a2-8c26-2817d42857c4" />
 
-## 4. คำถามท้ายการทดลอง (Review Questions)
+## 4. สรุปผลและคำถามท้ายการทดลอง
 
 ### 1. ประโยชน์ของการรอสัญญาณ ACK จากหัวข้อ iot/esp32/led_ack แทนการเปลี่ยน UI ทันที (Optimistic Update) คืออะไร?
 * **สะท้อนสถานะจริงทางกายภาพ (True Physical State):** ป้องกันปัญหาสถานะบนหน้าจอแอปพลิเคชันไม่ตรงกับอุปกรณ์จริง เช่น กรณีคำสั่งถูกส่งไปแต่บอร์ดไฟดับ relay เสีย หรือสั่งงานล้มเหลว
