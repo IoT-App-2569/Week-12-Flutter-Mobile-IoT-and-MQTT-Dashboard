@@ -29,7 +29,8 @@
 ```powershell
 flutter doctor
 ```
-*(ตรวจสอบว่า Flutter และ Windows Desktop หรือ Android Toolchain พร้อมใช้งาน)*
+<img width="965" height="300" alt="image" src="https://github.com/user-attachments/assets/d24520ff-7e04-4706-811b-a530ea9cf339" />
+
 
 #### 2. สร้างโฟลเดอร์และโปรเจกต์ Flutter ใหม่
 ```powershell
@@ -49,6 +50,37 @@ dependencies:
     sdk: flutter
   mqtt_client: ^10.3.0
 ```
+
+## ผลการทดลอง
+
+
+| รายการ | ผล |
+|:---|:---|
+| Flutter | 3.44.4 (stable) |
+| Visual Studio | Community 2022 17.14.42 (Desktop development with C++) |
+| ผล `flutter doctor` | No issues found! |
+
+### กิจกรรม 12-1.3 ทดสอบร่วมกับ Mosquitto CLI
+
+<img width="1558" height="632" alt="image" src="https://github.com/user-attachments/assets/ec18bf22-87b7-491d-9891-6df3dff39af0" />
+
+
+<img width="1068" height="72" alt="image" src="https://github.com/user-attachments/assets/2506749e-362d-4d7b-a068-bd27ef61f25a" />
+
+
+| ทิศทาง | วิธีทดสอบ | ผล |
+|:---|:---|:---|
+| Flutter → Broker | กด Publish Test Message ส่งไป `test/flutter/ping` | `mosquitto_sub` ได้รับ `Hello from Flutter at 2026-10-24T21:54:43` |
+| Broker → Flutter | `mosquitto_pub` ส่งไป `test/broker/echo` | Logs ในแอปแสดง `📩 [test/broker/echo] -> Echo response from CLI` |
+| ส่งก่อนเชื่อมต่อ | กด Publish ขณะยังไม่ Connect | แอปแจ้ง `⚠️ ไม่สามารถส่งข้อความได้เนื่องจากยังไม่ได้เชื่อมต่อ` ไม่เกิดข้อผิดพลาด |
+
+### ปัญหาที่พบและการแก้ไข
+
+| ปัญหา | สาเหตุ | วิธีแก้ |
+|:---|:---|:---|
+| `flutter doctor` แจ้ง Visual Studio not installed | การรันแอปบน Windows Desktop ต้องใช้ C++ toolchain | ติดตั้ง Visual Studio 2022 Community พร้อม workload Desktop development with C++ |
+| `flutter analyze` แจ้ง error ใน `test/widget_test.dart` | ไฟล์ทดสอบตัวอย่างอ้างถึงคลาส `MyApp` ที่ถูกแทนด้วย `MqttBasicsApp` | ลบไฟล์ทดสอบตัวอย่างออก |
+| `withOpacity` is deprecated | Flutter 3.44 แนะนำให้ใช้ `withValues()` | เปลี่ยนเป็น `withValues(alpha: 0.15)` |
 
 ---
 
@@ -372,5 +404,32 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "test/broker/echo" -m "Echo response from 
 
 ## 4. คำถามท้ายการทดลอง (Review Questions)
 1. เพราะเหตุใดเราจึงต้องสุ่มชื่อ `clientId` เช่นการใส่ Timestamp ต่อท้าย แทนที่จะตั้งชื่อแบบคงที่?
+```
+ตามมาตรฐาน MQTT ค่า Client ID ต้อง ไม่ซ้ำกัน ภายใน Broker เดียวกัน หากมี Client ใหม่เชื่อมต่อเข้ามาด้วย Client ID ที่ซ้ำกับตัวที่เชื่อมต่ออยู่แล้ว Broker จะ ตัดการเชื่อมต่อของตัวเก่าทิ้งทันที (Session Takeover) เพื่อให้ตัวใหม่ใช้ชื่อนั้นแทน
+
+หากตั้งชื่อคงที่ เช่น `Flutter_App` แล้วเปิดแอปพร้อมกันหลายเครื่อง หรือเปิดทั้งบน Windows และมือถือ ทั้งสองเครื่องจะผลัดกันเตะกันออกวนไปเรื่อยๆ และเนื่องจากโค้ดตั้ง `autoReconnect = true` ไว้ จะเกิดการเชื่อมต่อใหม่และถูกตัดซ้ำไม่จบ (Reconnect Loop) นอกจากนี้ยังอาจทำให้ข้อความ LWT `Client crashed` ถูกส่งออกไปผิดเวลาด้วย การต่อท้ายด้วย `DateTime.now().millisecondsSinceEpoch` ทำให้ทุกครั้งที่กด Connect ได้ Client ID ใหม่ที่ไม่ซ้ำกัน
+
+ข้อแลกเปลี่ยนคือ Client ID ที่เปลี่ยนทุกครั้งไม่เหมาะกับ Persistent Session (`cleanSession = false`) เพราะ Broker จะจำ Subscription และข้อความค้างไว้โดยอ้างอิงจาก Client ID ในระบบจริงจึงนิยมใช้ ID คงที่ที่ไม่ซ้ำกันต่อเครื่อง เช่น รหัสผู้ใช้ผสมรหัสอุปกรณ์
+
+```
 2. หากหน้าจอ Flutter รันบนอุปกรณ์จริง (Physical Android Phone) เหตุใดการกรอก IP `127.0.0.1` จึงไม่สามารถเชื่อมต่อ Broker ได้? และต้องใช้ IP ใด?
+```
+`127.0.0.1` คือ Loopback Address (localhost) ซึ่งหมายถึง "เครื่องตัวเอง" เสมอ เมื่อแอปรันบน Windows เครื่องเดียวกับ Broker จึงเชื่อมต่อได้ แต่เมื่อรันบนมือถือ `127.0.0.1` จะหมายถึง ตัวมือถือเอง ซึ่งไม่มี Broker ทำงานอยู่ การเชื่อมต่อจึงล้มเหลวด้วย `Connection refused`
+
+ต้องใช้ IP วงแลนของคอมพิวเตอร์ที่รัน Broker แทน เช่น `172.20.10.4` (ดูได้จากคำสั่ง `ipconfig`) โดยมีเงื่อนไข
+- มือถือและคอมพิวเตอร์ต้องอยู่ในเครือข่าย Wi-Fi เดียวกัน
+- Broker ต้องรันด้วยไฟล์คอนฟิกที่มี `listener 1883 0.0.0.0` และ `allow_anonymous true` เพราะ Mosquitto 2.x ที่รันโดยไม่มีไฟล์คอนฟิกจะรับเฉพาะ `127.0.0.1`
+- Windows Firewall ต้องอนุญาตพอร์ต TCP 1883 ขาเข้า
+
+กรณีใช้ Android Emulator ให้ใช้ IP พิเศษ `10.0.2.2` ซึ่ง Emulator ใช้แทนเครื่องคอมพิวเตอร์ที่รันอยู่
+
+```
 3. การตั้งค่า `keepAlivePeriod` มีความจำเป็นอย่างไรในสภาพแวดล้อมเครือข่ายไร้สาย?
+```
+`keepAlivePeriod = 20` คือการตกลงกับ Broker ว่า Client จะต้องมีการสื่อสารอย่างน้อยทุก 20 วินาที หากช่วงนั้นไม่มีข้อความใดๆ Client จะส่ง `PINGREQ` และ Broker ตอบ `PINGRESP` (เห็นได้ใน Broker Log ตั้งแต่ใบงาน 11.1) ซึ่งจำเป็นในเครือข่ายไร้สายเพราะ
+- ตรวจจับการหลุดแบบเงียบ: มือถือที่เดินออกนอกระยะ Wi-Fi สลับเครือข่าย หรือแบตหมด จะไม่ได้ส่ง DISCONNECT ทำให้ TCP Connection ค้างอยู่โดยไม่มีใครรู้ หาก Broker ไม่ได้รับข้อความภายใน 1.5 เท่าของ Keep Alive (30 วินาที) จะถือว่า Client หลุดและส่งข้อความ LWT `Client crashed` ไปที่ `iot/flutter/lwt`
+- ฝั่ง Client รู้ตัว: หากส่ง PINGREQ แล้วไม่ได้ PINGRESP แอปจะรู้ว่าการเชื่อมต่อขาด เรียก `onDisconnected` เพื่อเปลี่ยนแถบสถานะเป็นสีแดง และเริ่มเชื่อมต่อใหม่ด้วย `autoReconnect`
+- รักษาการเชื่อมต่อผ่าน NAT/Router: เราเตอร์และ Hotspot มักลบ TCP Session ที่เงียบนานเกินไปออกจากตาราง NAT การส่ง PINGREQ เป็นระยะช่วยให้การเชื่อมต่อยังคงอยู่
+
+การเลือกค่าเป็นการแลกเปลี่ยน ค่าน้อยตรวจจับการหลุดได้เร็วแต่สิ้นเปลืองแบตเตอรี่และแบนด์วิดท์ ค่ามาก (เช่น 60 วินาทีที่ ESP32 ใช้ในใบงาน 11.2) ประหยัดกว่าแต่รู้ตัวช้ากว่า
+```
