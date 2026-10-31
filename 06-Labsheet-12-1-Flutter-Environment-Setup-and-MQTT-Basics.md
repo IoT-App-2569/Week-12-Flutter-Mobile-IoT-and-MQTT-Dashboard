@@ -372,7 +372,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "test/broker/echo" -m "Echo response from 
 ## ภาพผลการทดลอง Lab12-1
 <img width="286" height="656" alt="image" src="https://github.com/user-attachments/assets/6acfd169-f907-43d2-aff6-002dfb5bd97b" />
 
-## 4. คำถามท้ายการทดลอง (Review Questions)
+## 4. สรุปผลและคำถามท้ายการทดลอง
 
 ### 1. เพราะเหตุใดเราจึงต้องสุ่มชื่อ clientId เช่นการใส่ Timestamp ต่อท้าย แทนที่จะตั้งชื่อแบบคงที่?
 * **เป็นไปตามมาตรฐาน MQTT Broker:** โปรโตคอล MQTT ไม่อนุญาตให้ `clientId` ซ้ำกันเชื่อมต่อพร้อมกันในเวลาเดียวกัน
