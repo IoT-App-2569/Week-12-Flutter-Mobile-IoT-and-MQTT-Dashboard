@@ -16,30 +16,8 @@
 
 ## 2. แผนผังเนื้อหาการเรียนรู้ประจำสัปดาห์ (Lesson Roadmap)
 
-```mermaid
-flowchart TD
-    W12["<b>สัปดาห์ที่ 12: Flutter Mobile IoT & MQTT Dashboard</b><br/>(Cross-Platform Mobile Application Development)"]
-
-    M1["<b>1. Cross-Platform IoT & สถาปัตยกรรม Flutter</b><br/>- Flutter Engine & Widget Tree<br/>- Reactive Programming Paradigm<br/>- Mobile vs Embedded Networking"]
-    M2["<b>2. การผสาน MQTT Client บน Flutter</b><br/>- แพ็กเกจ mqtt_client (Dart)<br/>- TCP Socket vs WebSocket (Port 8083)<br/>- JSON Serialization & Stream Handling<br/>- Auto-Reconnect Strategy"]
-    M3["<b>3. การจัดการสถานะเชิงปฏิกิริยา (State Management)</b><br/>- ChangeNotifier & Provider / Streams<br/>- High-Frequency Telemetry Handling<br/>- Separation of Concerns (UI vs Net)"]
-    M4["<b>4. ออกแบบ UI แดชบอร์ด IoT อัจฉริยะ</b><br/>- Radial Speedo Gauge & Telemetry Chart<br/>- Interactive Actuator Toggle Switch<br/>- Dynamic Connection Status Banner<br/>- Modern Glassmorphism & Dark Mode"]
-
-    W12 --> M1
-    W12 --> M2
-    W12 --> M3
-    W12 --> M4
-
-    L1["<b>ใบงานที่ 12.1</b><br/>Flutter Environment Bringup & Basic MQTT Client<br/>(Flutter Setup, mqtt_client, Console Pub/Sub)"]
-    L2["<b>ใบงานที่ 12.2</b><br/>Interactive Actuator Switch & Bi-directional State Sync<br/>(Remote LED Switch, Ack Feedback, LWT Display)"]
-    L3["<b>ใบงานที่ 12.3</b><br/>Real-time Telemetry Dashboard & Animated Gauge<br/>(JSON Parsing, Radial Gauge Meter, Live Chart)"]
-    L4["<b>ใบงานที่ 12.4</b><br/>End-to-End Mobile-to-Hardware IoT Ecosystem<br/>(ESP32-C3 <-> Mosquitto Broker <-> Flutter Mobile App)"]
-
-    M1 --> L1
-    M2 --> L2
-    M3 --> L3
-    M4 --> L4
-```
+<p align="center"><img src="Images/Fig_Readme_2026-10-27T19-55-17_academic.svg" alt="Readme"></p>
+<p align="center">  2. แผนผังเนื้อหาการเรียนรู้ประจำสัปดาห์ (Lesson Roadmap)</p>
 
 ---
 
@@ -47,31 +25,8 @@ flowchart TD
 
 ในสัปดาห์นี้ เราจะสร้างวงจรการทำงานที่สมบูรณ์แบบของระบบ IoT โดยเชื่อมต่อ 3 องค์ประกอบหลักเข้าด้วยกัน:
 
-```
-+-----------------------------------------------------------------------------------+
-|                        End-to-End Mobile IoT Architecture                         |
-+-----------------------------------------------------------------------------------+
-
-     [ สมาร์ตโฟน Android / iOS ]                             [ บอร์ด ESP32 ]
-    +---------------------------+                      +---------------------------+
-    |   Flutter Mobile App      |                      |    ESP-IDF Firmware       |
-    |   - Radial Gauge (Volt)   |                      |   - Potentiometer (ADC0)  |
-    |   - Toggle Switch (LED)   |                      |   - LED Actuator (GPIO8)  |
-    |   - Status Indicator      |                      |   - cJSON Telemetry Task  |
-    +-------------┬-------------+                      +-------------▲-------------+
-                  │                                                  │
-                  │ MQTT via TCP (1883)                              │ MQTT via TCP (1883)
-                  │ or WebSocket (8083)                              │
-                  ▼                                                  ▼
-        ┌──────────────────────────────────────────────────────────────────┐
-        │                 Mosquitto MQTT Broker (Host / Cloud)             │
-        │                                                                  │
-        │   Topics:                                                        │
-        │     - Telemetry:  iot/esp32/telemetry  (ESP32 -> Flutter)        │
-        │     - Command:    iot/esp32/control    (Flutter -> ESP32)        │
-        │     - Status:     iot/esp32/status     (LWT / Online Status)     │
-        └──────────────────────────────────────────────────────────────────┘
-```
+<p align="center"><img src="Images/Fig_Readme_2026-10-27T20-00-43_academic.svg" alt="Readme" width="800" ></p>
+<p align="center">  3. สถาปัตยกรรมการเชื่อมต่อของระบบ (End-to-End System Topology)</p>
 
 ---
 

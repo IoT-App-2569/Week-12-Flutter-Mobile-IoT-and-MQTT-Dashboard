@@ -20,28 +20,8 @@
 
 เพื่อแก้ปัญหานี้ เราจะแบ่งสถาปัตยกรรมของแอปพลิเคชันออกเป็น 3 เลเยอร์ที่แยกหน้าที่กันอย่างชัดเจน:
 
-```mermaid
-flowchart TD
-    subgraph NetLayer["<b>1. Network / Service Layer</b>"]
-        MQTT["<b>MqttService</b><br/>- จัดการ TCP Socket / Broker<br/>- รับ/ส่ง MQTT Packets<br/>- StreamSubscription ขาเข้า"]
-    end
-
-    subgraph StateLayer["<b>2. State / Domain Layer</b>"]
-        State["<b>IotStateProvider (ChangeNotifier)</b><br/>- voltage: double<br/>- isLedOn: bool<br/>- isDeviceOnline: bool<br/>- notifyListeners()"]
-    end
-
-    subgraph UILayer["<b>3. Presentation / UI Layer</b>"]
-        W1["<b>RadialGaugeWidget</b><br/>(วาดเข็มแรงดัน)"]
-        W2["<b>ActuatorSwitchWidget</b><br/>(สลับสวิตช์ไฟ)"]
-        W3["<b>ConnectionBannerWidget</b><br/>(แถบสถานะ Online/Offline)"]
-    end
-
-    MQTT -->|แปลง JSON แล้วส่งต่อ| State
-    State -.->|แจ้งเตือนเฉพาะวิดเจ็ตที่เกี่ยวข้อง| W1
-    State -.->|แจ้งเตือนเฉพาะวิดเจ็ตที่เกี่ยวข้อง| W2
-    State -.->|แจ้งเตือนเฉพาะวิดเจ็ตที่เกี่ยวข้อง| W3
-    W2 -->|กดปุ่มเปิด-ปิด| MQTT
-```
+<p align="center"><img src="Images/Fig_03-State-Management-and-Reactive-IoT-UI_2026-10-27T19-54-07_academic.svg" alt="03-State-Management-and-Reactive-IoT-UI" width="800" ></p>
+<p align="center">  12.3.2 สถาปัตยกรรมแบบแยกส่วน (Separation of Concerns: Layered Architecture)</p>
 
 1. **Service Layer (`MqttService`)**: รับผิดชอบเรื่องการเชื่อมต่อ TCP, การส่ง PINGREQ, การแปลงข้อความไบต์เป็น UTF-8 String เท่านั้น โดยไม่สนใจว่าหน้าจอจะแสดงผลอย่างไร
 2. **State Layer (`IotStateProvider`)**: จัดเก็บตัวแปรสถานะของระบบ เช่น ค่าแรงดันล่าสุด, สถานะ LED, ค่าประวัติย้อนหลัง และเป็นจุดรวมศูนย์ในการเรียก `notifyListeners()` เมื่อข้อมูลเปลี่ยน
