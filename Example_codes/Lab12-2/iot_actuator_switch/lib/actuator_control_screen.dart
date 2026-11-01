@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mqtt_client/mqtt_client.dart';
-import 'package:mqtt_client/mqtt_server_client.dart';
+import 'mqtt_factory.dart';
 
 class ActuatorControlScreen extends StatefulWidget {
   final String brokerIp;
@@ -14,7 +14,7 @@ class ActuatorControlScreen extends StatefulWidget {
 }
 
 class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
-  MqttServerClient? _client;
+  MqttClient? _client;
   bool _isLedOn = false;
   bool _isDeviceOnline = false;
   bool _isWaitingAck = false;
@@ -34,8 +34,7 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
 
   Future<void> _connectMqtt() async {
     final clientId = 'Flutter_Switch_${DateTime.now().millisecondsSinceEpoch}';
-    _client = MqttServerClient(widget.brokerIp, clientId);
-    _client!.port = 1883;
+    _client = getMqttClient(widget.brokerIp, clientId);
     _client!.keepAlivePeriod = 20;
 
     _client!.onConnected = () {

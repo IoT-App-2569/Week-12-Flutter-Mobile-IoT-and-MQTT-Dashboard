@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:mqtt_client/mqtt_client.dart';
-import 'package:mqtt_client/mqtt_server_client.dart';
+import 'mqtt_factory.dart';
 import 'radial_gauge_widget.dart';
 
 class TelemetryDashboardScreen extends StatefulWidget {
@@ -14,7 +14,7 @@ class TelemetryDashboardScreen extends StatefulWidget {
 }
 
 class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
-  MqttServerClient? _client;
+  MqttClient? _client;
   double _currentVoltage = 0.0;
   int _currentRaw = 0;
   int _currentUptime = 0;
@@ -38,8 +38,7 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
 
   Future<void> _connect() async {
     final clientId = 'Flutter_Telemetry_${DateTime.now().millisecondsSinceEpoch}';
-    _client = MqttServerClient(widget.brokerIp, clientId);
-    _client!.port = 1883;
+    _client = getMqttClient(widget.brokerIp, clientId);
     _client!.keepAlivePeriod = 20;
 
     _client!.onConnected = () {

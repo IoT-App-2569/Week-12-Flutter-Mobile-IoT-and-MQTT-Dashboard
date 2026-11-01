@@ -1,8 +1,8 @@
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
 import 'package:mqtt_client/mqtt_client.dart';
-import 'package:mqtt_client/mqtt_server_client.dart';
+import 'mqtt_factory.dart';
 
 void main() {
   runApp(const MqttBasicsApp());
@@ -41,7 +41,7 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
     text: '127.0.0.1',
   );
 
-  MqttServerClient? _client;
+  MqttClient? _client;
   String _statusText = 'ยังไม่ได้เชื่อมต่อ (Disconnected)';
   Color _statusColor = Colors.redAccent;
   final List<String> _receivedLogs = [];
@@ -62,8 +62,7 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
     final broker = _brokerIpController.text.trim();
     final clientId = 'Flutter_Lab12_1_${DateTime.now().millisecondsSinceEpoch}';
 
-    _client = MqttServerClient(broker, clientId);
-    _client!.port = 1883;
+    _client = getMqttClient(broker, clientId);
     _client!.keepAlivePeriod = 20;
     _client!.autoReconnect = true;
 
@@ -93,9 +92,6 @@ class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
 
     try {
       await _client!.connect();
-    } on SocketException catch (e) {
-      _appendLog('❌ Socket Error: ไม่สามารถต่อ Broker IP ได้ ($e)');
-      _client?.disconnect();
     } catch (e) {
       _appendLog('❌ Error: $e');
       _client?.disconnect();

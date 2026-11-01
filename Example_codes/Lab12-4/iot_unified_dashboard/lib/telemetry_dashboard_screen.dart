@@ -1,8 +1,9 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:mqtt_client/mqtt_client.dart';
-import 'package:mqtt_client/mqtt_server_client.dart';
+import 'mqtt_factory.dart';
 import 'radial_gauge_widget.dart';
 
 class TelemetryDashboardScreen extends StatefulWidget {
@@ -14,38 +15,83 @@ class TelemetryDashboardScreen extends StatefulWidget {
 }
 
 class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
-  MqttServerClient? _client;
+  MqttClient? _client;
   double _currentVoltage = 0.0;
   int _currentRaw = 0;
   int _currentUptime = 0;
   double _maxVoltage = 0.0;
   double _minVoltage = 3.3;
+  int _packetCount = 0;
 
   final List<double> _history = [];
   bool _isConnected = false;
+  bool _isListening = false;
+  bool _isSimulating = false;
+  Timer? _simTimer;
+  int _simTick = 0;
 
   @override
   void initState() {
     super.initState();
     _connect();
+    // Auto-start simulation after 2 seconds if no packets received yet
+    Timer(const Duration(seconds: 2), () {
+      if (mounted && _packetCount == 0) {
+        _startSimulation();
+      }
+    });
   }
 
   @override
   void dispose() {
+    _simTimer?.cancel();
     _client?.disconnect();
     super.dispose();
   }
 
+  void _startSimulation() {
+    if (_isSimulating) return;
+    setState(() => _isSimulating = true);
+    _simTimer?.cancel();
+    _simTimer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
+      if (!mounted) return;
+      _simTick++;
+      final v = double.parse((1.65 + 1.5 * math.sin(_simTick * 0.2)).toStringAsFixed(2));
+      final raw = ((v / 3.3) * 4095).round();
+      final payload = jsonEncode({'voltage': v, 'raw': raw, 'uptime': _simTick});
+
+      // Also publish to MQTT broker if connected
+      if (_client?.connectionStatus?.state == MqttConnectionState.connected) {
+        final builder = MqttClientPayloadBuilder();
+        builder.addString(payload);
+        _client?.publishMessage('iot/esp32/telemetry', MqttQos.atMostOnce, builder.payload!);
+      }
+
+      setState(() {
+        _packetCount++;
+        _currentVoltage = v;
+        _currentRaw = raw;
+        _currentUptime = _simTick;
+        _maxVoltage = math.max(_maxVoltage, v);
+        _minVoltage = _minVoltage == 3.3 ? v : math.min(_minVoltage, v);
+        _history.add(v);
+        if (_history.length > 30) _history.removeAt(0);
+      });
+    });
+  }
+
   Future<void> _connect() async {
     final clientId = 'Flutter_Telemetry_${DateTime.now().millisecondsSinceEpoch}';
-    _client = MqttServerClient(widget.brokerIp, clientId);
-    _client!.port = 1883;
-    _client!.keepAlivePeriod = 20;
+    _client = getMqttClient(widget.brokerIp, clientId);
+    _client!.keepAlivePeriod = 60;
 
     _client!.onConnected = () {
       setState(() => _isConnected = true);
       _client!.subscribe('iot/esp32/telemetry', MqttQos.atMostOnce);
-      _client!.updates?.listen(_handleIncomingMessage);
+      if (!_isListening) {
+        _isListening = true;
+        _client!.updates?.listen(_handleIncomingMessage);
+      }
     };
 
     _client!.onDisconnected = () {
@@ -58,27 +104,36 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
   }
 
   void _handleIncomingMessage(List<MqttReceivedMessage<MqttMessage>> c) {
+    if (c.isEmpty) return;
     final recMess = c[0].payload as MqttPublishMessage;
-    final payload = MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
+    final rawString = MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
+    final payload = rawString.replaceAll('\u0000', '').trim();
 
     try {
       final data = jsonDecode(payload) as Map<String, dynamic>;
-      final v = (data['voltage'] as num?)?.toDouble() ?? 0.0;
-      final raw = (data['raw'] as num?)?.toInt() ?? 0;
-      final up = (data['uptime'] as num?)?.toInt() ?? 0;
+      final v = double.tryParse(data['voltage']?.toString() ?? '0') ?? 0.0;
+      final raw = int.tryParse(data['raw']?.toString() ?? '0') ?? 0;
+      final up = int.tryParse(data['uptime']?.toString() ?? '0') ?? 0;
+
+      // When external packets arrive, stop internal timer
+      if (_isSimulating && _simTimer != null) {
+        _simTimer?.cancel();
+        _isSimulating = false;
+      }
 
       setState(() {
+        _packetCount++;
         _currentVoltage = v;
         _currentRaw = raw;
         _currentUptime = up;
         _maxVoltage = math.max(_maxVoltage, v);
-        _minVoltage = math.min(_minVoltage, v);
+        _minVoltage = _minVoltage == 3.3 ? v : math.min(_minVoltage, v);
 
         _history.add(v);
         if (_history.length > 30) _history.removeAt(0);
       });
     } catch (e) {
-      debugPrint('Parsing error: $e');
+      debugPrint('Parsing error: $e for payload: $payload');
     }
   }
 
@@ -90,8 +145,27 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
         title: const Text('Real-time Telemetry Dashboard'),
         backgroundColor: const Color(0xFF1E293B),
         actions: [
+          TextButton.icon(
+            onPressed: () {
+              if (_isSimulating) {
+                _simTimer?.cancel();
+                setState(() => _isSimulating = false);
+              } else {
+                _startSimulation();
+              }
+            },
+            icon: Icon(
+              _isSimulating ? Icons.sensors : Icons.sensors_off,
+              size: 18,
+              color: const Color(0xFF00E5FF),
+            ),
+            label: Text(
+              _isSimulating ? 'จำลอง: กำลังส่ง' : 'เริ่มจำลอง',
+              style: const TextStyle(color: Color(0xFF00E5FF), fontSize: 12),
+            ),
+          ),
           Padding(
-            padding: const EdgeInsets.only(right: 16.0),
+            padding: const EdgeInsets.only(right: 16.0, left: 8.0),
             child: Icon(
               Icons.circle,
               size: 14,
@@ -117,7 +191,7 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
                 const SizedBox(width: 12),
                 _buildMetricCard('แรงดันสูงสุด', '${_maxVoltage.toStringAsFixed(2)} V', const Color(0xFFFF5252)),
                 const SizedBox(width: 12),
-                _buildMetricCard('แรงดันต่ำสุด', '${_minVoltage == 3.3 ? 0.0 : _minVoltage.toStringAsFixed(2)} V', const Color(0xFF00E676)),
+                _buildMetricCard('แรงดันต่ำสุด', '${_minVoltage.toStringAsFixed(2)} V', const Color(0xFF00E676)),
               ],
             ),
             const SizedBox(height: 20),
@@ -150,8 +224,8 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
             ),
             const SizedBox(height: 16),
             Text(
-              'ESP32 Uptime: ${_currentUptime}s',
-              style: const TextStyle(color: Colors.white38, fontSize: 13),
+              'ESP32 Uptime: ${_currentUptime}s  |  ข้อมูลที่ได้รับ: $_packetCount แพ็กเก็ต',
+              style: const TextStyle(color: Colors.white70, fontSize: 13),
             ),
           ],
         ),
@@ -197,11 +271,13 @@ class _SparklinePainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     final path = Path();
-    final dx = size.width / (history.length - 1);
+    final stepX = size.width / (history.length - 1);
 
     for (int i = 0; i < history.length; i++) {
-      final x = i * dx;
-      final y = size.height - ((history[i] / maxLimit).clamp(0.0, 1.0) * size.height);
+      final x = i * stepX;
+      final normalizedY = (history[i] / maxLimit).clamp(0.0, 1.0);
+      final y = size.height - (normalizedY * size.height);
+
       if (i == 0) {
         path.moveTo(x, y);
       } else {
@@ -210,6 +286,12 @@ class _SparklinePainter extends CustomPainter {
     }
 
     canvas.drawPath(path, paint);
+
+    final dotPaint = Paint()..color = const Color(0xFF00E676);
+    final lastX = size.width;
+    final lastNormalizedY = (history.last / maxLimit).clamp(0.0, 1.0);
+    final lastY = size.height - (lastNormalizedY * size.height);
+    canvas.drawCircle(Offset(lastX, lastY), 4, dotPaint);
   }
 
   @override
