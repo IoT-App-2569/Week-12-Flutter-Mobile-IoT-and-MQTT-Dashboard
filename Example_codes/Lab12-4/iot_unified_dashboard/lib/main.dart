@@ -7,7 +7,9 @@ void main() {
 }
 
 class UnifiedIotApp extends StatelessWidget {
-  const UnifiedIotApp({super.key});
+  const UnifiedIotApp({super.key, this.connectToMqtt = true});
+
+  final bool connectToMqtt;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +22,16 @@ class UnifiedIotApp extends StatelessWidget {
           secondary: Color(0xFF00E676),
         ),
       ),
-      home: const MainNavigationShell(),
+      home: MainNavigationShell(connectToMqtt: connectToMqtt),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MainNavigationShell extends StatefulWidget {
-  const MainNavigationShell({super.key});
+  const MainNavigationShell({super.key, this.connectToMqtt = true});
+
+  final bool connectToMqtt;
 
   @override
   State<MainNavigationShell> createState() => _MainNavigationShellState();
@@ -36,10 +40,9 @@ class MainNavigationShell extends StatefulWidget {
 class _MainNavigationShellState extends State<MainNavigationShell> {
   int _currentIndex = 0;
 
-  // หมายเลข IP ของเครื่องรัน Broker:
-  // - ใช้ '127.0.0.1' หากรันบนคอมพิวเตอร์เครื่องเดียวกัน (Windows Desktop) สำหรับการทดสอบจำลอง
-  // - เปลี่ยนเป็น IP วง LAN ของเครื่องคอมพิวเตอร์ (เช่น '192.168.1.100') เมื่อรันแอปบนมือถือ หรือเชื่อมต่อกับ ESP32 จริง
-  final String brokerIp = '127.0.0.1';
+  // Android Emulator uses this address to reach the broker on the host computer.
+  // Use the computer's LAN IP when running on a physical phone or ESP32.
+  final String brokerIp = '10.0.2.2';
 
   late final List<Widget> _pages;
 
@@ -47,8 +50,14 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
   void initState() {
     super.initState();
     _pages = [
-      TelemetryDashboardScreen(brokerIp: brokerIp),
-      ActuatorControlScreen(brokerIp: brokerIp),
+      TelemetryDashboardScreen(
+        brokerIp: brokerIp,
+        connectToMqtt: widget.connectToMqtt,
+      ),
+      ActuatorControlScreen(
+        brokerIp: brokerIp,
+        connectToMqtt: widget.connectToMqtt,
+      ),
     ];
   }
 
@@ -56,10 +65,7 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
   Widget build(BuildContext context) {
     return Scaffold(
       // ใช้ IndexedStack เพื่อรักษาสถานะ (State) และการเชื่อมต่อ MQTT ของทั้งสองหน้าจอให้ทำงานต่อเนื่อง
-      body: IndexedStack(
-        index: _currentIndex,
-        children: _pages,
-      ),
+      body: IndexedStack(index: _currentIndex, children: _pages),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _currentIndex,
         onDestinationSelected: (idx) => setState(() => _currentIndex = idx),

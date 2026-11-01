@@ -50,10 +50,10 @@
 3. **[03-State-Management-and-Reactive-IoT-UI.md](03-State-Management-and-Reactive-IoT-UI.md)** - การจัดการสถานะของข้อมูลเซนเซอร์ความถี่สูงด้วย `ChangeNotifier` และ `Streams`, การแยกเลเยอร์การสื่อสารเครือข่ายออกจาก UI
 4. **[04-IoT-Dashboard-UI-Design-and-Interactive-Controls.md](04-IoT-Dashboard-UI-Design-and-Interactive-Controls.md)** - หลักการออกแบบ UI แดชบอร์ด IoT, การสร้าง Radial Gauge มาตรวัดเข็ม, กราฟเส้นแสดงข้อมูลย้อนหลัง, สวิตช์ควบคุมแอนิเมชัน, และชุดสีสไตล์ Dark Mode & Glassmorphism
 5. **[05-Glossary.md](05-Glossary.md)** - อภิธานศัพท์และคำย่อทางเทคนิคประจำสัปดาห์ที่ 12
-6. **[06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics.md](06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics.md)** - **ใบงานที่ 12.1: การติดตั้งสภาพแวดล้อม Flutter และการพัฒนา MQTT Client พื้นฐานบนสมาร์ตโฟน**
-7. **[07-Labsheet-12-2-Interactive-Actuator-Control-Switch-and-Status.md](07-Labsheet-12-2-Interactive-Actuator-Control-Switch-and-Status.md)** - **ใบงานที่ 12.2: การสร้างสวิตช์ควบคุมอุปกรณ์สองทาง (Bi-directional Actuator Switch) พร้อมระบบ Feedback และสถานะ LWT**
-8. **[08-Labsheet-12-3-Realtime-Telemetry-Dashboard-and-Radial-Gauge.md](08-Labsheet-12-3-Realtime-Telemetry-Dashboard-and-Radial-Gauge.md)** - **ใบงานที่ 12.3: การสร้างแดชบอร์ดแสดงผลเซนเซอร์เรียลไทม์ด้วย Radial Gauge และ Live Trend Line Chart**
-9. **[09-Labsheet-12-4-End-to-End-IoT-Ecosystem-Integration.md](09-Labsheet-12-4-End-to-End-IoT-Ecosystem-Integration.md)** - **ใบงานที่ 12.4: การทดสอบผสานรวมระบบครบวงจร (ESP32-C3 Hardware <-> Mosquitto Broker <-> Flutter Mobile App)**
+6. **[06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics.md](67030043/06-Labsheet-12-1-Flutter-Environment-Setup-and-MQTT-Basics.md)** - **ใบงานที่ 12.1: การติดตั้งสภาพแวดล้อม Flutter และการพัฒนา MQTT Client พื้นฐานบนสมาร์ตโฟน**
+7. **[07-Labsheet-12-2-Interactive-Actuator-Control-Switch-and-Status.md](67030043/07-Labsheet-12-2-Interactive-Actuator-Control-Switch-and-Status.md)** - **ใบงานที่ 12.2: การสร้างสวิตช์ควบคุมอุปกรณ์สองทาง (Bi-directional Actuator Switch) พร้อมระบบ Feedback และสถานะ LWT**
+8. **[08-Labsheet-12-3-Realtime-Telemetry-Dashboard-and-Radial-Gauge.md](67030043/08-Labsheet-12-3-Realtime-Telemetry-Dashboard-and-Radial-Gauge.md)** - **ใบงานที่ 12.3: การสร้างแดชบอร์ดแสดงผลเซนเซอร์เรียลไทม์ด้วย Radial Gauge และ Live Trend Line Chart**
+9. **[09-Labsheet-12-4-End-to-End-IoT-Ecosystem-Integration.md](67030043/09-Labsheet-12-4-End-to-End-IoT-Ecosystem-Integration.md)** - **ใบงานที่ 12.4: การทดสอบผสานรวมระบบครบวงจร (ESP32-C3 Hardware <-> Mosquitto Broker <-> Flutter Mobile App)**
 
 ---
 

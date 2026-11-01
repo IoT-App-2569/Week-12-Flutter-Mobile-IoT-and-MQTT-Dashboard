@@ -40,7 +40,6 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
     final clientId = 'Flutter_Telemetry_${DateTime.now().millisecondsSinceEpoch}';
     _client = MqttServerClient(widget.brokerIp, clientId);
     _client!.port = 1883;
-    _client!.keepAlivePeriod = 20;
 
     _client!.onConnected = () {
       setState(() => _isConnected = true);

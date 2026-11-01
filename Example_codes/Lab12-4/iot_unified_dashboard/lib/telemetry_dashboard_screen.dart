@@ -7,10 +7,17 @@ import 'radial_gauge_widget.dart';
 
 class TelemetryDashboardScreen extends StatefulWidget {
   final String brokerIp;
-  const TelemetryDashboardScreen({super.key, required this.brokerIp});
+  final bool connectToMqtt;
+
+  const TelemetryDashboardScreen({
+    super.key,
+    required this.brokerIp,
+    this.connectToMqtt = true,
+  });
 
   @override
-  State<TelemetryDashboardScreen> createState() => _TelemetryDashboardScreenState();
+  State<TelemetryDashboardScreen> createState() =>
+      _TelemetryDashboardScreenState();
 }
 
 class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
@@ -27,7 +34,9 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
   @override
   void initState() {
     super.initState();
-    _connect();
+    if (widget.connectToMqtt) {
+      _connect();
+    }
   }
 
   @override
@@ -37,18 +46,21 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
   }
 
   Future<void> _connect() async {
-    final clientId = 'Flutter_Telemetry_${DateTime.now().millisecondsSinceEpoch}';
+    final clientId =
+        'Flutter_Telemetry_${DateTime.now().millisecondsSinceEpoch}';
     _client = MqttServerClient(widget.brokerIp, clientId);
     _client!.port = 1883;
     _client!.keepAlivePeriod = 20;
 
     _client!.onConnected = () {
+      if (!mounted) return;
       setState(() => _isConnected = true);
       _client!.subscribe('iot/esp32/telemetry', MqttQos.atMostOnce);
       _client!.updates?.listen(_handleIncomingMessage);
     };
 
     _client!.onDisconnected = () {
+      if (!mounted) return;
       setState(() => _isConnected = false);
     };
 
@@ -58,8 +70,12 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
   }
 
   void _handleIncomingMessage(List<MqttReceivedMessage<MqttMessage>> c) {
+    if (!mounted) return;
+
     final recMess = c[0].payload as MqttPublishMessage;
-    final payload = MqttPublishPayload.bytesToStringAsString(recMess.payload.message);
+    final payload = MqttPublishPayload.bytesToStringAsString(
+      recMess.payload.message,
+    );
 
     try {
       final data = jsonDecode(payload) as Map<String, dynamic>;
@@ -97,7 +113,7 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
               size: 14,
               color: _isConnected ? const Color(0xFF00E676) : Colors.redAccent,
             ),
-          )
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -113,11 +129,23 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
             // 2. การ์ดสรุปค่าสถิติ (Statistics Cards)
             Row(
               children: [
-                _buildMetricCard('ค่าดิบ ADC', '$_currentRaw / 4095', const Color(0xFF00E5FF)),
+                _buildMetricCard(
+                  'ค่าดิบ ADC',
+                  '$_currentRaw / 4095',
+                  const Color(0xFF00E5FF),
+                ),
                 const SizedBox(width: 12),
-                _buildMetricCard('แรงดันสูงสุด', '${_maxVoltage.toStringAsFixed(2)} V', const Color(0xFFFF5252)),
+                _buildMetricCard(
+                  'แรงดันสูงสุด',
+                  '${_maxVoltage.toStringAsFixed(2)} V',
+                  const Color(0xFFFF5252),
+                ),
                 const SizedBox(width: 12),
-                _buildMetricCard('แรงดันต่ำสุด', '${_minVoltage == 3.3 ? 0.0 : _minVoltage.toStringAsFixed(2)} V', const Color(0xFF00E676)),
+                _buildMetricCard(
+                  'แรงดันต่ำสุด',
+                  '${_minVoltage == 3.3 ? 0.0 : _minVoltage.toStringAsFixed(2)} V',
+                  const Color(0xFF00E676),
+                ),
               ],
             ),
             const SizedBox(height: 20),
@@ -135,14 +163,20 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
                 children: [
                   const Text(
                     'แนวโน้มแรงดันย้อนหลัง 30 ตัวอย่าง (Live Trend)',
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white70,
+                    ),
                   ),
                   const SizedBox(height: 16),
                   SizedBox(
                     height: 100,
                     width: double.infinity,
                     child: CustomPaint(
-                      painter: _SparklinePainter(history: _history, maxLimit: 3.3),
+                      painter: _SparklinePainter(
+                        history: _history,
+                        maxLimit: 3.3,
+                      ),
                     ),
                   ),
                 ],
@@ -170,9 +204,19 @@ class _TelemetryDashboardScreenState extends State<TelemetryDashboardScreen> {
         ),
         child: Column(
           children: [
-            Text(title, style: const TextStyle(fontSize: 11, color: Colors.white54)),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 11, color: Colors.white54),
+            ),
             const SizedBox(height: 6),
-            Text(val, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: color)),
+            Text(
+              val,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
+            ),
           ],
         ),
       ),
@@ -201,7 +245,8 @@ class _SparklinePainter extends CustomPainter {
 
     for (int i = 0; i < history.length; i++) {
       final x = i * dx;
-      final y = size.height - ((history[i] / maxLimit).clamp(0.0, 1.0) * size.height);
+      final y =
+          size.height - ((history[i] / maxLimit).clamp(0.0, 1.0) * size.height);
       if (i == 0) {
         path.moveTo(x, y);
       } else {

@@ -7,7 +7,13 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 
 class ActuatorControlScreen extends StatefulWidget {
   final String brokerIp;
-  const ActuatorControlScreen({super.key, required this.brokerIp});
+  final bool connectToMqtt;
+
+  const ActuatorControlScreen({
+    super.key,
+    required this.brokerIp,
+    this.connectToMqtt = true,
+  });
 
   @override
   State<ActuatorControlScreen> createState() => _ActuatorControlScreenState();
@@ -23,7 +29,9 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
   @override
   void initState() {
     super.initState();
-    _connectMqtt();
+    if (widget.connectToMqtt) {
+      _connectMqtt();
+    }
   }
 
   @override
@@ -39,11 +47,13 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     _client!.keepAlivePeriod = 20;
 
     _client!.onConnected = () {
+      if (!mounted) return;
       setState(() => _networkStatus = 'เชื่อมต่อ Broker เรียบร้อย');
       _subscribeTopics();
     };
 
     _client!.onDisconnected = () {
+      if (!mounted) return;
       setState(() {
         _networkStatus = 'ขาดการเชื่อมต่อ Broker!';
         _isDeviceOnline = false;
@@ -53,7 +63,9 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     try {
       await _client!.connect();
     } catch (e) {
-      setState(() => _networkStatus = 'เชื่อมต่อล้มเหลว: $e');
+      if (mounted) {
+        setState(() => _networkStatus = 'เชื่อมต่อล้มเหลว: $e');
+      }
     }
   }
 
@@ -64,6 +76,8 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
     _client?.subscribe('iot/esp32/led_ack', MqttQos.atMostOnce);
 
     _client?.updates?.listen((List<MqttReceivedMessage<MqttMessage>> c) {
+      if (!mounted) return;
+
       final recMess = c[0].payload as MqttPublishMessage;
       final pt = MqttPublishPayload.bytesToStringAsString(
         recMess.payload.message,
@@ -245,7 +259,9 @@ class _ActuatorControlScreenState extends State<ActuatorControlScreen> {
                     child: Switch(
                       value: _isLedOn,
                       activeColor: const Color(0xFF00E676),
-                      onChanged: _isWaitingAck ? null : _toggleLed,
+                      onChanged: (_isWaitingAck || !_isDeviceOnline)
+                          ? null
+                          : _toggleLed,
                     ),
                   ),
                 ],

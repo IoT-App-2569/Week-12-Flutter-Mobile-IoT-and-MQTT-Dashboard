@@ -2,6 +2,17 @@
 
 A new Flutter project.
 
+## Run Lab 12-4 on an Android emulator (Windows)
+
+Start the `emulator-5554` device, then run this command from this directory:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_lab12_4.ps1
+```
+
+The script starts Mosquitto if needed, runs the mock ESP32, and launches the app.
+Use both tabs to test live telemetry and LED control; press `Ctrl+C` to stop.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

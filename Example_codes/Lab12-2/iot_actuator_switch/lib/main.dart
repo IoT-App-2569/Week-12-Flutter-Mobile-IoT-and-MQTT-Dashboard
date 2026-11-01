@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'actuator_control_screen.dart';
 
 void main() {

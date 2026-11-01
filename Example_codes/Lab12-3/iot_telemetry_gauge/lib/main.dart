@@ -19,8 +19,8 @@ class TelemetryApp extends StatelessWidget {
           secondary: Color(0xFF00E676),
         ),
       ),
-      // กำหนด IP ของ Mosquitto Broker (ใช้ 127.0.0.1 หากรันบนคอมพิวเตอร์เครื่องเดียวกัน)
-      home: const TelemetryDashboardScreen(brokerIp: '127.0.0.1'),
+      // Android Emulator uses this address to reach the broker on the host computer.
+      home: const TelemetryDashboardScreen(brokerIp: '10.0.2.2'),
       debugShowCheckedModeBanner: false,
     );
   }

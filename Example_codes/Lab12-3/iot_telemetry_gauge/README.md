@@ -2,6 +2,17 @@
 
 A new Flutter project.
 
+## Run Lab 12-3 on an Android emulator (Windows)
+
+From this directory, run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run_lab12_3.ps1
+```
+
+The script starts Mosquitto if needed, streams simulated telemetry, and launches
+the app on `emulator-5554`. Press `Ctrl+C` in the terminal to stop the test.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

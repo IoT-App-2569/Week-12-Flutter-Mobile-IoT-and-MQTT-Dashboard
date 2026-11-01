@@ -3,7 +3,7 @@ import 'package:iot_mqtt_basics/main.dart';
 
 void main() {
   testWidgets('Unified IoT app smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(const UnifiedIotApp());
+    await tester.pumpWidget(const UnifiedIotApp(connectToMqtt: false));
     expect(find.byType(UnifiedIotApp), findsOneWidget);
   });
 }
