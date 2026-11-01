@@ -1,0 +1,9 @@
+[14:48:10] 🔗 [UnifiedIoTApp - 67030360] Connected to Broker 192.168.1.124:1883
+[14:48:10] 📩 [iot/esp32/status] (Retained) -> "online" | สถานะฮาร์ดแวร์: ONLINE
+[14:48:11] 📩 [iot/esp32/telemetry] -> {"voltage": 1.81, "raw": 2246, "uptime": 207}
+[14:48:11] 📩 [iot/esp32/telemetry] -> {"voltage": 1.95, "raw": 2420, "uptime": 208} (History Count: 96)
+[14:48:14] 🚀 [iot/esp32/control] -> {"led": "ON"} (QoS 1)
+[14:48:14] 📩 [iot/esp32/led_ack] -> {"led_state": true, "ack": true} (Verified in 28 ms | History Count: 97)
+[14:48:20] ⚠️ [FAULT TEST] ถอดสายไฟบอร์ด ESP32 / สั่งหยุดทำงานกะทันหัน (Unplug / Kill Process)
+[14:48:21] 🚨 [iot/esp32/status] (LWT Retained) -> "offline" (ตรวจพบบอร์ดดับภายใน 1.7 วินาที | History Count: 98)
+[14:48:21] 🔒 UI Guard Activated: ล็อกสวิตช์ควบคุมและแสดงแถบแจ้งเตือน "ESP32 ฮาร์ดแวร์: ออฟไลน์ (OFFLINE)" 

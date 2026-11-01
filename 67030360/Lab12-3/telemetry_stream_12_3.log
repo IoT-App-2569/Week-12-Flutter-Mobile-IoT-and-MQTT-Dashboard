@@ -1,0 +1,5 @@
+[14:35:01.000] 📩 [iot/esp32/telemetry] -> {"voltage": 1.68, "raw": 2084, "uptime": 206}
+[14:35:01.500] 📩 [iot/esp32/telemetry] -> {"voltage": 1.81, "raw": 2246, "uptime": 207}
+[14:35:02.000] 📩 [iot/esp32/telemetry] -> {"voltage": 1.95, "raw": 2420, "uptime": 208}
+[14:35:02.500] 📩 [iot/esp32/telemetry] -> {"voltage": 2.06, "raw": 2556, "uptime": 209}
+[14:35:02.502] 📊 Parsed Telemetry (67030360): voltage=1.95V, raw=2420/4095, min=0.07V, max=3.22V, history_buffer=30/30 samples
