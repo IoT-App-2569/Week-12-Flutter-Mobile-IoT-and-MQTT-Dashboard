@@ -1,0 +1,43 @@
+# ESP-IDF build output
+**/build/**
+build/**
+build-v6/**
+/sdkconfig
+/sdkconfig.old
+.esp/**
+
+# CMake cache
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+
+# Ninja build files
+.ninja_deps
+.ninja_log
+
+# IDE & Editor files
+.vscode/
+.idea/
+.cache/**
+
+# Python virtual environment
+venv/
+.env/
+
+# ESP-IDF Python tools cache
+__pycache__/
+*.pyc
+
+# Partition table auto-generated
+partition_table/
+
+# ESP-IDF component manager
+dependencies.lock
+managed_components/
+
+# Temporary files & notes
+*.tmp
+*.bak
+.obsidian/**
+/.obsidian
