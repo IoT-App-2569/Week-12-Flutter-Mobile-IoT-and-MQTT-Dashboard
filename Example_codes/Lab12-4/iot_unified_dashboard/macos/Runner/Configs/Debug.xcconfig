@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-#include "../../Flutter/Flutter-Debug.xcconfig"
-#include "Warnings.xcconfig"
-=======
-#include "../../Flutter/Flutter-Debug.xcconfig"
-#include "Warnings.xcconfig"
->>>>>>> ecaf15c033ba2b7e4c00cf4e7402a9b7fe88594a
