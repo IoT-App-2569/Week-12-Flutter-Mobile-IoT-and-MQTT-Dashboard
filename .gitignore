@@ -6,6 +6,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 .idea/
+.obsidian/
 *.tmp
 __pycache__/
 *.py[cod]
