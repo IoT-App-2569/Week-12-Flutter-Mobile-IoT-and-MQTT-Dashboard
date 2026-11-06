@@ -38,7 +38,7 @@ class MqttBasicsScreen extends StatefulWidget {
 class _MqttBasicsScreenState extends State<MqttBasicsScreen> {
   // หมายเลข IP ของเครื่องคอมพิวเตอร์ที่รัน Mosquitto Broker
   final TextEditingController _brokerIpController = TextEditingController(
-    text: '127.0.0.1',
+    text: '10.0.2.2',
   );
 
   MqttServerClient? _client;

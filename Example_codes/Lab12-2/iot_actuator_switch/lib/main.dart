@@ -21,7 +21,7 @@ class ActuatorApp extends StatelessWidget {
         ),
       ),
       // กำหนด IP ของ Mosquitto Broker (ใช้ 127.0.0.1 หากรันบนคอมพิวเตอร์เครื่องเดียวกัน)
-      home: const ActuatorControlScreen(brokerIp: '127.0.0.1'),
+      home: const ActuatorControlScreen(brokerIp: '10.0.2.2'),
       debugShowCheckedModeBanner: false,
     );
   }
