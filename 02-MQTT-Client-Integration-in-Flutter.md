@@ -30,8 +30,25 @@ flutter pub add mqtt_client
 
 เมื่อนำ Flutter ไปรันบนแพลตฟอร์มที่แตกต่างกัน ตัวกลางในการขนส่งข้อมูล (Transport Layer) มีความแตกต่างกันอย่างสำคัญ
 
-<p align="center"><img src="Images/Fig_02-MQTT-Client-Integration-in-Flutter_2026-10-27T19-53-49_academic.svg" alt="02-MQTT-Client-Integration-in-Flutter" width="800" ></p>
-<p align="center">  12.2.2 รูปแบบการเชื่อมต่อ TCP Socket vs WebSocket</p>
+```mermaid
+flowchart TD
+    subgraph Targets[" 📱 แพลตฟอร์มเป้าหมาย (Client Platforms) "]
+        direction LR
+        Mobile["📱 <b>Android / iOS / Desktop</b><br/>(รันเนทีฟบน OS)"]
+        Web["🌐 <b>Flutter Web Browser</b><br/>(รันบนเบราว์เซอร์)"]
+    end
+
+    ServerClient["⚙️ <b>MqttServerClient</b><br/>(ทำงานผ่าน Raw TCP Socket)"]
+    BrowserClient["🌐 <b>MqttBrowserClient</b><br/>(ทำงานผ่าน WebSockets ws:// หรือ wss://)"]
+
+    Broker["🏢 <b>Mosquitto / EMQX MQTT Broker</b><br/>ศูนย์กลางกระจายข้อความ Publish / Subscribe"]
+
+    Mobile --> ServerClient
+    Web --> BrowserClient
+
+    ServerClient -->|Port 1883 / 8883 TCP| Broker
+    BrowserClient -->|Port 8083 / 9001 WS| Broker
+```
 
 1. **`MqttServerClient` (ใช้กับแอปพลิเคชันมือถือ Android, iOS และ Desktop)**
    * เชื่อมต่อผ่าน Raw TCP Socket ตรงๆ ไปยังพอร์ต **1883** (ไม่เข้ารหัส) หรือ **8883** (TLS)
@@ -45,8 +62,23 @@ flutter pub add mqtt_client
 
 การเชื่อมต่อกับ Broker มีขั้นตอนที่เป็นลำดับชั้น (Pipeline) ดังแสดงในแผนภาพ
 
-<p align="center"><img src="Images/Fig_02-MQTT-Client-Integration-in-Flutter_2026-10-27T19-53-53_academic.svg" alt="02-MQTT-Client-Integration-in-Flutter" width="800" ></p>
-<p align="center">  12.2.3 ขั้นตอนการสร้างการเชื่อมต่อกับ Broker (Connection Workflow)</p>
+```mermaid
+sequenceDiagram
+    autonumber
+    actor App as Flutter Application
+    participant Client as MqttServerClient
+    participant Broker as Mosquitto Broker
+
+    App->>Client: กำหนดค่า Host, Port, ClientId, KeepAlive
+    App->>Client: กำหนด Callback (onConnected, onDisconnected)
+    App->>Client: client.connect()
+    Client->>Broker: ส่งแพ็กเก็ต CONNECT
+    Broker-->>Client: ตอบกลับแพ็กเก็ต CONNACK (Connection Accepted)
+    Client-->>App: ทริกเกอร์ onConnected() Callback
+    App->>Client: client.subscribe("iot/esp32/telemetry", QoS0)
+    Client->>Broker: ส่งแพ็กเก็ต SUBSCRIBE
+    Broker-->>Client: ตอบกลับ SUBACK
+```
 
 ### โครงสร้างโค้ดการเชื่อมต่อพื้นฐาน (Connection Setup Code)
 
